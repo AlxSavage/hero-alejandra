@@ -1,0 +1,110 @@
+<template name="accounts">
+  <div class="page-auth fit">
+    {{> atForm}}          
+  </div>
+</template>
+
+<template name="override-atPwdFormBtn">
+  <button type="submit" class="btn-primary">
+    {{buttonText}}
+  </button>
+</template>
+
+<template name="override-atTextInput">
+  <div class="input {{#if isValidating}}validating{{/if}} {{#if hasError}}error{{/if}} {{#if hasSuccess}}has-success{{/if}} {{#if feedback}}has-feedback{{/if}} at-field-{{_id}}">
+    <input type="{{type}}" id="at-field-{{_id}}" name="at-field-{{_id}}" placeholder="{{placeholder}}" autocapitalize="none" autocorrect="off" autocomplete="off">
+    {{#if hasIcon}}
+        <span class="{{iconClass}}"></span>
+    {{/if}}
+    {{#if hasError}}
+      <span>{{errorText}}</span>
+    {{/if}}
+  </div>
+</template>
+
+<template name="override-atTitle">
+  <h1 class="title-auth">{{title}}</h1>
+</template>
+
+<template name="override-atSigninLink">
+  <div class="at-signin-link">
+    <p>
+      Already have an account?
+      <a href="{{pathFor 'login'}}" id="at-signIn" class="at-link at-signin">Sign In</a>
+    </p>
+  </div>
+</template>
+
+<template name="override-atSignupLink">
+  <div class="at-signup-link">
+    <p>
+      Don't have an account?
+      <a href="{{pathFor 'register'}}" id="at-signUp" class="at-link at-signup">Sign Up</a>
+    </p>
+  </div>
+</template>
+
+<template name="override-atError">
+  <div class="list-errors">
+    {{#each error}}
+      <div class="list-item">{{errorText}}</div>
+    {{/each}}
+  </div>
+</template>
+
+<template name="override-atPwdLink">
+
+</template>
+
+<template name="override-atPwdForm">
+  <div class="at-pwd-form">
+    <form role="form" id="at-pwd-form" class="{{disabled}}" novalidate action="#" method="POST">
+      {{#each fields}}
+        {{> atInput}}
+      {{/each}}
+      {{#if showReCaptcha}}
+        {{> atReCaptcha}}
+      {{/if}}
+      {{> atPwdFormBtn}}
+      {{#if showForgotPasswordLink}}
+        {{> atPwdLink}}
+      {{/if}}
+    </form>
+  </div>
+</template>
+
+
+
+<template name="override-atForm">
+  <div class="page-auth fit">
+    <div class="title">
+      {{>atTitle}}        
+    </div>
+    <div class="subtitle"></div>
+
+    <div class="layout vertical center flex">
+      {{#if showMessage}}
+        {{> atMessage}}
+      {{/if}}
+      {{#if showError}}
+        {{> atError}}
+      {{/if}}
+      {{#if showPwdForm}}
+        {{> atPwdForm}}
+      {{/if}}
+      {{#if showResult}}
+        {{> atResult}}
+      {{/if}}
+      {{#if showSignInLink}}
+        {{> atSigninLink}}
+      {{/if}}
+      {{#if showForgotPasswordLink}}
+        {{> atPwdLink}}
+      {{/if}}
+      {{#if showSignUpLink}}
+        {{> atSignupLink}}
+      {{/if}}
+      {{> atTermsLink}}
+    </div>
+  </div>
+</template>

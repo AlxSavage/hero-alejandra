@@ -1,0 +1,56 @@
+<template name="userNotifications">
+	{{>nav title='Notifications' black=true}}
+	<div class="page-user-notifications {{activeTab}}">
+
+  	<div class="btns-group messages-tabs layout horizontal scroll">
+    	<a class="btn-tertiary {{#if isActiveTab 'tab-1'}}active{{else}}no-state{{/if}} js-show-tab-1">Activity</a>
+    	<a class="btn-tertiary {{#if isActiveTab 'tab-2'}}active{{else}}no-state{{/if}} js-show-tab-2">Inbox</a>
+		</div>
+
+		<div class="content-scrollable static-nav tab-1-scrollable"></div>
+		<div class="content-scrollable static-nav tab-2-scrollable">
+			<h5>Channels</h5>
+			<ul>
+<!-- 			  {{#each channel in channels}}
+			    <li class="{{currentChannel channel.name}}">
+			      <a href="/messages/{{channel.name}}">
+			        #{{channel.name}}
+			      </a>
+			    </li>
+			  {{/each}} -->
+			</ul>
+
+			<h5>Direct Messages</h5>
+			<ul>
+				  {{#each user in users}}
+				    <li class="">
+					    <a href="/messages/@{{user.username}}">
+					      {{user.username}}
+					    </a>
+				    </li>
+				  {{/each}}
+			</ul>
+
+			<h5>Recent messages</h5>
+			<ul>
+				  {{#each message in recentMessages}}
+					  <li>
+						  <a href="/messages/@{{fromUsername message.owner}}">
+						  	
+						  	
+						  	{{#with sendersName message.owner}}
+						  		{{this}}
+						  	{{/with}}
+
+						  	<p>{{message.message}}</p>
+						  	<p>{{message.timestamp}}</p>
+
+						  </a>
+					  </li>
+				  {{/each}}
+			</ul>
+		</div>
+	</div>
+	
+	{{>navTabs}}
+</template>

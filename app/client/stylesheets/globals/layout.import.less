@@ -1,0 +1,21 @@
+#outer-body-wrapper {
+  .position(absolute, 0, 0, 0, 0);
+  .transition(all 200ms ease-out);
+  .transform(translate3d(0, 0, 0));
+}
+
+.content-scrollable {
+  .position(absolute, 0, 0, 0, 0);
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: none;
+}
+
+// Transparent screen to prevent interactions on content when menu is open
+.content-overlay {
+  .position(absolute, 0, 0, 0, 0);
+  cursor: pointer;
+}
+.overlay {
+  .position(absolute, 0, 0, 0, 0);  
+}

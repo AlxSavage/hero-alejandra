@@ -1,0 +1,109 @@
+[class^="btn-"],
+[class*=" btn-"] {
+  // Sizing
+  .font-s2;
+  line-height: 22px !important; //override line-height always so we can use em's to size.
+  padding: 1em 1.25em 1em; // 48px tall
+
+  // Style
+  .type-black;
+  .title-caps;
+  .transition( all 100ms ease-in );
+  color: @color-empty;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  text-decoration: none !important; //prevents global link styles from applying
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &[class*="small"] {
+    padding: .7em 1.25em .50em; // 36px tall
+  }
+
+  &[class*="primary"] {
+    background-color: @color-primary;
+    color: @color-empty;
+
+    &:hover { background-color: darken(@color-primary, 5%); }
+    &:active { box-shadow: rgba(0,0,0,.3) 0 1px 3px 0 inset; }
+  }
+
+  &[class*="secondary"] {
+    background: @color-tertiary;
+    color: @light-icon-color;
+    opacity: 0.9;
+
+    &:hover { background-color: darken(@color-tertiary, 5%); }
+
+    &.active {
+      background: @color-medium;
+      color: @color-empty;
+
+      //&:hover{ background-color: darken(@color-secondary, 5%); }
+      &:active{ box-shadow: rgba(0,0,0,.3) 0 1px 3px 0 inset; }
+    }
+
+    &.no-state { color: @color-empty; }
+  }
+
+  &[class*="tertiary"] {
+    background-color: @color-raw;
+    color: @color-rare;
+    &.active {
+      color: @color-medium-rare;
+      border-bottom: 3px solid @color-primary;
+    }
+  }
+  &[class*="darktab"] {
+    color:@color-medium;
+    &.active {
+      color:  @color-rare;
+      border-bottom: 3px solid @color-primary;
+    }
+  }
+
+
+  &[class*="post-action-nav"] {
+    background-color: @color-raw;
+
+    font-weight: 400;
+    letter spacing: .7px 16px;
+    color: @color-medium-rare;
+
+    &.active {
+      color: @color-primary;
+    }
+  }  
+
+  &[class*="twitter"] {
+    background-color: @color-twitter;
+    color: @color-empty;
+
+    &:hover { background-color: darken(@color-twitter, 10%); }
+    &:active { box-shadow: rgba(0,0,0,.3) 0 1px 3px 0 inset; }
+  }
+
+  &[disabled] { opacity: .5; }
+}
+
+.btns-group {
+  .display(flex);
+  .flex-wrap(wrap);
+  width: 100%;
+
+  [class*="btn-"] {
+    .flex(1);
+  }
+}
+.explore-tabs {
+  background-color: @darktab;
+  margin-top: -1px;
+
+  [class*="btn-"] {
+    .flex(1);
+  }
+}
+.action-nav-container {
+  //.position(absolute, auto, 0, 0, 0, auto, auto);
+}
