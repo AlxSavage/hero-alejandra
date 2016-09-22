@@ -68,7 +68,7 @@ ul.notifications-listing {
             flex-direction: row;
             flex-wrap: nowrap;
         }
-        .not-user {
+        .nt-user {
             width: 90px;
             flex-shrink: 0;
             img{
@@ -76,27 +76,27 @@ ul.notifications-listing {
                 border-radius: 50%;
             }
         }
-        .not-info {
+        .nt-info {
             .type-regular;
             .font-s3;
             flex-grow: 1;
             line-height: 20px;
             letter-spacing: 0;
-            .not-about {
+            .nt-about {
               color: @color-well;
               margin-bottom: 10px;
             }
-            .not-message {
+            .nt-inbox {
+              color: @color-well;
+              margin-bottom: 5px;
+            }
+            .nt-message {
               color: @color-medium-well;
               display: block;
               margin-bottom: 10px;
             }
-            .not-date {
-              .font-s3-alt;
-              color: @color-medium-well;
-            }
         }
-        .not-img {
+        .nt-right {
             width: 95px;
             flex-shrink: 0;
             img {
@@ -105,6 +105,10 @@ ul.notifications-listing {
         }
         .strong {
             font-weight: 700;
+        }
+        .nt-date {
+          .font-s3-alt;
+          color: @color-medium-well;
         }
     }
 }
