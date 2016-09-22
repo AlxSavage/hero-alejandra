@@ -54,57 +54,57 @@
   }
 }
 
-
-ul.notifications-activity{
+// Recent activity notifications
+ul.notifications-listing {
     margin: 0;
     padding: 0;
-    li{
+    li {
         position: relative;
         list-style: none;
         padding: 30px 15px;
         border-bottom: #eee solid 1px;
-        a{
+        a {
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
-            .act-user {
-                width: 90px;
-                flex-shrink: 0;
-                img{
-                    .position(relative, 5px, auto, auto, 15px, 55px, 55px);
-                    border-radius: 50%;
-                }
+        }
+        .not-user {
+            width: 90px;
+            flex-shrink: 0;
+            img{
+                .position(relative, 5px, auto, auto, 15px, 55px, 55px);
+                border-radius: 50%;
             }
-            .act-info {
-                .type-regular;
-                .font-s3;
-                flex-grow: 1;
-                line-height: 20px;
-                letter-spacing: 0;
-                .act-about{
-                  color: @color-well;
-                  .strong{
-                      font-weight: 700;
-                  }
-                  margin-bottom: 10px;
-                }
-                .act-message{
-                  color: @color-medium-well;
-                  display: block;
-                  margin-bottom: 10px;
-                }
-                .act-date{
-                  .font-s3-alt;
-                  color: @color-medium-well;
-                }
+        }
+        .not-info {
+            .type-regular;
+            .font-s3;
+            flex-grow: 1;
+            line-height: 20px;
+            letter-spacing: 0;
+            .not-about {
+              color: @color-well;
+              margin-bottom: 10px;
             }
-            .act-img {
-                width: 95px;
-                flex-shrink: 0;
-                img{
-                  .position(relative, 5px, auto, auto, 16px, 64px, 64px);
-                }
+            .not-message {
+              color: @color-medium-well;
+              display: block;
+              margin-bottom: 10px;
             }
+            .not-date {
+              .font-s3-alt;
+              color: @color-medium-well;
+            }
+        }
+        .not-img {
+            width: 95px;
+            flex-shrink: 0;
+            img {
+              .position(relative, 5px, auto, auto, 16px, 64px, 64px);
+            }
+        }
+        .strong {
+            font-weight: 700;
         }
     }
 }
