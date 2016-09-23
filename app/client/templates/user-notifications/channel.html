@@ -3,20 +3,23 @@
   <div class="page-channel">
     <div id="messages">
       <div class="messages-list {{#if isLoading}}loading-list{{/if}}">
-        {{#each messages}}
-          {{> message}}
-        {{else}}
-          {{#if isDirect}}
-            <p class="alert alert-warning">You haven't said anything to {{username}} yet. Say hello!</p>
+        <ul class="list-chats">
+          {{#each messages}}
+            <li>{{> message}}</li>
           {{else}}
-            <p class="alert alert-warning">This channel is pretty quiet. You should say something!</p>
-          {{/if}}
-        {{/each}}
+            {{#if isDirect}}
+              <p class="alert alert-warning">You haven't said anything to {{username}} yet. Say hello!</p>
+            {{else}}
+              <p class="alert alert-warning">This channel is pretty quiet. You should say something!</p>
+            {{/if}}
+          {{/each}}
+        </ul>
       </div>
     </div>
 
     <div class="message-input">
       <input name="message" placeholder="Type your message here...">
+      <button type="submit" class="messageSubmit">Send</button>
     </div>
   </div>
 

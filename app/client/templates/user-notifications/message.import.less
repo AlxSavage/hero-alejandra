@@ -1,0 +1,88 @@
+// Chat message styles
+#messages{
+    height: 100%;
+    background: white;
+}
+
+ul.list-chats {
+    padding: 25px 0 140px;
+    margin: 0;
+    li {
+        position: relative;
+        list-style: none;
+        display: block;
+        padding: 30px 15px;
+        margin: 20px 0 8px;
+    }
+    h4 {
+        text-align: center;
+          .font-s2;
+          color: @color-medium-well;
+    }
+    .chat-user {
+        width: 80px;
+        flex-shrink: 0;
+        img {
+            border-radius: 50%;
+        }
+    }
+    .chat-message {
+        .chat-arrow {
+            position: absolute;
+            width: 0;
+            height: 0;
+            margin-top: 27px;
+            border-bottom: 6px solid transparent;
+        }
+        .chat-msg {
+            display: inline-block;
+            margin-top: 7px;
+            margin-bottom: 10px;
+            padding: 12px 15px;
+            border-radius: 12px;
+            max-width: 320px;
+            .type-regular;
+            .font-s3;
+            color: @color-well;
+        }
+    }
+    .chat-body.left {
+        .chat-user{
+            float: left;
+            img{
+                .position(relative, 10px, auto, auto, 10px, 55px, 55px);                
+            }
+        }
+        .chat-message{
+            float: left;
+        }
+        .chat-arrow{
+            margin-left: -12px;
+            border-right: 12px solid #f0f0f0;
+        }
+        .chat-msg{
+            float: left;
+            background: #f0f0f0;
+        }
+    }
+    .chat-body.right {
+        .chat-user{
+            float: right;
+            img{
+                .position(relative, 10px, auto, auto, 20px, 55px, 55px);                
+            }
+        }
+        .chat-message{
+            float: rleft;
+        }
+        .chat-arrow{
+            margin-right: -12px;
+            border-left: 12px solid #e4f2fd;
+            right: 95px;
+        }
+        .chat-msg{
+            float: right;
+            background: #e4f2fd;
+        }
+    }
+}

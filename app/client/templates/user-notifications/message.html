@@ -1,13 +1,17 @@
 <template name="message">
-  <div class="message">
-    {{#if showHeader}}
-      <header>
-        <h4>{{name owner}} <span>{{messageTimestamp timestamp}}</span></h4>
-      </header>
-    {{/if}}
+  {{#if showHeader}}
+      <h4>{{messageTimestamp timestamp}}</h4>
+  {{/if}}
 
-    <div class="body">
-      {{{parseMarkdown message}}}
+  <div class="chat-body {{messageType owner}}">
+    <div class="chat-user">
+      <img src="http://cdn0.peopleimages.com/picture/1324707-theres-just-so-many-wonderful-things-to-see-fit_400_400.jpg">
+    </div>
+    <div class="chat-message">
+      <div class="chat-arrow"></div>
+      <div class="chat-msg">
+        {{{parseMarkdown message}}}
+      </div>
     </div>
   </div>
 </template>
