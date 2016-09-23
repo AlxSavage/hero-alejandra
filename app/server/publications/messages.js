@@ -1,7 +1,7 @@
 Meteor.publish( 'recentMessages', function() {
     
     return Messages.find({
-        to: this.userId
+        $or: [{ to: this.userId }, { owner : this.userId } ]
       }, {
         fields: {
           message: 1,

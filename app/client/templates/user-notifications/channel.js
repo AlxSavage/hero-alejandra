@@ -46,7 +46,10 @@ Template.channel.helpers({
 });
 
 Template.channel.events({
-  'keyup [name="message"]' ( event, template ) {
+  'keyup [name="message"], click .messageSubmit' ( event, template ) {
     handleMessageInsert( event, template );
+  },
+  'click .messageSubmit' ( event, template ) {
+    handleMessageInsert( event, template, true );
   }
 });
