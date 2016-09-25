@@ -30,6 +30,13 @@ Router.route('/profile', {
   name: 'profile'
 });
 
+Router.route('/profile/follow/:_type', {
+  name: 'follow',
+  data: function(){
+    return this.params._type;
+  }
+});
+
 
 AccountsTemplates.configure({
   defaultLayout: 'default',

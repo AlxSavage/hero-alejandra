@@ -28,24 +28,29 @@
 .page-user-notifications.tab-2,
 .page-user-notifications.tab-3,
 .page-user-notifications.tab-4,
-.page-user-notifications.tab-5 {
+.page-user-notifications.tab-5{
   .content-scrollable {
     //min-height: 70%;
     top: 128px;
   }
 }
 
+.profile-followers{
+  .content-scrollable {
+    top: 78px;
+  }
+}
+
+
 // Collapse animation-specific styles
 @transition-time: 700ms;
 @easing: cubic-bezier(0.175, 0.885, 0.335, 1.05);
-.page-user-notifications {
+.page-user-notifications, .profile-followers {
   
-
   .content-scrollable {
     .transform(translate3d(0,0,0));
     .transition( all @transition-time @easing );
     .backface-visibility(hidden);
-
 
     &.instant { .transition( transform 0, top @transition-time @easing ); }
     &.delayed { .transition( transform 0 linear @transition-time, top @transition-time @easing); }
