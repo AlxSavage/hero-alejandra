@@ -44,6 +44,13 @@ Router.route('/feed/:_story/comments', {
   }
 });
 
+Router.route('/feed/:_story/share', {
+  name: 'share',
+  data: function(){
+    return this.params._story;
+  }
+});
+
 
 AccountsTemplates.configure({
   defaultLayout: 'default',

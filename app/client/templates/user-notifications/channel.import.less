@@ -22,7 +22,10 @@
 		width: 85%;
 		float: left;
 	}
-	button{
+	.msg-share{
+		width: 100%;
+	}
+	button:not(.btn-share){
 		border: none;
 		background: transparent;
 		color: @color-medium;
@@ -32,4 +35,20 @@
 	    float: right;
 	    height: 80%;
 	}
+	button.btn-share{
+		display: block;
+		.position(absolute, 58px, 0, 0, 0, 100%, 3.2rem);
+		background: @color-primary;
+		.type-black();
+		text-align: center;
+		line-height: 3.2rem;
+		vertical-align: middle;
+		font-size: 1rem;
+		&:hover{
+			background: @color-full;
+		}
+	}
+}
+.message-input-share{
+	height: 110px;
 }

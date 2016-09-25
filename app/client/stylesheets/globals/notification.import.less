@@ -95,6 +95,11 @@ ul.notifications-listing {
               color: @color-well;
               margin-bottom: 5px;
             }
+            .nt-username {
+              color: @color-well;
+              vertical-align: middle;
+              line-height: 57px;
+            }
             .nt-desc {
               color: @color-medium-well;
               margin-bottom: 5px;
@@ -113,6 +118,9 @@ ul.notifications-listing {
         }
         .nt-right {
           width: 95px;
+        }
+        .nt-share {
+          width: 3rem;
         }
         .nt-action {
           width: 8.5rem;
@@ -155,4 +163,47 @@ ul.notifications-listing {
           color: @color-medium-well;
         }
     }
+    li.share{
+      padding: 10px 15px;
+      .ion-checkmark-circled {
+        color: #dadada;
+        font-size: 2.2rem;
+        vertical-align: middle;
+        line-height: 57px;
+        cursor: pointer;
+      }
+      .sharing{
+        color: @color-primary;
+      }
+    }
+}
+
+.share-search{
+  display: block;
+  background: @color-empty;
+  .position(relative, 77px, 0, 0, 0, 100%, 55px);
+  padding: 0 60px;
+  border-bottom: #eee solid 1px;
+  .user-search{
+    display: block;
+    position: relative;
+    width: 19rem;
+    margin: 0 auto;
+    .icon{
+      display: inline-block;
+      font-size: 2rem;
+      line-height: 50px;
+      vertical-align: middle;
+      color: @color-rare;
+    }
+    input{
+      display: inline-block;
+      border: none;
+      background: @color-empty;
+      font-size: 1rem;
+      padding: 0 10px;
+      text-align: center;
+      .position(static, auto, 0, 0, 0, 16rem, 40px);
+    }
+  }
 }
