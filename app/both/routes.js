@@ -37,6 +37,13 @@ Router.route('/profile/follow/:_type', {
   }
 });
 
+Router.route('/feed/:_story/comments', {
+  name: 'comments',
+  data: function(){
+    return this.params._story;
+  }
+});
+
 
 AccountsTemplates.configure({
   defaultLayout: 'default',
