@@ -30,6 +30,27 @@ Router.route('/profile', {
   name: 'profile'
 });
 
+Router.route('/profile/follow/:_type', {
+  name: 'follow',
+  data: function(){
+    return this.params._type;
+  }
+});
+
+Router.route('/feed/:_story/comments', {
+  name: 'comments',
+  data: function(){
+    return this.params._story;
+  }
+});
+
+Router.route('/feed/:_story/share', {
+  name: 'share',
+  data: function(){
+    return this.params._story;
+  }
+});
+
 
 AccountsTemplates.configure({
   defaultLayout: 'default',
