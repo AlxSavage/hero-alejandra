@@ -1,0 +1,55 @@
+<template name="follow">
+    {{>nav title=followType back="true" black=true}}
+    <div class="profile-followers">
+        <!-- Followers/Following (Temporary templating placeholder info) -->
+        <div class="content-scrollable static-nav tab-1-scrollable">
+            <ul class="notifications-listing ">
+                <li>
+                    <div class="nt">
+                        <div class="nt-user">
+                            <img src="http://cdn0.peopleimages.com/picture/1256331-leave-nothing-but-footprints-take-nothing-but-pictures-fit_400_400.jpg">
+                        </div>
+                        <div class="nt-info">
+                            <div class="nt-inbox strong">Optimus Prime</div>
+                            <div class="nt-desc">Couch Surfer</div>
+                        </div>
+                        <div class="nt-action">
+                            <button class="follow js-follow" data-following="true">follow</button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="nt">
+                        <div class="nt-user">
+                            <img src="http://cdn1.peopleimages.com/picture/1231404-vacation-memories-that-will-last-a-lifetime-fit_400_400.jpg">
+                        </div>
+                        <div class="nt-info">
+                            <div class="nt-inbox strong">Jenny Smith</div>
+                            <div class="nt-desc">I kick puppies</div>
+                        </div>
+                        <div class="nt-action">
+                            <button class="follow js-follow following" data-following="true">following</button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="nt">
+                        <div class="nt-user">
+                            <img src="http://cdn2.peopleimages.com/picture/1216041-searching-for-new-challenges-fit_400_400.jpg">
+                        </div>
+                        <div class="nt-info">
+                            <div class="nt-inbox strong">Terry Cloth</div>
+                            <div class="nt-desc">Super Explorer</div>
+                        </div>
+                        <div class="nt-action">
+                            <button class="follow js-follow" data-following="false">follow</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+        
+    </div>
+
+</template>

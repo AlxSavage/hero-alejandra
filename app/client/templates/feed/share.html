@@ -1,0 +1,48 @@
+<template name="share">
+    {{>nav title="Send To" close="true" black=true}}
+    <div class="share-search"> 
+        <div class="user-search">
+            <i class="icon ion-ios-search-strong js-share"></i><input type="text" placeholder="Search by name or email...">
+        </div>
+    </div>
+    <div class="profile-share">
+        <!-- Send To (Temporary templating placeholder info) -->
+        <div class="content-scrollable static-nav tab-1-scrollable">
+            <ul class="notifications-listing">
+                <li class="share">
+                    <div class="nt">
+                        <div class="nt-user">
+                            <img src="http://cdn0.peopleimages.com/picture/1324707-theres-just-so-many-wonderful-things-to-see-fit_400_400.jpg">
+                        </div>
+                        <div class="nt-info">
+                            <div class="nt-username strong">K Jones</div>
+                        </div>
+                        <div class="nt-share">
+                            <i class="icon ion-checkmark-circled js-share" data-sharing="false"></i>
+                        </div>
+                    </div>
+                </li>
+                <li class="share">
+                    <div class="nt">
+                        <div class="nt-user">
+                            <img src="http://cdn0.peopleimages.com/picture/1256331-leave-nothing-but-footprints-take-nothing-but-pictures-fit_400_400.jpg">
+                        </div>
+                        <div class="nt-info">
+                            <div class="nt-username strong">Optimus Prime</div>
+                        </div>
+                        <div class="nt-share">
+                            <i class="icon ion-checkmark-circled js-share" data-sharing="false"></i>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="message-input message-input-share">
+          <input name="message" class="msg-share" placeholder="Write a message...">
+          <button type="submit" class="btn-share">Send</button>
+        </div>
+    </div>
+
+</template>
