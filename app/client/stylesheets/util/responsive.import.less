@@ -1,0 +1,187 @@
+// Basic defined breakpoints
+@xxs-to-xs-breakpoint: 480px;
+@xs-to-sm-breakpoint: 768px;
+@sm-to-md-breakpoint: 992px;
+@md-to-lg-breakpoint: 1200px;
+
+@xs-min: @xxs-to-xs-breakpoint;
+@sm-min: @xs-to-sm-breakpoint;
+@md-min: @sm-to-md-breakpoint;
+@lg-min: @md-to-lg-breakpoint;
+
+@xxs-max: (@xs-min - 1);
+@xs-max: (@sm-min - 1);
+@sm-max: (@md-min - 1);
+@md-max: (@lg-min - 1);
+
+@screen: ~"only screen";
+@landscape: ~"(orientation: landscape)";
+@portrait: ~"(orientation: portrait)";
+
+@xs-low: ~"(min-width: @{xs-min})";
+@sm-low: ~"(min-width: @{sm-min})";
+@md-low: ~"(min-width: @{md-min})";
+@lg-low: ~"(min-width: @{lg-min})";
+
+@xxs-high: ~"(max-width: @{xxs-max})";
+@xs-high: ~"(max-width: @{xs-max})";
+@sm-high: ~"(max-width: @{sm-max})";
+@md-high: ~"(max-width: @{md-max})";
+
+// Apply styles on landscape
+.landscape(@rules) {
+  @media @landscape {
+    @rules();
+  }
+}
+
+// Apply styles on portrait
+.portrait(@rules) {
+  @media @portrait {
+    @rules();
+  }
+}
+
+// Apply styles on portrait phone
+.portrait-phone(@rules) {
+  @media @screen and @xxs-high and @portrait {
+    @rules();
+  }
+}
+// Apply styles on landscape phone
+.landscape-phone(@rules) {
+  @media @screen and @xs-high and @landscape {
+    @rules();
+  }
+}
+// Apply styles on portrait tablet
+.portrait-tablet(@rules) {
+  @media @screen and @xs-low and @xs-high and @portrait {
+    @rules();
+  }
+}
+// Apply styles on landscape tablet
+.landscape-tablet(@rules) {
+  @media @screen and @sm-low and @sm-high and @landscape {
+    @rules();
+  }
+}
+// Apply styles on portrait desktop
+.portrait-desktop(@rules) {
+  @media @screen and @sm-low and @sm-high and @portrait {
+    @rules();
+  }
+}
+// Apply styles on landscape desktop
+.landscape-desktop(@rules) {
+  @media @screen and @md-low and @md-high and @landscape {
+    @rules();
+  }
+}
+.portrait-large(@rules) {
+  @media @screen and @md-low and @md-high and @portrait {
+    @rules();
+  }
+}
+.landscape-large(@rules) {
+  @media @screen and @lg-low and @landscape {
+    @rules();
+  }
+}
+
+.portrait-tablet-and-up(@rules) {
+  @media @screen and @xs-low and @portrait {
+    @rules();
+  }
+}
+.landscape-tablet-and-up(@rules) {
+  @media @screen and @sm-low and @landscape {
+    @rules();
+  }
+}
+.portrait-desktop-and-up(@rules) {
+  @media @screen and @sm-low and @portrait {
+    @rules();
+  }
+}
+.landscape-desktop-and-up(@rules) {
+  @media @screen and @md-low and @landscape {
+    @rules();
+  }
+}
+
+.xs(@rules) {
+  @media @screen and @xs-low and @xs-high {
+    @rules();
+  }
+}
+.sm(@rules) {
+  @media @screen and @sm-low and @sm-high{
+    @rules();
+  }
+}
+.md(@rules) {
+  @media @screen and @md-low and @md-high {
+    @rules();
+  }
+}
+.lg(@rules) {
+  @media @screen and @lg-low {
+    @rules();
+  }
+}
+
+.xs-and-up(@rules) {
+  @media @screen and @xs-low {
+    @rules();
+  }
+}
+.sm-and-up(@rules) {
+  @media @screen and @sm-low {
+    @rules();
+  }
+}
+.md-and-up(@rules) {
+  @media @screen and @md-low {
+    @rules();
+  }
+}
+
+.wider-than(@width, @rules) {
+  @media @screen and (min-width: @width) {
+    @rules();
+  }
+}
+.narrower-than(@width, @rules) {
+  @media @screen and (max-width: (@width - 1px)) {
+    @rules();
+  }
+}
+
+.responsive-test {
+  .portrait-phone({
+      background-color: fade(lightgreen, 50%);
+  });
+  .portrait-tablet({
+    background-color: fade(darkgreen, 50%);
+  });
+  .portrait-desktop({
+    background-color: fade(blue, 50%);
+  });
+  .portrait-large({
+    background-color: fade(purple, 50%);
+  });
+
+  .landscape-phone({
+    background-color: fade(yellow, 50%);
+  });
+  .landscape-tablet({
+    background-color: fade(orange, 50%);
+  });
+  .landscape-desktop({
+    background-color: fade(red, 50%);
+  });
+  .landscape-large({
+    background-color: fade(darkred, 50%);
+  });
+}
