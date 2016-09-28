@@ -131,6 +131,16 @@
   }
 }
 
+.xs-and-down(@rules) {
+  @media @screen and @xxs-high {
+    @rules();
+  }
+}
+.md-and-down(@rules) {
+  @media @screen and @md-high {
+    @rules();
+  }
+}
 .xs-and-up(@rules) {
   @media @screen and @xs-low {
     @rules();
