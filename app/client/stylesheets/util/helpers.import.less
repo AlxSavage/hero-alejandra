@@ -7,3 +7,17 @@
   width: @width;
   height: @height;
 }
+
+// .uiButton(background; border; color; background hover; color hover; width; height; border radius)
+.uiButton(@background; @border; @text; @background-hover; @text-hover; @btnWidth: auto; @btnHeight: auto; @btnRadius){
+  background: @background;
+  border: 1px solid @border;
+  border-radius: @btnRadius;
+  color: @text;
+  height: @btnHeight;
+  width: @btnWidth;
+  &:hover{
+    background: @background-hover;
+    color: @text-hover;
+  }
+}

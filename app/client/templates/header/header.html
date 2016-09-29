@@ -1,32 +1,35 @@
 <template name="header">
 	<header>
 		<div class="header-container container">			
+			<div class="layout horizontal wrap">
+				<a href="/" class="logo"><img src="/img/logo/logo-white.png" alt="Hero Traveller" title="Hero Traveller"></a>
 
-			<a href="/" class="logo"><img src="/img/logo/logo-white.png" alt="Hero Traveller" title="Hero Traveller"></a>
+				<ul id="header-nav" class="header-nav">
+					<li>
+						<a href="#">My Feed</a>
+					</li>
+					<li>
+						<a href="#">Explore</a>
+					</li>
+				</ul>
 
-			<ul id="header-nav" class="header-nav">
-				<li>
-					<a href="#">
-						My Feed
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						Explore
-					</a>
-				</li>
-			</ul>
+				<div class="header-right layout horizontal flex end-justified">
+					<div class="header-search-box">
+						<div class="header-search">
+							<i class="fa fa-search" aria-hidden="true"></i>
+						</div>
+						<input type="text" name="desktop-search" class="desktop-search">
+					</div>
+					<button class="header-create">Create</button>
+					<div class="header-notifications">
+						<i class="fa fa-bell-o" aria-hidden="true"></i>
+					</div>
+			    <div class="header-user">
+			      <img src="http://cdn0.peopleimages.com/picture/1324707-theres-just-so-many-wonderful-things-to-see-fit_400_400.jpg">
+			    </div>
+				</div>
 
-			<div class="header-right">
-				<button class="header-search">Search</button>
-				<input type="text" name="desktop-search" class="desktop-search">
-				<button class="header-create">Create</button>
-				<button class="header-notifications">Notifications</button>
-		    <div class="header-user">
-		      <img src="http://cdn0.peopleimages.com/picture/1324707-theres-just-so-many-wonderful-things-to-see-fit_400_400.jpg">
-		    </div>
 			</div>
-
 		</div>
 	</header>
 </template>

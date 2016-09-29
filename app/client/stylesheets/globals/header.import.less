@@ -1,10 +1,102 @@
 // Desktop header style definition
+@header-element: 2rem;
+@header-padding: 1.25rem;
+
 header{
-	background: @color-full;
-	.position(fixed, 0, 0, auto, 0, 100%, 4.5rem);
+	background: transparent;
+	.position(relative, 0, 0, auto, 0, 100%, 4.5rem);
 	.xs-and-down({ display:none; });
-	.logo img{
-		width: 12rem;
+	&.sticky{
+		background: @color-full;
+		.position(fixed, 0, 0, auto, 0, 100%, 4.5rem);
+	}
+	.logo img {
 		padding: 1.3rem;
+		width: 12rem;
+	}
+	* {
+		.transition( all 200ms ease-in );
+	}
+	ul.header-nav {
+		.xs({ display:none; });
+    margin: @header-padding 0;
+    padding: 0 0 0 2%;
+    li {
+    	display: inline-block;
+    	padding: 0 0.7rem;
+    	&:nth-child(1) {
+    		border-right: 1px solid @light-icon-color;
+    	}
+    	a {
+    		color: @color-empty;
+    		line-height: @header-element;
+    		vertical-align: middle;
+    		font-size: 0.9rem;
+    		.type-bold();
+				&:hover {
+					color: @light-icon-color;
+				}
+				&.active{
+			    border-bottom: 2px solid red;
+			    padding-bottom: 5px;
+  			}
+    	}
+    }
+	}
+	.header-right > *{
+		margin: 0 0.5rem;
+		.transition( all 200ms ease-in );
+	}
+  button.header-create {
+    .uiButton(@color-primary; @color-primary; @color-empty; @color-primary-bold; @color-empty; 6.2rem; 2rem; 1.2rem);
+    font-size: 0.9rem;
+    padding: 5px 12px;
+		.transition( all 200ms ease-in );
+    .type-bold();
+    margin-top: 1.25rem;
+  }
+	.desktop-search {
+		display: none;
+	}
+	.header-search-box {
+		.position(relative, @header-padding, auto, auto, auto, 3.5rem, @header-element);
+		border-right: 1px solid @light-icon-color;
+		margin-right: 1rem;
+		padding-right: 1rem;
+		.header-search {
+			.position(relative, auto, auto, auto, auto, @header-element, @header-element);
+		}
+	}
+	.header-search, .header-notifications {
+		background: rgba(0, 0, 0, 0.4);
+		border: 1px solid white;
+		border-radius: 50%;
+		cursor: pointer;
+		display: block;
+		line-height: @header-element;
+		min-width: @header-element;
+		text-align: center;
+		vertical-align: middle;
+		i {
+			color: white;
+		}
+		&:hover {
+			background: @color-full;
+			i {color: @color-raw-alt;}
+		}
+	}
+	.header-notifications{
+		.position(relative, @header-padding, auto, auto, auto, @header-element, @header-element);
+	}
+	.header-user {
+		display: block;
+	}
+	.header-user img {
+		cursor: pointer;
+		border-radius: 50%;
+		.position(relative, @header-padding, auto, auto, auto, @header-element, @header-element);
+	}
+	.fa {
+		font-size: 1.2rem;
 	}
 }
