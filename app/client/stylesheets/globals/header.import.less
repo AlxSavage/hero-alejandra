@@ -2,13 +2,29 @@
 @header-element: 2rem;
 @header-padding: 1.25rem;
 
+// Temp styles for testing on desktop
+body{
+  .xs-and-up({
+		background-image: url(/img/bg/login_blur_800x800.jpg);
+		background-size: cover;
+		min-height: 2000px;
+  });
+}
+
+// Header styles
 header{
-	background: transparent;
 	.position(relative, 0, 0, auto, 0, 100%, 4.5rem);
 	.xs-and-down({ display:none; });
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 	&.sticky{
 		background: @color-full;
 		.position(fixed, 0, 0, auto, 0, 100%, 4.5rem);
+	}
+	&:not('sticky'){
+		background: transparent;
 	}
 	.logo img {
 		padding: 1.3rem;
@@ -34,10 +50,10 @@ header{
     		font-size: 0.9rem;
     		.type-bold();
 				&:hover {
-					color: @light-icon-color;
+			    border-bottom: 2px solid @color-empty;
 				}
 				&.active{
-			    border-bottom: 2px solid red;
+			    border-bottom: 2px solid @color-primary;
 			    padding-bottom: 5px;
   			}
     	}
