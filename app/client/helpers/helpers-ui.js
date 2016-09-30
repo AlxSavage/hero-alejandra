@@ -103,3 +103,7 @@ UI.registerHelper( 'parseMarkdown', ( string ) => {
     return parseMarkdown( string );
   }
 });
+
+UI.registerHelper( 'currentUserId', () => {
+  return Meteor.userId();
+});

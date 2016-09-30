@@ -1,0 +1,115 @@
+.page-view-profile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background-color: @color-empty;
+
+  nav.transparent-nav .nav-item {
+    color:@color-well;
+  }
+  
+  .profile-brief {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background-color: @color-raw-alt;
+  }
+  
+  .profile-tabs {
+    position: absolute;
+    top: 50%;
+    height: 50px;
+  }
+
+  .content-scrollable {
+    top: 50%;
+    margin-top: 50px;
+    overflow-y: scroll;
+  }  
+  .profile-tabs [class*="btn-"] {
+    display: inline-block;
+    float: left;
+    -webkit-box-flex: 0.25;
+    -moz-box-flex: 0.25;
+    -webkit-flex: 0.25;
+    flex: 0.25;
+    padding: 13px 5px;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-indent: 0;
+    text-transform: uppercase;
+  }
+
+  .profile-list-item {
+  display: block; 
+  min-height: 180px;
+    .title {
+      display: block;
+      .type-bold;
+      .font-m2;
+    }
+    .desc {
+      display: block;
+      .type-regular;
+      .font-s3;
+    }
+  }
+
+
+}
+
+.page-view-profile.tab-1,
+.page-view-profile.tab-2,
+.page-view-profile.tab-3,
+.page-view-profile.tab-4,
+.page-view-profile.tab-5 {
+
+}
+
+// Collapse animation-specific styles
+@transition-time: 700ms;
+@easing: cubic-bezier(0.175, 0.885, 0.335, 1.05);
+
+.page-view-profile {
+  .content-scrollable {
+    .transform(translate3d(0,0,0));
+    .transition( all @transition-time @easing );
+    .backface-visibility(hidden);
+    &.instant { .transition( transform 0, top @transition-time @easing ); }
+    &.delayed { .transition( transform 0 linear @transition-time, top @transition-time @easing); }
+  }
+}
+
+//USE SESSION VALUE TO SET VISIBILITY AND TRANSFORMATION OF SCROLLABLE AREAS
+// Value is set from session var and template helper isActiveClass
+.page-view-profile.tab-1 {
+  .tab-1-scrollable { .transform(translate3d(0,0,0)); }
+  .tab-2-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-3-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-4-scrollable { .transform(translate3d(-100%,0,0)); }
+}
+.page-view-profile.tab-2 {
+  .tab-1-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-2-scrollable { .transform(translate3d(0,0,0)); }
+  .tab-3-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-4-scrollable { .transform(translate3d(-100%,0,0)); }
+}
+.page-view-profile.tab-3 {
+  .tab-1-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-2-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-3-scrollable { .transform(translate3d(0,0,0)); }
+  .tab-4-scrollable { .transform(translate3d(-100%,0,0)); }
+}
+.page-view-profile.tab-4 {
+  .tab-1-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-2-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-3-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-4-scrollable { .transform(translate3d(0,0,0)); }
+}
