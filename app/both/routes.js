@@ -29,6 +29,21 @@ Router.route('/messages/:channel', {
 Router.route('/profile', {
   name: 'profile'
 });
+Router.route('/profile/edit/:_id', {
+  name: 'profileEdit'
+});
+Router.route('/profile/settings/:_id', {
+  name: 'profileSettings'
+});
+Router.route('/profile/followers/:_id', {
+  name: 'profileFollowers'
+});
+Router.route('/profile/following/:_id', {
+  name: 'profileFollowing'
+});
+Router.route('/profile/stats/:_id', {
+  name: 'profileStats'
+});
 
 Router.route('/profile/follow/:_type', {
   name: 'follow',
