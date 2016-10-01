@@ -1,5 +1,73 @@
 <template name="profile">
 	{{> header}}
 	{{> sidePanel}}
-	{{> navTabs}}
+
+	{{#HammerTouchArea configureCallback=configureHammer gestureMap=profileGestures}}
+			<div class="page-view-profile {{activeTabClass}}">
+				<nav class="transparent-nav">
+				  <div class="nav-group right">
+				      <a href="{{pathFor 'profileSettings' _id=currentUserId}}" class="nav-item js-edit-user-settings"><i class="icon ion-ios-gear-outline"></i></a>
+				  </div>
+				</nav>
+
+				<div class="profile-brief layout vertical center-center">
+						<img src="https://www.petfinder.com/wp-content/uploads/2012/11/99950237-why-cats-meow-632x475.jpg" alt="" style="width: 35%; border-radius: 100%;">
+				  	<a href="{{pathFor 'profileEdit' _id=currentUserId}}" title="">Edit Profile</a>
+				  	<a href="{{pathFor 'profileFollowers' _id=currentUserId}}" title="">## Followers</a>
+				  	<a href="{{pathFor 'profileFollowing' _id=currentUserId}}" title="">## Following</a>
+				  	<a href="{{pathFor 'profileStats' _id=currentUserId}}" title="">## points</a>
+
+				</div>
+
+		  	<div class="btns-group profile-tabs">
+		    	<a class="btn-tertiary {{#if isActiveTab 'tab-1'}}active{{else}}no-state{{/if}} js-show-tab-1">Stories</a>
+		    	<a class="btn-tertiary {{#if isActiveTab 'tab-2'}}active{{else}}no-state{{/if}} js-show-tab-2">Drafts</a>
+		    	<a class="btn-tertiary {{#if isActiveTab 'tab-3'}}active{{else}}no-state{{/if}} js-show-tab-3">Itineraries</a>
+		    	<a class="btn-tertiary {{#if isActiveTab 'tab-4'}}active{{else}}no-state{{/if}} js-show-tab-4">Bookmarks</a>
+				</div>
+				<div class="content-scrollable static-nav tab-1-scrollable">	
+					<ul>
+						<li>Do one</li>
+					</ul>
+				</div>
+				<div class="content-scrollable static-nav tab-2-scrollable">
+				<ul>
+					<li>Do one</li>
+				</ul>
+				</div>
+				<div class="content-scrollable static-nav tab-3-scrollable">
+				<ul>
+					<li>Do one</li>
+				</ul>
+				</div>
+				<div class="content-scrollable static-nav tab-4-scrollable">
+				<ul>
+					<li>Do one</li>
+				</ul>
+				</div>
+			</div>
+		{{/HammerTouchArea}}
+  	{{>navTabs}}
+</template>
+
+<template name="postItem">
+  <a class="profile-list-item" href="">
+    {{#with post}}
+      <span class="">
+        <span class="title">{{title}}</span>
+        <span class="desc">{{description}}</span>
+      </span>
+      {{> coverImage id=coverImage}}
+    {{/with}}
+  </a>
+</template>
+
+<template name="coverImage">
+	<!-- {{#with imageFile.with}} -->
+	  <!-- <img src="{{link}}" alt="{{name}}" /> -->
+	<!-- {{else}} -->
+	  <!-- Loading Image... -->
+	<!-- <p>{{fileURL fileRef}}</p> -->
+	<img src="{{fileRef.link}}" alt="{{fileRef.name}}" style="width: 100vw;" />
+	<!-- <img src="{{fileURL imageFile}}" /> -->
 </template>

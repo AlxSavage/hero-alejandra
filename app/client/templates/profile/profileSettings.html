@@ -1,0 +1,11 @@
+<template name="profileSettings">
+	{{> nav black="true" back="true" title="Settings"}}	
+	<div class="layout vertical fit center-center">
+		
+		<a href="{{pathFor 'profileChangePassword'}}" title="">change password</a>	
+		<a href="{{pathFor 'pushNotificationSelection'}}" title="">pushNotificationSelection</a>
+
+		<a class="js-force-signout" title="">Sign out</a>
+	</div>
+	
+</template>
