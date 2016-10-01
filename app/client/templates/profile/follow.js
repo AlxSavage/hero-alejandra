@@ -1,11 +1,11 @@
 Template.follow.onCreated(function() {
-   this.followType = this.data;
+  Session.set('panelType', this.data);
 });
 
 // Follow helpers, we get the {{followType}} var from the router
 Template.follow.helpers({
   followType() {
-    return Template.instance().followType;
+    return Session.get('panelType')
   }
 });
 

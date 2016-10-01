@@ -1,0 +1,9 @@
+<template name="sidePanel">  
+	<div class="side-panel {{panelType}}">
+		{{#if activeSidePanel}}
+			{{> Template.dynamic template=activeSidePanel data=panelType}}
+		{{/if}}
+	</div>
+	<div class="cover"></div>
+
+</template>
