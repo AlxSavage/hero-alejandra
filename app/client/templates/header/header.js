@@ -10,26 +10,15 @@ Template.header.onCreated(function() {
 
 // Functions to show and hide side panel with notifications
 // TODO: Move to a Metheor function with templates
-// TODO: Fix reactive var after showing panel
-function hideSidePanel() {
-	$("body").velocity({ perspectiveOriginX:"0px", perspectiveOriginY:"50%"});
-	$(".side-menu").velocity({ transformOrigin: "100% 50%",transition:"all 0.2s ease",translateX: "-100%", translateX:"6px"}).velocity({ opacity: 0 }, { display: "none" });
-	$(".side-menu,.contents, body").velocity("reverse");
-	$(".cover").velocity({ opacity: 0 ,transition:"all 0.1s ease"}, { visibility: "hidden" });
-	$('.reverse').velocity({ left: "5px",transition:"all 0.1s ease" }).fadeOut(100);	
-	$('.side-menu li').velocity('transition.swoopOut',{duration: 300, delay:100});
-}
-
 function showSidePanel() {
-	$(".cover").velocity({ opacity: 1,transition:"all 0.1s ease" }, { visibility: "visible" });
-	$(".contents").velocity({ translateX: "260px",transition:"all 0.1s ease",rotateY: "15deg",transformOrigin: "0px 50%"});
-	$("body").velocity({perspective: "800px",perspectiveOriginX:"0px", perspectiveOriginY:"50%"});
-	$(".side-menu").velocity({ opacity: 1 }, { display: "block" }).velocity({transformOrigin: "100% 50%",transition:"all 0.1s ease",translateX: "100%", translateX:"-6px"});
-	$('.reverse').fadeIn().velocity({ left: "200px",transition:"all 0.1s ease" });
-	$('.side-menu li').velocity('transition.swoopIn',{duration: 300, delay:100}).show();
-	return false; 	
+	$(".cover").velocity({ opacity: 1,transformOrigin: "100% 50%",transition:"all 0.1s ease",translateX: "100%",translateX:"-6px" },{ visibility: "visible" }, 300);
+  $(".side-menu").velocity({ translateX: [0, "100%"] }, {duration: 300, delay: 150});
 }
 
+function hideSidePanel() {
+	$(".cover").velocity({ opacity: 0 ,transition:"all 0.1s ease"}, { visibility: "hidden" });
+  $(".side-menu").velocity({ translateX: ["100%", 0] }, 300);
+}
 
 // Header helpers
 Template.header.helpers({
@@ -48,12 +37,6 @@ Template.header.events({
   'click .reverse,.cover, a.page': function(e){
 		return hideSidePanel();
 		return false;  	
-  },
-  'mouseenter .side-menu li': function(e){
-		$(this).velocity({rotateY: '30deg',duration: 300});
-  },
-  'mouseleave .side-menu li': function(e){
-		$(this).velocity('reverse'); 
   }
 });
 

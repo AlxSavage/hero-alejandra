@@ -28,28 +28,11 @@
 	.position(fixed, 0, 0, auto, auto, 500px, 100%);
 	display: block;
 	z-index: 99999;
-	display: none;
 	padding: 40px 20px 20px;
 	overflow: auto;
+	transform: translateX(100%);
 	background: @color-empty;
-	color: #eee;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-}
-
-.side-menu ul {
-	margin-top: 10px;
-	li{
-		display: inline-block;
-		width: 200px;
-		list-style: none;
-		font-size: 20px;
-		padding: 3px 10px;
-		&:before{
-			content: '-';
-			margin-right: 5px;
-			color: rgba( 255, 255, 255, 0.2 );
-		}
-	}
 }
