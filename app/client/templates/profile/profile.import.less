@@ -117,6 +117,31 @@
     z-index: 2;
   }
 
+  .user-cont{
+    .type-bold();
+    font-size: 0.6rem;
+    position: absolute;
+    bottom: 0.8rem;
+    display: block;
+    left: 0.8rem;
+    z-index: 2;
+    &:before{
+        .type-awesome();
+        border-radius: 0.2rem;
+        content: "\f005";
+        color: @color-empty;
+        background: red;
+        font-size: 0.7rem;
+        display: inline-block;
+        text-align: center;
+        line-height: 1.2rem;
+        margin-right: 0.4rem;
+        height: 1.2rem;
+        vertical-align: middle;
+        width: 1.2rem;
+    }
+  }
+
   .profile-tabs {
     position: absolute;
     top: 50%;
