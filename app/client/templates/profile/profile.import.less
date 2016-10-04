@@ -64,40 +64,52 @@
   }
 
   ul.user-stats {
-      display: block;
-      height: 2.5rem;
-      line-height: 2.5rem;
-      margin: 1.5rem 0;
-      li {
-        display: inline-block;
-        padding: 0 1rem;
-        &:nth-child(1), &:nth-child(2) {
-          border-right: 1px solid @light-icon-color;
+    display: block;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    margin: 1.5rem 0;
+    li {
+      display: inline-block;
+      padding: 0 1rem;
+      &:nth-child(1), &:nth-child(2) {
+        border-right: 1px solid @light-icon-color;
+      }
+      a {
+        color: @light-icon-color;
+        vertical-align: middle;
+        letter-spacing: 0.08rem;
+        .font-s1();
+        .type-bold();
+        .number {
+          color: @color-empty;
+          display: block;
+          .font-s3();
+          border-bottom: 2px solid transparent;
         }
-        a {
-          color: @light-icon-color;
-          vertical-align: middle;
-          letter-spacing: 0.08rem;
-          .font-s1();
-          .type-bold();
+        &:hover {
+          color: @color-empty;
           .number{
-            color: @color-empty;
-            display: block;
-            .font-s3();
-            border-bottom: 2px solid transparent;
+            border-bottom: 2px solid @color-empty;
           }
-          &:hover {
-            color: @color-empty;
-            .number{
-              border-bottom: 2px solid @color-empty;
-            }
-          }
-          &.active{
-            border-bottom: 2px solid @color-primary;
-            padding-bottom: 5px;
-          }
+        }
+        &.active {
+          border-bottom: 2px solid @color-primary;
+          padding-bottom: 5px;
         }
       }
+    }
+  }
+
+  a.edit-profile {
+    .uiButton(transparent; @color-empty; @color-empty; @color-primary-bold; @color-empty; 8.2rem; 1.9rem; 1rem);
+    .transition( all 200ms ease-in );
+    .type-bold();
+    font-size: 0.75rem;
+    letter-spacing: 0.1rem;
+    line-height: 1.9rem;
+    margin-top: 0.2rem;
+    text-transform: uppercase;
+    vertical-align: middle;
   }
 
   .profile-tabs {
