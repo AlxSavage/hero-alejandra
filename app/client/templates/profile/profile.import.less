@@ -86,30 +86,3 @@
     &.delayed { .transition( transform 0 linear @transition-time, top @transition-time @easing); }
   }
 }
-
-//USE SESSION VALUE TO SET VISIBILITY AND TRANSFORMATION OF SCROLLABLE AREAS
-// Value is set from session var and template helper isActiveClass
-.page-view-profile.tab-1 {
-  .tab-1-scrollable { .transform(translate3d(0,0,0)); }
-  .tab-2-scrollable { .transform(translate3d(-100%,0,0)); }
-  .tab-3-scrollable { .transform(translate3d(-100%,0,0)); }
-  .tab-4-scrollable { .transform(translate3d(-100%,0,0)); }
-}
-.page-view-profile.tab-2 {
-  .tab-1-scrollable { .transform(translate3d(-100%,0,0)); }
-  .tab-2-scrollable { .transform(translate3d(0,0,0)); }
-  .tab-3-scrollable { .transform(translate3d(-100%,0,0)); }
-  .tab-4-scrollable { .transform(translate3d(-100%,0,0)); }
-}
-.page-view-profile.tab-3 {
-  .tab-1-scrollable { .transform(translate3d(-100%,0,0)); }
-  .tab-2-scrollable { .transform(translate3d(-100%,0,0)); }
-  .tab-3-scrollable { .transform(translate3d(0,0,0)); }
-  .tab-4-scrollable { .transform(translate3d(-100%,0,0)); }
-}
-.page-view-profile.tab-4 {
-  .tab-1-scrollable { .transform(translate3d(-100%,0,0)); }
-  .tab-2-scrollable { .transform(translate3d(-100%,0,0)); }
-  .tab-3-scrollable { .transform(translate3d(-100%,0,0)); }
-  .tab-4-scrollable { .transform(translate3d(0,0,0)); }
-}
