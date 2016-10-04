@@ -15,11 +15,12 @@
   }
   // Profile main brief
   .profile-brief {
-    .position(absolute; 0; 0; 0; 0; auto; 50vh);
+    .xs-and-down ({ .position(absolute; 0; 0; 0; 0; auto; 50vh); });
+    .xs-and-up ({ .position(absolute; 0; 0; 0; 0; auto; 70vh); });
     background: white;
-    //background-image: url("https://instagram.fmex1-1.fna.fbcdn.net/t51.2885-15/e35/14280355_978687815589972_1061713616_n.jpg?ig_cache_key=MTMzMzYyODczMTUwMzMyMTAwMw%3D%3D.2");
+    background-image: url("https://instagram.fmex1-1.fna.fbcdn.net/t51.2885-15/e35/14280355_978687815589972_1061713616_n.jpg?ig_cache_key=MTMzMzYyODczMTUwMzMyMTAwMw%3D%3D.2");
     //background-image: url("https://instagram.fmex1-1.fna.fbcdn.net/t51.2885-15/e35/14374217_866734406761391_432776869138399232_n.jpg?ig_cache_key=MTM0NzkwNzM4NDM5NTMxNjg5NQ%3D%3D.2");
-    background-image: url("https://instagram.fmex1-1.fna.fbcdn.net/t51.2885-15/e35/14474557_1270793886305587_3327837808806068224_n.jpg?ig_cache_key=MTM1MTg4NTI2MDMzODQwODE1OQ%3D%3D.2");
+    //background-image: url("https://instagram.fmex1-1.fna.fbcdn.net/t51.2885-15/e35/14474557_1270793886305587_3327837808806068224_n.jpg?ig_cache_key=MTM1MTg4NTI2MDMzODQwODE1OQ%3D%3D.2");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;  
@@ -34,7 +35,7 @@
         .overlay-gradient(bottom, 0.5);
       });
       .xs-and-up ({
-        .position(absolute; 0; 0; 0; 0; 100%; 40%);
+        .position(absolute; 0; 0; 0; 0; 100%; 50%);
         .overlay-gradient(bottom, 0.65);
       });
       z-index: 1;
@@ -79,7 +80,7 @@
         border-right: 1px solid @light-icon-color;
       }
       a {
-        color: @light-icon-color;
+        color: @color-raw;
         vertical-align: middle;
         letter-spacing: 0.08rem;
         .font-s1();
@@ -144,11 +145,13 @@
 
   .profile-tabs {
     position: absolute;
-    top: 50%;
+    .xs-and-down ({ top: 50vh; });
+    .xs-and-up ({ top: 70vh; });
     height: 50px;
   }
   .content-scrollable {
-    top: 50%;
+    .xs-and-down ({ top: 50vh; });
+    .xs-and-up ({ top: 70vh; });
     margin-top: 50px;
     overflow-y: scroll;
   }  
