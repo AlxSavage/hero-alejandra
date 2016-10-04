@@ -124,28 +124,39 @@
             .uiButton(rgba(0, 0, 0, 0.2); @color-empty; @color-empty; @color-full; @color-empty; 8rem; 1.9rem; 1rem); 
             line-height: 1.9rem;
             font-size: 0.7rem;
+            margin-top: 0.2rem;
         });
         .xs-and-up({ 
             .uiButton(rgba(0, 0, 0, 0.2); @color-empty; @color-empty; @color-full; @color-empty; 10rem; 2.2rem; 1.4rem); 
             line-height: 2.2rem;
             font-size: 0.9rem;
+            margin-top: 1.7rem;
         });
         .transition( all 200ms ease-in );
         .type-bold();
         letter-spacing: 0.07rem;
-        margin-top: 0.2rem;
         text-transform: uppercase;
         vertical-align: middle;
         z-index: 2;
     }
 
     .user-cont{
+        .md-and-down({ 
+            position: absolute;
+            bottom: 0.8rem;
+            left: 0.8rem;
+        });
+        .lg({ 
+            float: bottom;
+            width: 1170px;
+            margin: 0 auto;
+            text-align: left;
+            padding-bottom: 0.8rem;
+            padding-left: 2.5rem;
+        });
         .type-bold();
-        font-size: 0.6rem;
-        position: absolute;
-        bottom: 0.8rem;
         display: block;
-        left: 0.8rem;
+        font-size: 0.6rem;
         z-index: 2;
         &:before{
             .type-awesome();
