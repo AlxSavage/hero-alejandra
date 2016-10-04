@@ -30,7 +30,7 @@
     // Profile gradient background
     .profile-brief-overlay {
       .xs-and-down ({
-        .position(absolute; 0; 0; 0; 0; 100%; 25%);
+        .position(absolute; 0; 0; 0; 0; 100%; 100%);
         .overlay-gradient(bottom, 0.5);
       });
       .xs-and-up ({
@@ -40,9 +40,10 @@
       z-index: 1;
     }
     .profile-img {
-      width: 5.7rem;
       height: 5.7rem;
       border-radius: 100%;
+      width: 5.7rem;
+      z-index: 2;
     }
     hr{
       width: 3.2rem;
@@ -55,12 +56,14 @@
   h1 {
     .type-bold();
     .title-over-bg1();
+    z-index: 2;
   }
   h2 {
     .type-secondary();
     .font-s3-alt();
     margin: 0.3rem auto 0.7rem;
     font-style: italic;
+    z-index: 2;
   }
 
   ul.user-stats {
@@ -68,6 +71,7 @@
     height: 2.5rem;
     line-height: 2.5rem;
     margin: 1.5rem 0;
+    z-index: 2;
     li {
       display: inline-block;
       padding: 0 1rem;
@@ -101,15 +105,16 @@
   }
 
   a.edit-profile {
-    .uiButton(transparent; @color-empty; @color-empty; @color-primary-bold; @color-empty; 8.2rem; 1.9rem; 1rem);
+    .uiButton(rgba(0, 0, 0, 0.2); @color-empty; @color-empty; @color-primary-bold; @color-empty; 8rem; 1.9rem; 1rem);
     .transition( all 200ms ease-in );
     .type-bold();
-    font-size: 0.75rem;
-    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.07rem;
     line-height: 1.9rem;
     margin-top: 0.2rem;
     text-transform: uppercase;
     vertical-align: middle;
+    z-index: 2;
   }
 
   .profile-tabs {
