@@ -3,21 +3,22 @@
 	{{> sidePanel}}
 
 	{{#HammerTouchArea configureCallback=configureHammer gestureMap=profileGestures}}
-			<div class="page-view-profile {{activeTabClass}}">
-				<nav class="transparent-nav">
-				  <div class="nav-group right">
-				      <a href="{{pathFor 'profileSettings' _id=currentUserId}}" class="nav-item js-edit-user-settings"><i class="icon ion-ios-gear-outline"></i></a>
-				  </div>
-				</nav>
+		<div class="page-view-profile {{activeTabClass}}">
+			<nav class="transparent-nav">
+			  <div class="nav-group right">
+			      <a href="{{pathFor 'profileSettings' _id=currentUserId}}" class="nav-item js-edit-user-settings"><i class="icon ion-ios-gear-outline"></i></a>
+			  </div>
+			</nav>
 
-				<div class="profile-brief layout vertical center-center">
-						<img src="https://www.petfinder.com/wp-content/uploads/2012/11/99950237-why-cats-meow-632x475.jpg" alt="" style="width: 35%; border-radius: 100%;">
-				  	<a href="{{pathFor 'profileEdit' _id=currentUserId}}" title="">Edit Profile</a>
-				  	<a href="{{pathFor 'profileFollowers' _id=currentUserId}}" title="">## Followers</a>
-				  	<a href="{{pathFor 'profileFollowing' _id=currentUserId}}" title="">## Following</a>
-				  	<a href="{{pathFor 'profileStats' _id=currentUserId}}" title="">## points</a>
+			<div class="profile-brief layout vertical center-center">
+				<div class="profile-brief-overlay"></div>
+				<img src="https://www.petfinder.com/wp-content/uploads/2012/11/99950237-why-cats-meow-632x475.jpg" alt="" style="width: 35%; border-radius: 100%;">
+			  	<a href="{{pathFor 'profileEdit' _id=currentUserId}}" title="">Edit Profile</a>
+			  	<a href="{{pathFor 'profileFollowers' _id=currentUserId}}" title="">## Followers</a>
+			  	<a href="{{pathFor 'profileFollowing' _id=currentUserId}}" title="">## Following</a>
+			  	<a href="{{pathFor 'profileStats' _id=currentUserId}}" title="">## points</a>
 
-				</div>
+			</div>
 
 		  	<div class="btns-group profile-tabs">
 		    	<a class="btn-tertiary {{#if isActiveTab 'tab-1'}}active{{else}}no-state{{/if}} js-show-tab-1">Stories</a>
@@ -44,9 +45,9 @@
 				<ul>
 					<li>Do one</li>
 				</ul>
-				</div>
 			</div>
-		{{/HammerTouchArea}}
+		</div>
+	{{/HammerTouchArea}}
   	{{>navTabs}}
 </template>
 

@@ -33,29 +33,29 @@ header{
 	}
 	ul.header-nav {
 		.xs({ display:none; });
-    margin: @header-padding 0;
-    padding: 0 0 0 2%;
-    li {
-    	display: inline-block;
-    	padding: 0 0.7rem;
-    	&:nth-child(1) {
-    		border-right: 1px solid @light-icon-color;
-    	}
-    	a {
-    		color: @color-empty;
-    		line-height: @header-element;
-    		vertical-align: middle;
-    		font-size: 0.9rem;
-    		.type-bold();
-				&:hover {
-			    border-bottom: 2px solid @color-empty;
-				}
-				&.active{
-			    border-bottom: 2px solid @color-primary;
-			    padding-bottom: 5px;
-  			}
-    	}
-    }
+	    margin: @header-padding 0;
+	    padding: 0 0 0 2%;
+	    li {
+	    	display: inline-block;
+	    	padding: 0 0.7rem;
+	    	&:nth-child(1) {
+	    		border-right: 1px solid @light-icon-color;
+	    	}
+	    	a {
+	    		color: @color-empty;
+	    		line-height: @header-element;
+	    		vertical-align: middle;
+	    		font-size: 0.9rem;
+	    		.type-bold();
+					&:hover {
+				    border-bottom: 2px solid @color-empty;
+					}
+					&.active{
+				    border-bottom: 2px solid @color-primary;
+				    padding-bottom: 5px;
+	  			}
+	    	}
+	    }
 	}
 	.header-right > *{
 		margin: 0 0.5rem;
@@ -65,7 +65,7 @@ header{
     .uiButton(@color-primary; @color-primary; @color-empty; @color-primary-bold; @color-empty; 6.2rem; 2rem; 1.2rem);
     font-size: 0.9rem;
     padding: 5px 12px;
-		.transition( all 200ms ease-in );
+	.transition( all 200ms ease-in );
     .type-bold();
     margin-top: 1.25rem;
   }
