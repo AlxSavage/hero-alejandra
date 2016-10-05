@@ -4,23 +4,29 @@ Template.header.onCreated(function() {
 	var self = this;
 	self.scroll = new ReactiveVar('');
 	$(window).on('scroll', function(e) {
-		$(this).scrollTop() > 180 ? setStickyHeader(self) : removeStickyHeader(self);
+		checkScroll($(this).scrollTop(), self);
 	});
-	//headerClass = 'sticky'
-	//headerClass = ''
 });
+
+Template.header.onRendered(function() {
+	checkScroll(window.pageYOffset, this);
+});
+
+function checkScroll(scrollTop, self) {
+	scrollTop > 180 ? setStickyHeader(self) : removeStickyHeader(self);
+}
 
 function setStickyHeader(self) {
 	if (!$('header').hasClass('sticky')) {
+		$('.header-backdrop').velocity("reverse").velocity({ translateY: 0 });
 		self.scroll.set('sticky');
-		$('.header-backdrop').velocity({ translateY: 0 }, 100);
 	}
 }
 
 function removeStickyHeader(self) {
 	if ($('header').hasClass('sticky')) {
-		self.scroll.set('');
 		$('.header-backdrop').velocity("reverse").velocity({ translateY: '-4.5rem' }, 100);
+		self.scroll.set('');
 	}
 }
 
