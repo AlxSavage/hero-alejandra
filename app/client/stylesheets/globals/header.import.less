@@ -68,17 +68,30 @@ header{
     .type-bold();
     margin-top: 1.25rem;
   }
-	.desktop-search {
-		display: none;
-	}
 	.header-search-box {
-		.position(relative, @header-padding, auto, auto, auto, 3.5rem, @header-element);
+		.position(relative, @header-padding, auto, auto, auto, 3.5rem, 2.2rem);
 		border-right: 1px solid @light-icon-color;
 		margin-right: 1rem;
 		padding-right: 1rem;
+		overflow: hidden;
 		.header-search {
 			.position(relative, auto, auto, auto, auto, @header-element, @header-element);
+			text-align: left;
+			padding-left: 0.4rem;
 		}
+		input {
+			visibility: hidden;
+			opacity: 0;
+		    display: inline-block;
+		    width: 7rem;
+		    color: @color-empty;
+		    border: none;
+		    font-size: 0.8rem;
+		    height: 2rem;
+		    line-height: 2rem;
+		    vertical-align: top;
+		    padding: 0.2rem;	
+	    }
 	}
 	.header-search, .header-notifications {
 		background: rgba(0, 0, 0, 0.4);
@@ -88,7 +101,6 @@ header{
 		display: block;
 		line-height: @header-element;
 		min-width: @header-element;
-		text-align: center;
 		vertical-align: middle;
 		i {
 			color: white;
@@ -100,6 +112,7 @@ header{
 	}
 	.header-notifications{
 		.position(relative, @header-padding, auto, auto, auto, @header-element, @header-element);
+		text-align: center;
 	}
 	.header-user {
 		display: block;

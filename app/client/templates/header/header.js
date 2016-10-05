@@ -42,6 +42,17 @@ Template.header.events({
 	// Opens side menu for followers
   'click .side-panel-left': function(e, template){
   	openSidePanel(e, template);
+  },
+  'click .header-search': function(e){
+	$(".header-search-box").velocity({ width: '11rem' ,transition:"all 0.1s ease"}, 100);
+	$(".header-search").velocity({ width: '10rem' , 'border-radius': '2rem'}, 100);
+	$("#desktop-search").delay(100).velocity({ opacity: 1 }, { visibility: 'visible', complete: function() {$(this).focus();}});
+  },
+  'click #desktop-search': function(e){
+	e.stopPropagation();
+  },
+  'blur .header-search': function(e){
+	$(".header-search-box, .header-search, #desktop-search").velocity("reverse");
   }
 });
 
