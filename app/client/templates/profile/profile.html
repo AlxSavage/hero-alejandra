@@ -23,17 +23,17 @@
 
 				<ul class="user-stats layout horizontal wrap">
 					<li class="user-followers">
-						<a href="{{pathFor 'profileFollowers' _id=currentUserId}}" title="">
+						<a href="#" data-panel-template="profileFollowers" data-panel-user="{{currentUserId}}" class="side-panel-profile" >
 							<span class="number">245</span> Followers
 						</a>
 					</li>
 					<li class="user-following">
-						<a href="{{pathFor 'profileFollowing' _id=currentUserId}}" title="">
+						<a href="#" data-panel-template="profileFollowing" data-panel-user="{{currentUserId}}" class="side-panel-profile">
 							<span class="number">127</span> Following
 						</a>
 					</li>
 					<li class="user-points">
-						<a href="{{pathFor 'profileStats' _id=currentUserId}}" title="">
+						<a href="{{pathFor 'profileStats' _id=currentUserId}}" data-panel-user="{{currentUserId}}">
 							<span class="number">1,139</span> Points
 						</a>
 					</li>

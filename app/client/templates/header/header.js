@@ -39,10 +39,6 @@ Template.header.helpers({
 
 // Header helpers
 Template.header.events({
-	// Opens side menu for followers
-  'click .side-panel-left': function(e, template){
-  	openSidePanel(e, template);
-  },
   'click .header-search': function(e){
 	$(".header-search-box").velocity({ width: '11rem' ,transition:"all 0.1s ease"}, 100);
 	$(".header-search").velocity({ width: '10rem' , 'border-radius': '2rem'}, 100);
