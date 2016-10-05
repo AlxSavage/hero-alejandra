@@ -8,7 +8,7 @@ Template.sidePanel.helpers({
 // sidePanel events
 Template.sidePanel.events({
 	// Hides the sidepanel
-	'click .cover': function(e){
+	'click .cover, click .js-back': function(e){
 		$(".cover").velocity({ opacity: 0 ,transition:"all 0.1s ease"}, { visibility: "hidden" });
 		$(".side-panel").velocity({ translateX: ["100%", 0] }, 300);
 		delete Session.keys['activeSidePanel'];
