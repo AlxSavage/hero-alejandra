@@ -18,15 +18,15 @@
 @landscape: ~"(orientation: landscape)";
 @portrait: ~"(orientation: portrait)";
 
-@xs-low: ~"(min-width: @{xs-min})";
-@sm-low: ~"(min-width: @{sm-min})";
-@md-low: ~"(min-width: @{md-min})";
-@lg-low: ~"(min-width: @{lg-min})";
+@xs-low: ~"(min-width: @{xs-min})"; // min 480px;
+@sm-low: ~"(min-width: @{sm-min})"; // min 768px;
+@md-low: ~"(min-width: @{md-min})"; // min 992px;
+@lg-low: ~"(min-width: @{lg-min})"; // min 1200px;
 
-@xxs-high: ~"(max-width: @{xxs-max})";
-@xs-high: ~"(max-width: @{xs-max})";
-@sm-high: ~"(max-width: @{sm-max})";
-@md-high: ~"(max-width: @{md-max})";
+@xxs-high: ~"(max-width: @{xxs-max})"; // max 479px
+@xs-high: ~"(max-width: @{xs-max})"; // max 767px
+@sm-high: ~"(max-width: @{sm-max})"; // max 991px
+@md-high: ~"(max-width: @{md-max})"; // max 1199px
 
 // Apply styles on landscape
 .landscape(@rules) {
@@ -137,7 +137,7 @@
   }
 }
 .md-and-down(@rules) {
-  @media @screen and @md-high {
+  @media @screen and @sm-high {
     @rules();
   }
 }
