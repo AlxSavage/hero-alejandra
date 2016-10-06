@@ -1,3 +1,5 @@
+import openSidePanel from '../../modules/open-side-panel';
+
 PROFILE_TAB_KEY = "PROFILE_TAB_KEY";
 DEFAULT_PROFILE_TAB = 'tab-1';
 
@@ -81,6 +83,10 @@ Template.profile.events({
   'click .js-show-tab-4': function(event) {
     Template.profile.setTab('tab-4');
   },
+  // Opens side menu for followers/following
+  'click .side-panel-profile': function(e, template){
+    openSidePanel(e, template);
+  }
   // 'click .js-uncollapse': function() {
   //   Template.profile.setTab(null);
   // }

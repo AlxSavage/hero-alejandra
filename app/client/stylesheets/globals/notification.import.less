@@ -126,23 +126,15 @@ ul.notifications-listing {
           width: 8.5rem;
         }
         button.follow{
-          background: @color-empty;
-          border: 1px solid @color-primary;
-          color: @color-primary;
-          width: 8.2rem;
+          .uiButton(@color-empty; @color-primary; @color-primary; @color-primary; @color-empty; 8.2rem; auto; 18px);
           font-size: 0.9rem;
           padding: 8px 12px;
-          border-radius: 18px;
-          font-weight: 800;
           text-transform: uppercase;
           .type-black();
+          font-weight: 800;
           &:before{
             content: '+';
             margin-right: 0.5rem;
-          }
-          &:hover{
-            background: @color-primary;
-            color: @color-empty;
           }
         }
         button.following{
@@ -156,7 +148,7 @@ ul.notifications-listing {
           }
         }
         .strong {
-            font-weight: 700;
+          font-weight: 700;
         }
         .nt-date {
           .font-s3-alt;
