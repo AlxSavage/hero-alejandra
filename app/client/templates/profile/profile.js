@@ -83,7 +83,7 @@ Template.profile.events({
   'click .js-show-tab-4': function(event) {
     Template.profile.setTab('tab-4');
   },
-  // Opens side menu for followers
+  // Opens side menu for followers/following
   'click .side-panel-profile': function(e, template){
     openSidePanel(e, template);
   }
