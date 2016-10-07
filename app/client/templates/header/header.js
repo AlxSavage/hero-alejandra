@@ -33,13 +33,17 @@ function removeStickyHeader(self) { // Removes the sticky header and sets the ba
 
 // Header helpers
 Template.header.helpers({
-	scroll: function() { 
+	scroll: function() {  // Helper for scroll reactive var
 		return Template.instance().scroll.get(); 
 	}
 });
 
 // Header helpers
 Template.header.events({
+	// Opens side menu for followers/following
+	'click header .js-side-panel': function(e, template){
+		openSidePanel(e, template);
+	},
 	// Search box velocity.js effects
 	'click .header-search': function(e){
 		$(".header-search-box").velocity({ width: '11rem' ,transition:"all 0.1s ease"}, 100);
