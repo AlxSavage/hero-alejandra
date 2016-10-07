@@ -1,5 +1,5 @@
 <template name="navTabs">
-	  <div class="btns-group nav-tabs">
+	  <div class="btns-group nav-tabs tabs-{{currentRoute}}">
 	    <a href="{{pathFor 'feed'}}" class="btn-nav js-show-tab-1 {{#if currentRoute 'feed'}}active{{else}}inactive{{/if}}">
 	      <i class="icon ion-ios-home-outline"></i>
 	    </a>
