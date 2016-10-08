@@ -1,20 +1,51 @@
 <template name="profile">
+	{{> header}}
+	{{> sidePanel}}
+
 	{{#HammerTouchArea configureCallback=configureHammer gestureMap=profileGestures}}
-			<div class="page-view-profile {{activeTabClass}}">
-				<nav class="transparent-nav">
-				  <div class="nav-group right">
-				      <a href="{{pathFor 'profileSettings' _id=currentUserId}}" class="nav-item js-edit-user-settings"><i class="icon ion-ios-gear-outline"></i></a>
-				  </div>
-				</nav>
+		<div class="page-view-profile {{activeTabClass}}">
+			<nav class="transparent-nav">
+			  <div class="nav-group right">
+			      <a href="{{pathFor 'profileSettings' _id=currentUserId}}" class="nav-item js-edit-user-settings"><i class="icon ion-ios-gear"></i></a>
+			  </div>
+			</nav>
 
-				<div class="profile-brief layout vertical center-center">
-						<img src="https://www.petfinder.com/wp-content/uploads/2012/11/99950237-why-cats-meow-632x475.jpg" alt="" style="width: 35%; border-radius: 100%;">
-				  	<a href="{{pathFor 'profileEdit' _id=currentUserId}}" title="">Edit Profile</a>
-				  	<a href="{{pathFor 'profileFollowers' _id=currentUserId}}" title="">## Followers</a>
-				  	<a href="{{pathFor 'profileFollowing' _id=currentUserId}}" title="">## Following</a>
-				  	<a href="{{pathFor 'profileStats' _id=currentUserId}}" title="">## points</a>
+			<div class="profile-brief layout vertical center-center">
+				
+				<div class="profile-brief-overlay"></div>
+				
+				<h1>JACK KEROUAC</h1>
+				<hr>
+				<h2>On the road</h2>
 
-				</div>
+				<!--<img src="http://cdn0.peopleimages.com/picture/1256331-leave-nothing-but-footprints-take-nothing-but-pictures-fit_400_400.jpg" class="profile-img" alt="User">-->
+				<img src="https://s-media-cache-ak0.pinimg.com/236x/81/63/e4/8163e4d1615e6bd3a130cd50a786f14e.jpg" class="profile-img" alt="User">
+
+				<ul class="user-stats layout horizontal wrap">
+					<li class="user-followers">
+						<a href="#" data-panel-template="profileFollowers" data-panel-user="{{currentUserId}}" class="side-panel-profile" >
+							<span class="number">245</span> Followers
+						</a>
+					</li>
+					<li class="user-following">
+						<a href="#" data-panel-template="profileFollowing" data-panel-user="{{currentUserId}}" class="side-panel-profile">
+							<span class="number">127</span> Following
+						</a>
+					</li>
+					<li class="user-points">
+						<a href="{{pathFor 'profileStats' _id=currentUserId}}" data-panel-user="{{currentUserId}}">
+							<span class="number">1,139</span> Points
+						</a>
+					</li>
+				</ul>
+
+			  	<a href="{{pathFor 'profileEdit' _id=currentUserId}}" class="edit-profile">
+			  		Edit Profile
+			  	</a>
+
+			  	<div class="user-cont">CONTRIBUTOR</div>
+
+			</div>
 
 		  	<div class="btns-group profile-tabs">
 		    	<a class="btn-tertiary {{#if isActiveTab 'tab-1'}}active{{else}}no-state{{/if}} js-show-tab-1">Stories</a>
@@ -41,10 +72,12 @@
 				<ul>
 					<li>Do one</li>
 				</ul>
-				</div>
 			</div>
-		{{/HammerTouchArea}}
-  	{{>navTabs}}
+		</div>
+	{{/HammerTouchArea}}
+	<div class="profile-nav"> 
+  		{{>navTabs}}
+  	</div>
 </template>
 
 <template name="postItem">

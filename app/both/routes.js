@@ -36,7 +36,7 @@ Router.route('/profile/settings/:_id', {
   name: 'profileSettings'
 });
 Router.route('/profile/followers/:_id', {
-  name: 'profileFollowers'
+  name: 'profileFollowers',
 });
 Router.route('/profile/following/:_id', {
   name: 'profileFollowing'
@@ -50,13 +50,6 @@ Router.route('/pushNotificationSelection', {
 
 Router.route('/profile/change-password', {
   name: 'profileChangePassword'
-});
-
-Router.route('/profile/follow/:_type', {
-  name: 'follow',
-  data: function(){
-    return this.params._type;
-  }
 });
 
 Router.route('/feed/:_story/comments', {

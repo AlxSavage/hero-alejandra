@@ -1,0 +1,23 @@
+// General non-mobile styling
+
+.container {
+	height: 100%;
+	margin: 0 auto;
+	padding: 0 15px;
+	.lg({ width: 1170px; });
+	.md-and-down({ width: 100%; });
+} 
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.cover{
+	.position(absolute, 0, auto, 0, auto, 100%, 100%);
+	display: block;
+	z-index: 1000;
+	visibility: hidden; 
+	opacity: 0; 
+	background: rgba(0, 0, 0, 0.5);
+}
