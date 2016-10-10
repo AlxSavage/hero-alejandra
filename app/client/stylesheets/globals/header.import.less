@@ -2,34 +2,31 @@
 @header-element: 2rem;
 @header-padding: 1.25rem;
 
-// Header styles
-header{
+
+.header-wrapper{
 	.position(relative, 0, 0, auto, 0, 100%, 4.5rem);
-	.md-and-down({ display:none; });
-	.transition( all 0.5s ease );
+	.background-image(linear-gradient(bottom, rgba(0,0,0,0), rgba(0,0,0,0.3) 100%));
 	z-index: 99;
-	&.sticky{
-		.position(fixed, 0, 0, auto, 0, 100%, 4.5rem);
-	}
-	&:not('sticky'){
-		background: transparent;
-	}
+}
+
+.header-wrapper-backdrop {
+	.position(fixed, 0, 0, 0, 0, 100%, 4.5rem);
+	background: @color-full;
+	z-index: 99;
+}
+
+// Header styles
+.header-container{
+	.md-and-down({ display:none; });
 	.header-container{
 		z-index: 1;
 	}
-	.header-backdrop{
-		.position(absolute, 0, 0, 0, 0, 100%, 4.5rem);
-		background: @color-full;
-		transform: translateY(-4.5rem);
-		z-index: -1;
-	}
+
 	.logo img {
 		padding: 1.3rem;
 		width: 12rem;
 	}
-	* {
-		.transition( all 200ms ease-in );
-	}
+
 	ul.header-nav {
 		.xs({ display:none; });
 	    margin: @header-padding 0;

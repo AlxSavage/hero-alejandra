@@ -1,0 +1,27 @@
+<template name="searchResults">
+	<div class="overlay search-results {{activeTabClass}} bg-dark">
+		<nav class="darknav layout horizontal">
+		  <div class="flex padding-horizontal">
+			  <input class="search-active-input" type="search" name="search" placeholder="Search">
+		  </div>		
+			<div class="">
+			    <a class="nav-item js-cancel-search js-close-overlay">Cancel</a>
+			</div>
+		</nav>
+
+		<div class="page-search {{activeTabClass}}">
+		  	<div class="btns-group explore-tabs layout horizontal scroll">
+		    	<a class="btn-darktab {{#if isActiveTab 'tab-1'}}active{{else}}no-state{{/if}} js-show-tab-1">Stories</a>
+		    	<a class="btn-darktab {{#if isActiveTab 'tab-2'}}active{{else}}no-state{{/if}} js-show-tab-2">Itineraries</a>
+		    	<a class="btn-darktab {{#if isActiveTab 'tab-3'}}active{{else}}no-state{{/if}} js-show-tab-3">People</a>
+			</div>
+
+			<div class="tab-content-container static-nav tab-1-scrollable">
+			</div>
+			<div class="tab-content-container static-nav tab-2-scrollable">
+			</div>
+			<div class="tab-content-container static-nav tab-3-scrollable">
+			</div>
+		</div>
+	</div>
+</template>

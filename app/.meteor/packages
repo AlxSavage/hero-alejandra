@@ -1,59 +1,57 @@
 # Meteor libraries
 meteor-base@1.0.4
-ecmascript@0.5.8
-es5-shim@4.6.14
+ecmascript@0.5.8_1
+es5-shim@4.6.14_1
 check@1.2.3
 session@1.1.6
 tracker@1.1.0
-http@1.2.9
+http@1.2.9_1
 fastclick@1.0.12
 oauth1@1.1.10
 reload@1.1.10
 random@1.0.10
 ejson@1.0.12
-email@1.1.17
+email@1.1.17_1
 spacebars@1.0.12
 underscore@1.0.9
-browser-policy
+browser-policy@1.0.9
 ddp-rate-limiter@1.0.5
-shell-server
-
-mongo@1.1.12
+shell-server@0.2.1
+mongo@1.1.12_1
 blaze-html-templates@1.0.4
 reactive-var@1.0.10
 reactive-dict@1.1.8
 
-jquery@1.11.9
-jquery-waypoints@1.0.9
-less@2.7.5
+# Local: see /packages
+factory
 
-tmeasday:publish-counts@0.3.1
+# Atmosphere: also see package.js for npm deps
 iron:router
-percolate:velocityjs
-percolate:wireframing
-
-meteorhacks:inject-initial
-meteorhacks:aggregate
-differential:vulcanize
-practicalmeteor:faker
-meteorhacks:ssr
 
 aldeed:simple-schema
 aldeed:collection2
 aldeed:autoform
 aldeed:template-extension
-
+tmeasday:publish-counts@0.3.1
+utilities:smart-publications
+reywood:publish-composite
 dburles:collection-helpers
 matb33:collection-hooks
-
+themeteorchef:seeder
+practicalmeteor:faker
+themeteorchef:commonmark
 momentjs:moment
+meteorhacks:inject-initial
+meteorhacks:aggregate
+meteorhacks:ssr
+differential:vulcanize
+ostrio:files
 
 mdg:camera
 mdg:geolocation
 mdg:validated-method
 mdg:validation-error
 mdg:reload-on-resume
-reywood:publish-composite
 
 useraccounts:core
 useraccounts:unstyled
@@ -67,6 +65,7 @@ service-configuration@1.0.10
 alanning:roles
 softwarerero:accounts-t9n
 tap:i18n
+jparker:gravatar
 
 # mobile
 crosswalk@1.6.2
@@ -78,12 +77,11 @@ launch-screen@1.0.12
 #juliancwirko:postcss
 #standard-minifier-js
 #app-prod-security
+mologie:reactive-selectize
 
-utilities:smart-publications
-jparker:gravatar
-ostrio:files
-#voodoohop:masonrify
-themeteorchef:seeder
-themeteorchef:commonmark
-fortawesome:fontawesome
+# alix
 velocityjs:velocityjs
+fortawesome:fontawesome
+jquery@1.11.9
+#jquery-waypoints@1.0.9
+less@2.7.5_1

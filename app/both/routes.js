@@ -1,11 +1,15 @@
-
-Iron.utils.debug = true;
+let dataReadyHold = null;
+if (Meteor.isClient) {
+  dataReadyHold = LaunchScreen.hold();
+}
 
 Router.configure({
   layoutTemplate: 'default',
-  notFoundTemplate: 'notFound'
+  notFoundTemplate: 'notFound',
+  loadingTemplate: 'loading'  
 });
 
+// Primary routes
 Router.route('/', {
   name: 'feed'
 });
@@ -14,42 +18,20 @@ Router.route('/explore', {
   name: 'explore'
 });
 
-Router.route('/create-post', {
-  name: 'createPost'
+Router.route('/postFormPlaceholder', {
+  name: 'postFormPlaceholder'
 });
 
 Router.route('/user-notifications', {
   name: 'userNotifications'
 });
 
-Router.route('/messages/:channel', {
-  name: 'channel'
-});
-
 Router.route('/profile', {
   name: 'profile'
 });
-Router.route('/profile/edit/:_id', {
-  name: 'profileEdit'
-});
-Router.route('/profile/settings/:_id', {
-  name: 'profileSettings'
-});
-Router.route('/profile/followers/:_id', {
-  name: 'profileFollowers',
-});
-Router.route('/profile/following/:_id', {
-  name: 'profileFollowing'
-});
-Router.route('/profile/stats/:_id', {
-  name: 'profileStats'
-});
-Router.route('/pushNotificationSelection', {
-  name: 'pushNotificationSelection'
-});
 
-Router.route('/profile/change-password', {
-  name: 'profileChangePassword'
+Router.route('/messages/:channel', {
+  name: 'channel'
 });
 
 Router.route('/feed/:_story/comments', {
@@ -66,6 +48,13 @@ Router.route('/feed/:_story/share', {
   }
 });
 
+Router.route('/privacy', {
+  name: 'privacy',
+});
+
+Router.route('/terms-of-use', {
+  name: 'terms',
+});
 
 AccountsTemplates.configure({
   defaultLayout: 'default',
@@ -78,16 +67,14 @@ AccountsTemplates.configure({
   showLabels: false,
   showPlaceholders: true,
   showResendVerificationEmailLink: false,
-  // onLogoutHook: accountsLogoutCallback,
-  // onSubmitHook: accountSubmitCallback,
   continuousValidation: false,
   negativeFeedback: false,
   negativeValidation: true,
   positiveValidation: true,
   positiveFeedback: true,
   showValidating: true,
-  // privacyUrl: 'privacy',
-  // termsUrl: 'terms-of-use',
+  privacyUrl: 'privacy',
+  termsUrl: 'terms-of-use',
   texts: {
     errors: {
       loginForbidden: 'Incorrect username or password',
@@ -172,5 +159,5 @@ var makeSureLoggedIn = function() {
 }
 
 Router.onBeforeAction(makeSureLoggedIn, {
-  except: ['login', 'register']
+  except: ['explore', 'login', 'register']
 });
