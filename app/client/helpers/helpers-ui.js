@@ -11,6 +11,13 @@ UI.registerHelper("absoluteUrl", function(path) {
 });
 
 /*
+* Meteor extensions
+*/
+UI.registerHelper("showMobileNav", function(path) {
+  return Session.get('showMobileNav');
+});
+
+/*
 * Environment: native and web userAgent identification
 */
 UI.registerHelper('isIOS',function(){

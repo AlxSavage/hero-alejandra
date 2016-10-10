@@ -1,42 +1,40 @@
 <template name="header">
-	<header class="{{scroll}}">
-		<div class="header-container container">			
-			<div class="layout horizontal wrap">
-				<a href="/" class="logo"><img src="/img/logo/logo-white.png" alt="Hero Traveller" title="Hero Traveller"></a>
+	<header class="header-container container">			
+		<div class="layout horizontal wrap">
+			<a href="/" class="logo"><img src="/img/logo/logo-white.png" alt="Hero Traveler" title="Hero Traveler"></a>
 
-				<ul id="header-nav" class="header-nav">
-					<li>
-						<a href="#">My Feed</a>
-					</li>
-					<li>
-						<a href="#">Explore</a>
-					</li>
-				</ul>
+			<ul id="header-nav" class="header-nav">
+				<li>
+					<a href="{{pathFor 'feed'}}" class="{{#if currentRoute 'feed'}}active{{else}}inactive{{/if}}">My Feed</a>
+				</li>
+				<li>
+					<a href="{{pathFor 'explore'}}" class="{{#if currentRoute 'explore'}}active{{else}}inactive{{/if}}">Explore</a>
+				</li>
+			</ul>
 
-				<div class="header-right layout horizontal flex end-justified">
-					<div class="header-search-box">
-						<div class="header-search">
-							<i class="fa fa-search" aria-hidden="true"></i>
-							<input type="text" name="desktop-search" id="desktop-search">
-						</div>
-					</div>
-					<button class="header-create">Create</button>
-					<div class="header-inbox js-side-panel" data-panel-template="userInbox" data-panel-user="{{currentUserId}}">
-						<i class="fa fa-envelope-o" aria-hidden="true"></i>
-					</div>
-					<div class="header-notifications js-side-panel" data-panel-template="userNotifications" data-panel-user="{{currentUserId}}">
-						<i class="fa fa-bell-o" aria-hidden="true"></i>
-					</div>
-					<div class="header-user">
-						<a href="{{pathFor 'profile' _id=currentUserId}}">
-							<img src="http://cdn0.peopleimages.com/picture/1324707-theres-just-so-many-wonderful-things-to-see-fit_400_400.jpg">
-						</a>
+			<div class="header-right layout horizontal flex end-justified">
+				<div class="header-search-box">
+					<div class="header-search">
+						<i class="fa fa-search" aria-hidden="true"></i>
+						<input type="search" name="desktop-search" id="desktop-search">
 					</div>
 				</div>
-
+				<button class="header-create js-fakeroute-to-post-form">Create</button>
+				<div class="header-inbox js-side-panel" data-panel-template="userInbox" data-panel-user="{{currentUserId}}">
+					<i class="fa fa-envelope-o" aria-hidden="true"></i>
+				</div>
+				<div class="header-notifications">
+					<a href="{{pathFor 'userNotifications'}}" class="{{#if currentRoute 'userNotifications'}}active{{else}}inactive{{/if}}">
+						<i class="fa fa-bell-o" aria-hidden="true"></i>
+					</a>
+				</div>
+				<div class="header-user">
+					<a href="{{pathFor 'profile' _id=currentUserId}}" class="{{#if currentRoute 'profile'}}active{{else}}inactive{{/if}}">
+						<img src="http://cdn0.peopleimages.com/picture/1324707-theres-just-so-many-wonderful-things-to-see-fit_400_400.jpg">
+					</a>
+				</div>
 			</div>
-		</div>
-		<div class="header-backdrop"></div>
-	</header>
 
+		</div>
+	</header>
 </template>

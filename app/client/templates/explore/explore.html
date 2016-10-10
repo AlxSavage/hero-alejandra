@@ -1,4 +1,8 @@
 <template name="explore">
-	{{> sidePanel}}
-	{{> navTabs}}
+	{{>nav title='Explore' black=true}}
+	<div class="page-explore {{activeTabClass}} bg-dark">
+		{{>categories}}
+	</div>
+
+	{{>navTabs}}
 </template>

@@ -71,24 +71,22 @@ Template.coverImage.helpers({
 });
 
 Template.profile.events({
-    'click .js-show-tab-1': function(event) {
-        Template.profile.setTab('tab-1');
-    },
-    'click .js-show-tab-2': function(event) {
-        Template.profile.setTab('tab-2');
-    },
-    'click .js-show-tab-3': function(event) {
-        Template.profile.setTab('tab-3');
-    },
-    'click .js-show-tab-4': function(event) {
-        Template.profile.setTab('tab-4');
-    },
-    'click .page-view-profile .js-side-panel': function(e, template){ // Opens side menu for followers/following
-        openSidePanel(e, template);
-    },
-// 'click .js-uncollapse': function() {
-//   Template.profile.setTab(null);
-// }
+  'click .js-show-tab-1': function(event) {
+    Template.profile.setTab('tab-1');
+  },
+  'click .js-show-tab-2': function(event) {
+    Template.profile.setTab('tab-2');
+  },
+  'click .js-show-tab-3': function(event) {
+    Template.profile.setTab('tab-3');
+  },
+  'click .js-show-tab-4': function(event) {
+    Template.profile.setTab('tab-4');
+  },
+  // Opens side menu for followers/following
+  'click .side-panel-profile': function(e, template){
+    openSidePanel(e, template);
+  }
 });
 
 Template.profile.setTab = function(tab) {

@@ -1,0 +1,10 @@
+<template name="categories">
+	<div class="layout vertical fit" style="background-color: white; margin-top: 90px;">
+		<input type="search" id="searchValue" placeholder="Add Some Tags" class="tags-input" style="min-width: 95%;">
+		<ol>
+		  {{#each categories}}
+		    <li>{{name}}</li>
+		  {{/each}}
+		</ol>
+	</div>
+</template>
