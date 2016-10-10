@@ -1,0 +1,91 @@
+.padding-horizontal {
+  padding: 0 1em;
+}
+.search-active-input {
+  background-color: #424242;
+  opacity: 0.6;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: 0px;
+  .type-bold();
+  color: white;
+  font-size: 13px;
+  letter-spacing: 1px;
+  padding: 5px;
+  vertical-align: middle;
+  width: 95%;
+}
+
+
+.page-search {
+  background: @color-empty;
+
+  .content-scrollable {
+    top: 100%;
+    margin-top: -1px;
+  }
+
+  .btns-group [class*="btn-"] {
+      -webkit-box-flex: 1;
+      -moz-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+  }
+}
+
+// Collapse end-state
+.page-search.tab-1,
+.page-search.tab-2,
+.page-search.tab-3,
+.page-search.tab-4,
+.page-search.tab-5 {
+  .content-scrollable {
+    //min-height: 70%;
+    top: 33%;
+  }
+}
+
+// Collapse animation-specific styles
+@transition-time: 700ms;
+@easing: cubic-bezier(0.175, 0.885, 0.335, 1.05);
+.page-search {
+  
+
+  .content-scrollable {
+    .transform(translate3d(0,0,0));
+    .transition( all @transition-time @easing );
+    .backface-visibility(hidden);
+
+
+    &.instant { .transition( transform 0, top @transition-time @easing ); }
+    &.delayed { .transition( transform 0 linear @transition-time, top @transition-time @easing); }
+  }
+}
+
+//USE SESSION VALUE TO SET VISIBILITY AND TRANSFORMATION OF SCROLLABLE AREAS
+// Value is set from session var and template helper isActiveClass
+.page-search.tab-1 {
+  .tab-1-scrollable { .transform(translate3d(0,0,0)); }
+  .tab-2-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-3-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-4-scrollable { .transform(translate3d(-100%,0,0)); }
+}
+.page-search.tab-2 {
+  .tab-1-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-2-scrollable { .transform(translate3d(0,0,0)); }
+  .tab-3-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-4-scrollable { .transform(translate3d(-100%,0,0)); }
+}
+.page-search.tab-3 {
+  .tab-1-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-2-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-3-scrollable { .transform(translate3d(0,0,0)); }
+  .tab-4-scrollable { .transform(translate3d(-100%,0,0)); }
+}
+.page-search.tab-4 {
+  .tab-1-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-2-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-3-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-4-scrollable { .transform(translate3d(0,0,0)); }
+}

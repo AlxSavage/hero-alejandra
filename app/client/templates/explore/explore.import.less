@@ -1,0 +1,107 @@
+.page-explore {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: @color-full;
+  
+  .search-inactive {
+    background-color: #424242;
+    opacity: 0.6;
+    text-align: center;
+
+    margin: 20px auto 20px;
+    border-radius: 5px;
+    border: 0px;
+    .type-bold();
+    color: white;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 10px;
+    width: 85%;
+  }
+
+  .search-inactive  i {
+      font-size: 15px;
+      margin-left: -5px;
+      margin-right: 5px;
+  }
+
+  .content-scrollable {
+    top: 100%;
+    margin-top: -1px;
+  }
+
+  .btns-group [class*="btn-"] {
+      -webkit-box-flex: 1;
+      -moz-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+  }
+
+  .js-cancel-search {
+    margin-left: -90px;
+  }
+}
+
+// Collapse end-state
+.page-explore.tab-1,
+.page-explore.tab-2,
+.page-explore.tab-3,
+.page-explore.tab-4,
+.page-explore.tab-5 {
+  .content-scrollable {
+    top: 126px;
+  }
+}
+
+// Collapse animation-specific styles
+@transition-time: 700ms;
+@easing: cubic-bezier(0.175, 0.885, 0.335, 1.05);
+.page-explore {
+  
+
+  .content-scrollable {
+    .transform(translate3d(0,0,0));
+    .transition( all @transition-time @easing );
+    .backface-visibility(hidden);
+
+
+    &.instant { .transition( transform 0, top @transition-time @easing ); }
+    &.delayed { .transition( transform 0 linear @transition-time, top @transition-time @easing); }
+  }
+}
+
+//USE SESSION VALUE TO SET VISIBILITY AND TRANSFORMATION OF SCROLLABLE AREAS
+// Value is set from session var and template helper isActiveClass
+.page-explore.tab-1 {
+  .tab-1-scrollable { .transform(translate3d(0,0,0)); }
+  .tab-2-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-3-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-4-scrollable { .transform(translate3d(-100%,0,0)); }
+}
+.page-explore.tab-2 {
+  .tab-1-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-2-scrollable { .transform(translate3d(0,0,0)); }
+  .tab-3-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-4-scrollable { .transform(translate3d(-100%,0,0)); }
+}
+.page-explore.tab-3 {
+  .tab-1-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-2-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-3-scrollable { .transform(translate3d(0,0,0)); }
+  .tab-4-scrollable { .transform(translate3d(-100%,0,0)); }
+}
+.page-explore.tab-4 {
+  .tab-1-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-2-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-3-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-4-scrollable { .transform(translate3d(0,0,0)); }
+}
+
+
+.explore-nav .nav-tabs{
+    display: none;
+    .md-and-down({ display: flex; });
+}
