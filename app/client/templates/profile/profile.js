@@ -84,7 +84,7 @@ Template.profile.events({
     Template.profile.setTab('tab-4');
   },
   // Opens side menu for followers/following
-  'click .side-panel-profile': function(e, template){
+  'click .side-panel-trigger': function(e, template){
     openSidePanel(e, template);
   }
 });

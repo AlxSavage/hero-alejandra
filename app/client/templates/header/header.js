@@ -3,7 +3,8 @@ import openSidePanel from '../../modules/open-side-panel';
 // Header helpers
 Template.header.events({
 	// Opens side menu for followers/following
-	'click header .js-side-panel': function(e, template){
+	'click header .side-panel-trigger': function(e, template){
+		Session.set('activeMessagesTab', template.$(e.target).closest('.side-panel-trigger').data('panel-tab'));
 		openSidePanel(e, template);
 	},
 	// Search box velocity.js effects

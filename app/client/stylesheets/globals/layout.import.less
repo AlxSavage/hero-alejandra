@@ -20,6 +20,35 @@
   .position(absolute, 0, 0, 0, 0);  
 }
 
+// Side panel style
+.side-panel {
+    .position(fixed, 0, 0, auto, auto, 36rem, 100%);
+    .md-and-down ({ width: 100%; });
+    display: block;
+    z-index: 99999;
+    padding: 0;
+    overflow: auto;
+    transform: translateX(100%);
+    background: @color-empty;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    h3 {
+      display: block;
+      .md-and-down ({ display: none; });
+      background: @color-full;
+      width: 100%;
+      height: 4rem;
+      color: @color-empty;
+      .type-black();
+      .font-nav-title();
+      line-height: 4rem;
+      text-align: center;
+      letter-spacing: 1px;
+      text-transform: capitalize;
+    }
+}
+
 //USE SESSION VALUE TO SET VISIBILITY AND TRANSFORMATION OF SCROLLABLE AREAS
 // Value is set from session var and template helper isActiveClass
 .tab-1 {
