@@ -87,9 +87,6 @@ Template.profile.events({
   'click .side-panel-profile': function(e, template){
     openSidePanel(e, template);
   }
-  // 'click .js-uncollapse': function() {
-  //   Template.profile.setTab(null);
-  // }
 });
 
 Template.profile.setTab = function(tab) {

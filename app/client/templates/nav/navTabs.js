@@ -11,7 +11,7 @@ Template.navTabs.helpers({
   },
   navTabSelection: function(name) {
     return Template.instance().navTabSelection.get();
-  },
+  }
 });
 
 Template.navTabs.events({

@@ -1,19 +1,21 @@
 <template name="navTabs">
-	  <div class="btns-group nav-tabs tabs-{{currentRoute}}">
+	{{#if showMobileNav}}
+	  <div class="btns-group nav-tabs">
 	    <a href="{{pathFor 'feed'}}" class="btn-nav js-show-tab-1 {{#if currentRoute 'feed'}}active{{else}}inactive{{/if}}">
 	      <i class="icon ion-ios-home-outline"></i>
 	    </a>
 	    <a  href="{{pathFor 'explore'}}" class="btn-nav js-show-tab-2 {{#if currentRoute 'explore'}}active{{else}}inactive{{/if}}">
 	      <i class="icon ion-ios-search"></i>
 	    </a>
-	    <a  href="{{pathFor 'createPost'}}" class="btn-nav js-show-tab-3 {{#if currentRoute 'createPost'}}active{{else}}inactive{{/if}}">
+	    <a  href="{{pathFor 'postFormPlaceholder'}}" class="btn-nav js-show-tab-3 {{#if currentRoute 'postFormPlaceholder'}}active{{else}}inactive{{/if}}">
 	      <i class="icon ion-ios-plus-empty"></i>
-	    </a>	    
-			<a  href="{{pathFor 'userNotifications'}}" class="btn-nav js-show-tab-4 {{#if currentRoute 'userNotifications'}}active{{else}}inactive{{/if}}">
-	      <i class="icon ion-ios-bolt-outline"></i>
-	    </a> 
-	    <a  href="{{pathFor 'profile' _id=currentUserId}}" class="btn-nav js-show-tab-5 {{#if currentRoute 'profile'}}active{{else}}inactive{{/if}}">
+	    </a>	
+  		<a  href="{{pathFor 'userNotifications'}}" class="btn-nav js-show-tab-4 {{#if currentRoute 'userNotifications'}}active{{else}}inactive{{/if}}">
+        <i class="icon ion-ios-bolt-outline"></i>
+      </a> 
+	    <a  href="{{pathFor 'profile'}}" class="btn-nav js-show-tab-5 {{#if currentRoute 'profile'}}active{{else}}inactive{{/if}}">
 	      <i class="icon ion-ios-person-outline"></i>
-	    </a>                
+	    </a>                    
 	  </div>
+  {{/if}}
 </template>
