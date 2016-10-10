@@ -1,6 +1,6 @@
-Template.stickyHeader.rendered = function () {
-	
-	this.firstNode.parentNode._uihooks = {
+Template.stickyHeader.onRendered(function() {
+
+	Template.instance().find('#sticky-header-hook')._uihooks = {
 	  insertElement: function(node, next, done) {
 	    var $node = $(node);
 
@@ -22,5 +22,6 @@ Template.stickyHeader.rendered = function () {
 	      }
 	    });
 	  }
-	}
-};
+	};
+
+});

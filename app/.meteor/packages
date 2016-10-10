@@ -66,6 +66,7 @@ alanning:roles
 softwarerero:accounts-t9n
 tap:i18n
 jparker:gravatar
+mologie:reactive-selectize
 
 # mobile
 crosswalk@1.6.2
@@ -77,11 +78,8 @@ launch-screen@1.0.12
 #juliancwirko:postcss
 #standard-minifier-js
 #app-prod-security
-mologie:reactive-selectize
 
 # alix
 velocityjs:velocityjs
 fortawesome:fontawesome
-jquery@1.11.9
-#jquery-waypoints@1.0.9
 less@2.7.5_1

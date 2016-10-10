@@ -11,10 +11,13 @@ UI.registerHelper("absoluteUrl", function(path) {
 });
 
 /*
-* Meteor extensions
+* UI display
 */
 UI.registerHelper("showMobileNav", function(path) {
   return Session.get('showMobileNav');
+});
+UI.registerHelper("showStickyHeader", function(path) {
+  return Session.get('showStickyHeader');
 });
 
 /*
