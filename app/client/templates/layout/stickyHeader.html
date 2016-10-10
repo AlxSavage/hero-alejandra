@@ -1,5 +1,9 @@
 <template name="stickyHeader">
-	<div class="header-wrapper-backdrop">
-		{{> header}}
+	<div id="sticky-header-hook">
+		{{# if showStickyHeader}}
+			<div class="header-wrapper-backdrop">
+			{{> header}}				
+			</div>
+		{{/if}}
 	</div>	
 </template>
