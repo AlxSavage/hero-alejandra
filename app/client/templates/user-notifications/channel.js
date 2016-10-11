@@ -6,8 +6,8 @@ Template.channel.onCreated( () => {
   template.isDirect = new ReactiveVar();
   template.loading  = new ReactiveVar( true );
 
-  let channel = Router.current().params.channel;//FlowRouter.getParam( 'channel' );
-  console.log(channel);
+  //let channel = Router.current().params.channel;//FlowRouter.getParam( 'channel' );
+  let channel = Session.get('chatWith');//FlowRouter.getParam( 'channel' );
 
   if ( channel ) {
     let isDirect = channel.includes( '@' );
@@ -32,7 +32,7 @@ Template.channel.helpers({
     return Template.instance().isDirect.get();
   },
   username() {
-    return Router.current().params.channel;
+    return Session.get('chatWith');
   },
   messages() {
     let messages = Messages.find( {}, { sort: { timestamp: 1 } } );
@@ -41,7 +41,7 @@ Template.channel.helpers({
     }
   },
   chatWith() {
-    return Router.current().params.channel;
+    return Session.get('chatWith');
   }
 });
 

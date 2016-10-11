@@ -9,7 +9,7 @@
 
         <!-- Activity (Temporary templating placeholder info) -->
         <div class="content-scrollable static-nav tab-1-scrollable">
-            <h3>Notifications</h3>
+            <h3><i class="fa fa-times js-close-sidepanel" aria-hidden="true"></i>Notifications</h3>
             <ul class="notifications-listing">
                 <li>
                     <a href="#">
@@ -72,7 +72,7 @@
 
         <!-- Inbox -->
         <div class="content-scrollable static-nav tab-2-scrollable">
-            <h3>Inbox</h3>
+            <h3><i class="fa fa-times js-close-sidepanel" aria-hidden="true"></i>Inbox</h3>
             <!--        
             # TODO/REMOVE: Are channels gonna be included?
             <h5>Channels</h5>
@@ -105,7 +105,8 @@
             <ul class="notifications-listing">
                 {{#each message in recentMessages}}
                     <li>
-                        <a href="/messages/@{{fromUsername message.owner}}">
+                        <!--<a href="/messages/@{{fromUsername message.owner}}">-->
+                        <a href="#" class="inboxMessage side-panel-trigger" data-panel-owner="@{{fromUsername message.owner}}" data-panel-template="channel">
                             <div class="nt-user">
                                 <img src="http://cdn0.peopleimages.com/picture/1324707-theres-just-so-many-wonderful-things-to-see-fit_400_400.jpg">
                             </div>

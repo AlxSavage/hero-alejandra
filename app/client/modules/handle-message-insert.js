@@ -12,7 +12,7 @@ let _handleInsert = ( message, event, template ) => {
 
 let _buildMessage = ( template, text ) => {
   return {
-    destination: Router.current().params.channel.replace( '@', '' ),
+    destination: Session.get('chatWith').replace( '@', '' ),
     isDirect: template.isDirect.get(),
     message: text
   };
