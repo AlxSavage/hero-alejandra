@@ -1,26 +1,26 @@
 .page-user-notifications {
-  background: @color-empty;
-  overflow: hidden;
-  margin-top: 77px;
+    background: @color-empty;
+    overflow: hidden;
+    margin-top: 6px;
+    .btns-group {
+        position: relative;
+        background: white;
+        z-index:1;
+        .md-and-down ({ display: flex; });
+        .md-and-up ({ display: none !important; }); // Temp hack. let's get rid of this !important
+    }
+    .content-scrollable {
+        top: 100%;
+        margin-top: -1px;
+    }
 
-  .btns-group {
-    position: relative;
-    background: white;
-    z-index:1;
-  }
-
-  .content-scrollable {
-    top: 100%;
-    margin-top: -1px;
-  }
-
-  .btns-group [class*="btn-"] {
-      -webkit-box-flex: 1;
-      -moz-box-flex: 1;
-      -webkit-flex: 1;
-      -ms-flex: 1;
-      flex: 1;
-  }
+    .btns-group [class*="btn-"] {
+        -webkit-box-flex: 1;
+        -moz-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+    }
 }
 
 // Collapse end-state
@@ -29,35 +29,64 @@
 .page-user-notifications.tab-3,
 .page-user-notifications.tab-4,
 .page-user-notifications.tab-5{
-  .content-scrollable {
-    //min-height: 70%;
-    top: 128px;
-  }
+    .content-scrollable {
+        //min-height: 70%;
+        .md-and-down ({ top: 128px; });
+        .md-and-up ({ top: 0; });
+    }
 }
 
 .profile-followers, .profile-comments {
-  .content-scrollable {
-    top: 78px;
-  }
+    .content-scrollable {
+        .md-and-down ({ top: 78px; });
+        .md-and-up ({ top: 0; });
+    }
 }
 
 .profile-share {
-  .content-scrollable {
-    top: 140px;
-  }
+    .content-scrollable {
+        top: 140px;
+    }
 }
 
 // Collapse animation-specific styles
 @transition-time: 700ms;
 @easing: cubic-bezier(0.175, 0.885, 0.335, 1.05);
 .page-user-notifications, .profile-followers, .profile-comments, .profile-share {
-  
-  .content-scrollable {
-    .transform(translate3d(0,0,0));
-    .transition( all @transition-time @easing );
-    .backface-visibility(hidden);
 
-    &.instant { .transition( transform 0, top @transition-time @easing ); }
-    &.delayed { .transition( transform 0 linear @transition-time, top @transition-time @easing); }
-  }
+    .content-scrollable {
+        .transform(translate3d(0,0,0));
+        .transition( all @transition-time @easing );
+        .backface-visibility(hidden);
+
+        &.instant { .transition( transform 0, top @transition-time @easing ); }
+        &.delayed { .transition( transform 0 linear @transition-time, top @transition-time @easing); }
+    }
+}
+
+//USE TEMPLATE REACTIVE VAR TO SET VISIBILITY AND TRANSFORMATION OF SCROLLABLE AREAS
+// Value is set from session var and template helper isActiveClass
+.page-user-notifications.tab-1 {
+  .tab-1-scrollable { .transform(translate3d(0,0,0)); }
+  .tab-2-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-3-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-4-scrollable { .transform(translate3d(-100%,0,0)); }
+}
+.page-user-notifications.tab-2 {
+  .tab-1-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-2-scrollable { .transform(translate3d(0,0,0)); }
+  .tab-3-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-4-scrollable { .transform(translate3d(-100%,0,0)); }
+}
+.page-user-notifications.tab-3 {
+  .tab-1-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-2-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-3-scrollable { .transform(translate3d(0,0,0)); }
+  .tab-4-scrollable { .transform(translate3d(-100%,0,0)); }
+}
+.page-user-notifications.tab-4 {
+  .tab-1-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-2-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-3-scrollable { .transform(translate3d(-100%,0,0)); }
+  .tab-4-scrollable { .transform(translate3d(0,0,0)); }
 }

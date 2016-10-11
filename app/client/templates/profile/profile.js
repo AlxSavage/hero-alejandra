@@ -13,61 +13,61 @@ Template.profile.onCreated(function() {
 });
 
 Template.profile.helpers({
-  configureHammer: function () {
-    return function (hammer, templateInstance) {
-      var swipeup = new Hammer.Swipe({
-        event: 'swipeup',  
-        pointers: 1,
-        velocity: 0.5
-      });
-      var swipedown = new Hammer.Swipe({
-        event: 'swipedown', 
-        pointers: 1,
-        velocity: 0.5
-      });
-      hammer.add(swipeup);
-      // hammer.add(swipedown);
+    configureHammer: function () {
+        return function (hammer, templateInstance) {
+            var swipeup = new Hammer.Swipe({
+                event: 'swipeup',  
+                pointers: 1,
+                velocity: 0.5
+            });
+            var swipedown = new Hammer.Swipe({
+                event: 'swipedown', 
+                pointers: 1,
+                velocity: 0.5
+            });
+            hammer.add(swipeup);
+// hammer.add(swipedown);
 
-      return hammer;
-    }
-  },  
-  profileGestures: {
+return hammer;
+}
+},  
+profileGestures: {
     'swipeup .page-view-profile': function (event, templateInstance) {
-      console.log('swipeup');
+        console.log('swipeup');
     },
     'swipedown .page-view-profile': function (event, templateInstance) {
-      console.log('swipedown');
+        console.log('swipedown');
     }
-  },  
-  userPosts: function() {
+},  
+userPosts: function() {
     var data = Posts.find().fetch();
     if (data){
-      return data;
+        return data;
     } else {
-      return [];
+        return [];
     }
-  },
-  isActiveTab: function(name) {
+},
+isActiveTab: function(name) {
     return Session.equals(PROFILE_TAB_KEY, name);
-  },
-  activeTabClass: function() {
+},
+activeTabClass: function() {
     return Session.get(PROFILE_TAB_KEY);
-  },
-  data: function() {
-   return {
-     user: Meteor.user()
-   }
-  },
-  userPicHelper: function() {
+},
+data: function() {
+    return {
+        user: Meteor.user()
+    }
+},
+userPicHelper: function() {
     return Users.avatar.getGravatarUrl(Meteor.user());
-  }
+}
 });
 
 Template.coverImage.helpers({
-  fileRef: function () {
-    console.log(Template.instance().data.id);
-    return Images.findOne({_id: Template.instance().data.id});
-  }
+    fileRef: function () {
+        console.log(Template.instance().data.id);
+        return Images.findOne({_id: Template.instance().data.id});
+    }
 });
 
 Template.profile.events({
@@ -84,7 +84,7 @@ Template.profile.events({
     Template.profile.setTab('tab-4');
   },
   // Opens side menu for followers/following
-  'click .side-panel-profile': function(e, template){
+  'click .side-panel-trigger': function(e, template){
     openSidePanel(e, template);
   }
 });
@@ -94,6 +94,6 @@ Template.profile.setTab = function(tab) {
     var newTab = tab;
     Session.set(PROFILE_TAB_KEY, newTab);
 
-    // var composedClassFrom = "." + lastTab + "-scrollable";
-    // var composedClassTo = "." + newTab + "-scrollable";
+// var composedClassFrom = "." + lastTab + "-scrollable";
+// var composedClassTo = "." + newTab + "-scrollable";
 };
