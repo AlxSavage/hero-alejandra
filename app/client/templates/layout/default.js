@@ -1,3 +1,5 @@
+import openSidePanel from '../../modules/open-side-panel';
+
 let dataReadyHold = null;
 const NOTIFICATION_TIMEOUT = 3000;
 const IGNORE_CONNECTION_ISSUE_KEY = 'ignoreConnectionIssue';
@@ -85,5 +87,11 @@ Template.default.helpers({
   },  
   notifications: function() {
     return notifications.find();
+  }
+});
+
+Template.default.events({
+  'click .side-panel-trigger': function(e, template){
+    openSidePanel(e, template);
   }
 });
