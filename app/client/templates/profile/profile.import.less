@@ -20,8 +20,6 @@
         .md-and-up ({ .position(absolute; 0; 0; 0; 0; auto; 70vh); });
         background: white;
         background-image: url("https://instagram.fmex1-1.fna.fbcdn.net/t51.2885-15/e35/14280355_978687815589972_1061713616_n.jpg?ig_cache_key=MTMzMzYyODczMTUwMzMyMTAwMw%3D%3D.2");
-        //background-image: url("https://instagram.fmex1-1.fna.fbcdn.net/t51.2885-15/e35/14374217_866734406761391_432776869138399232_n.jpg?ig_cache_key=MTM0NzkwNzM4NDM5NTMxNjg5NQ%3D%3D.2");
-        //background-image: url("https://instagram.fmex1-1.fna.fbcdn.net/t51.2885-15/e35/14474557_1270793886305587_3327837808806068224_n.jpg?ig_cache_key=MTM1MTg4NTI2MDMzODQwODE1OQ%3D%3D.2");
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;  
@@ -169,21 +167,11 @@
             width: 1.2rem;
         }
     }
-
-    .profile-tabs {
-        position: absolute;
-        .md-and-down ({ top: 50vh; });
-        .md-and-up ({ top: 70vh; });
-        height: 50px;
-    }
-
-    .content-scrollable {
-        .md-and-down ({ top: 50vh; });
-        .md-and-up ({ top: 70vh; });
-        margin-top: 50px;
+    .profile-tab-container {
+        .md-and-down ({ margin-top: 50vh; });
+        .md-and-up ({ margin-top: 70vh; });
         overflow-y: scroll;
-    }  
-
+    }
     .profile-tabs [class*="btn-"] {
         display: inline-block;
         float: left;
@@ -214,26 +202,4 @@
           .font-s3;
         }
     }
-}
-
-.page-view-profile.tab-1,
-.page-view-profile.tab-2,
-.page-view-profile.tab-3,
-.page-view-profile.tab-4,
-.page-view-profile.tab-5 {
-
-}
-
-// Collapse animation-specific styles
-@transition-time: 700ms;
-@easing: cubic-bezier(0.175, 0.885, 0.335, 1.05);
-
-.page-view-profile {
-  .content-scrollable {
-    .transform(translate3d(0,0,0));
-    .transition( all @transition-time @easing );
-    .backface-visibility(hidden);
-    &.instant { .transition( transform 0, top @transition-time @easing ); }
-    &.delayed { .transition( transform 0 linear @transition-time, top @transition-time @easing); }
-  }
 }

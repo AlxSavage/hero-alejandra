@@ -1,5 +1,5 @@
 <template name="profile">
-	<!-- {{#HammerTouchArea configureCallback=configureHammer gestureMap=profileGestures}} -->
+
 		<div class="page-view-profile {{activeTabClass}}">
 		  {{#if showMobileNav}}
 				<nav class="transparent-nav">
@@ -18,7 +18,6 @@
 				<hr>
 				<h2>On the road</h2>
 
-				<!--<img src="http://cdn0.peopleimages.com/picture/1256331-leave-nothing-but-footprints-take-nothing-but-pictures-fit_400_400.jpg" class="profile-img" alt="User">-->
 				<img src="https://s-media-cache-ak0.pinimg.com/236x/81/63/e4/8163e4d1615e6bd3a130cd50a786f14e.jpg" class="profile-img" alt="User">
 				<h2>Jack Kerouac</h2>
 				<ul class="user-stats layout horizontal wrap">
@@ -44,41 +43,36 @@
 			  	</a>
 
 			  	<div class="user-cont">CONTRIBUTOR</div>
-
 			</div>
-			<div style="height: 2000px; width: 100%;"></div>
-	  	<!-- <div class="btns-group profile-tabs">
-	    	<a class="btn-tertiary {{#if isActiveTab 'tab-1'}}active{{else}}no-state{{/if}} js-show-tab-1">Stories</a>
-	    	<a class="btn-tertiary {{#if isActiveTab 'tab-2'}}active{{else}}no-state{{/if}} js-show-tab-2">Drafts</a>
-	    	<a class="btn-tertiary {{#if isActiveTab 'tab-3'}}active{{else}}no-state{{/if}} js-show-tab-3">Itineraries</a>
-	    	<a class="btn-tertiary {{#if isActiveTab 'tab-4'}}active{{else}}no-state{{/if}} js-show-tab-4">Bookmarks</a>
+			<div class="profile-tab-container layout vertical" >
+		  	<div class="btns-group profile-tabs">
+		    	<a data-tab-template="profileStories" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'profileStories'}}active{{else}}no-state{{/if}}">Stories</a>
+		    	<a data-tab-template="profileDrafts" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'profileDrafts'}}active{{else}}no-state{{/if}}">Drafts</a>
+		    	<a data-tab-template="profileItineraries" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'profileItineraries'}}active{{else}}no-state{{/if}}">Itineraries</a>
+		    	<a data-tab-template="profileBoards" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'profileBoards'}}active{{else}}no-state{{/if}}">Boards</a>
+				</div>
+				<div class="flex">
+					{{>activeTab tabKey=tabKey}}
+				</div>
 			</div>
-			<div class="content-scrollable static-nav tab-1-scrollable">	
-				<ul>
-					<li>1</li>
-				</ul>
-			</div>
-			<div class="content-scrollable static-nav tab-2-scrollable">
-				<ul>
-					<li>2</li>
-				</ul>
-			</div>
-			<div class="content-scrollable static-nav tab-3-scrollable">
-				<ul>
-					<li>3</li>
-				</ul>
-			</div>
-			<div class="content-scrollable static-nav tab-4-scrollable">
-				<ul>
-					<li>4</li>
-				</ul> -->
-		<!-- </div> -->
 		</div>
-
-	<!-- {{/HammerTouchArea}} -->
 
 	{{>navTabs}}
 </template>
+
+<template name="profileStories"><div style="height: 2000px; width:100%;">
+	<h1>profile stories</h1>
+</div></template>
+<template name="profileDrafts"><h1>profileDrafts</h1></template>
+<template name="profileItineraries"><h1>profileItineraries</h1></template>
+<template name="profileBoards"><h1>profileBoards</h1></template>
+
+
+<template name="activeTab">
+		{{> Template.dynamic template=(activeTabTemplate tabKey)}}
+</template>
+
+
 
 <template name="postItem">
   <a class="profile-list-item" href="">
@@ -101,3 +95,7 @@
 	<img src="{{fileRef.link}}" alt="{{fileRef.name}}" style="width: 100vw;" />
 	<!-- <img src="{{fileURL imageFile}}" /> -->
 </template>
+
+
+				<!--<img src="http://cdn0.peopleimages.com/picture/1256331-leave-nothing-but-footprints-take-nothing-but-pictures-fit_400_400.jpg" class="profile-img" alt="User">-->
+
