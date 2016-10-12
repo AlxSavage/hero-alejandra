@@ -1,14 +1,12 @@
 import openSidePanel from '../../modules/open-side-panel';
 
-Template.header.onCreated(function() {
-});
-
-// Header helpers
-Template.header.helpers({
-});
-
 // Header helpers
 Template.header.events({
+	// Opens side menu for followers/following
+	'click header .side-panel-trigger': function(e, template){
+		Session.set('activeMessagesTab', template.$(e.target).closest('.side-panel-trigger').data('panel-tab'));
+		openSidePanel(e, template);
+	},
 	// Search box velocity.js effects
 	'click .header-search': function(e){
 		$(".header-search-box").velocity({ width: '11rem' ,transition:"all 0.1s ease"}, 100);
