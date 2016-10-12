@@ -72,10 +72,8 @@ Template.userNotifications.events({
         Session.set('chatWith', messageOwner);
         if (Session.get('showMobileNav')) {
             openSidePanel(event, template);
-            console.log("mobile version");
         } else {
             Session.set('activeSidePanel', 'channel');
-            console.log("show desktop");
         }
     }
 
