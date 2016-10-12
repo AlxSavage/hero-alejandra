@@ -59,9 +59,39 @@
 			}
 		}
 	}
+	.st-edit {
+		.position(absolute; 0.7rem; 0; 0; 11.7rem; 2.2rem; 1rem);
+		border-bottom-left-radius: 0.2rem;
+		border-top-left-radius: 0.2rem;
+	}
+	.st-delete {
+		.position(absolute; 0.7rem; 0; 0; 13.95rem; 2.2rem; 1rem);
+		border-bottom-right-radius: 0.2rem;
+		border-top-right-radius: 0.2rem;
+	}
+	.st-edit, .st-delete {
+		background: rgba(0, 0, 0, 0.3);
+		cursor: pointer;
+		font-size: 1rem;
+		line-height: 1.9rem;
+		height: 1.9rem;
+	    text-align: center;
+		color: white;
+		font-weight: 300;
+		.transition( all 300ms ease-in );
+		vertical-align: middle;
+		visibility: hidden;
+		z-index: 1;
+		&:hover {
+			background: rgba(0, 0, 0, 1);
+		}
+	}
 	&:hover {
 		.story-cover {
 			background: rgba(0, 0, 0, 0);
+		}
+		.st-edit, .st-delete {
+			visibility: visible;
 		}
 	}
 }
