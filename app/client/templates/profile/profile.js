@@ -48,6 +48,27 @@ Template.profile.events({
     let name = template.$(event.target).closest('.js-tab-trigger').data('tab-template');
 
     Session.set(templateTabGroupName, name);
-  }
+  },
+  'click .st-count': function(e){
+    $closestLike = $(e.target).closest('.st-count');
+    if ($closestLike.data('liked-viewer')){
+      $closestLike.removeClass("liked-viewer").data('liked-viewer', false);
+    } else {
+        $closestLike.addClass("liked-viewer").data('liked-viewer', true);
+        $(e.target).closest('.shadow').velocity({ opacity: 0.5, fontSize: "1.5rem", left: "0.75rem", top: "-0.2rem" }, {
+            duration: 400,
+            complete: 
+                function() {
+                    $(e.target).closest('.shadow').velocity("reverse");
+                }
+            });
+        }
+    }
+
+
+
+
+
+
 });
 
