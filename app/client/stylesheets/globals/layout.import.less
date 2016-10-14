@@ -55,6 +55,48 @@ h3 {
     }
 }
 
+/* Hero cover image */
+.hero-cover(@background-color; @background-image; @position-x; @position-y) {
+    background: @background-color;
+    background-image: url(@background-image);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    color: @color-empty;
+    text-align: center;
+    overflow: hidden;
+    .md-and-down({ background-position: top center; });
+    .md-and-up({ background-position: @position-x @position-y });
+    // Hero cover gradient background
+    .hero-overlay-up-down {
+        .md-and-down ({
+            .position(absolute; 0; 0; 0; 0; 100%; 100%);
+            .overlay-gradient(bottom, 0.5);
+        });
+        .md-and-up ({
+            .position(absolute; 0; 0; 0; 0; 100%; 50%);
+            .overlay-gradient(bottom, 0.75);
+        });
+        z-index: 1;
+    }
+    .hero-overlay-down-up {
+        .md-and-down ({
+            .position(absolute; 0; 0; 0; 0; 100%; 100%);
+            .overlay-gradient(bottom, 0.5);
+        });
+        .md-and-up ({
+            .position(absolute; 0; 0; 0; 0; 100%; 100%);
+            .overlay-gradient(top, 0.65);
+        });
+        z-index: 1;
+    }
+    hr{
+      width: 3.2rem;
+      border: 0;
+      height: 1px;
+      background: @color-empty;
+    }
+}
 
 //USE SESSION VALUE TO SET VISIBILITY AND TRANSFORMATION OF SCROLLABLE AREAS
 // Value is set from session var and template helper isActiveClass

@@ -18,28 +18,9 @@
     .profile-brief {
         .md-and-down ({ .position(absolute; 0; 0; 0; 0; auto; 62vh); });
         .md-and-up ({ .position(absolute; 0; 0; 0; 0; auto; 70vh); });
-        background: white;
-        background-image: url("https://instagram.fmex1-1.fna.fbcdn.net/t51.2885-15/e35/14280355_978687815589972_1061713616_n.jpg?ig_cache_key=MTMzMzYyODczMTUwMzMyMTAwMw%3D%3D.2");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;  
-        color: @color-empty;
-        text-align: center;
-        overflow: hidden;
-        .md-and-down({ background-position: top center; });
-        .md-and-up({ background-position: 0px -200px; });
-        // Profile gradient background
-        .profile-brief-overlay {
-          .md-and-down ({
-            .position(absolute; 0; 0; 0; 0; 100%; 100%);
-            .overlay-gradient(bottom, 0.5);
-          });
-          .md-and-up ({
-            .position(absolute; 0; 0; 0; 0; 100%; 50%);
-            .overlay-gradient(bottom, 0.75);
-          });
-          z-index: 1;
-        }
+        .md-and-down ({ .position(absolute; 0; 0; 0; 0; auto; 62vh); });
+        .md-and-up ({ .position(absolute; 0; 0; 0; 0; auto; 70vh); });
+        .hero-cover(white; "https://instagram.fmex1-1.fna.fbcdn.net/t51.2885-15/e35/14718026_323701217996928_670964300696780800_n.jpg?ig_cache_key=MTM2MDUxNDE0NDYyMDczNjQzMQ%3D%3D.2"; 0px; -200px;);
         .profile-img {
             .md-and-down({ 
                 height: 5.7rem;
@@ -54,12 +35,6 @@
                 margin: 1.7rem auto 0.7rem;
             });
           z-index: 2;
-        }
-        hr{
-          width: 3.2rem;
-          border: 0;
-          height: 1px;
-          background: @color-empty;
         }
     }
 

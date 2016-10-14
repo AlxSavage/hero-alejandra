@@ -1,0 +1,44 @@
+// Story content
+.page-view-story {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: @color-empty;
+
+    // Story main brief
+    .story-brief {
+        .md-and-down ({ .position(absolute; 0; 0; 0; 0; auto; 120vh); });
+        .md-and-up ({ .position(absolute; 0; 0; 0; 0; auto; 120vh); });
+        .hero-cover(white; "https://instagram.fmex1-1.fna.fbcdn.net/t51.2885-15/e35/14533713_1678899692437238_7881188898519384064_n.jpg?ig_cache_key=MTM1MDkxNjEyMTAwNzUyMjM1NQ%3D%3D.2"; 0px; -600px;);
+        h1 {
+            .type-bold();
+            .md-and-down({ .title-over-bg3-mobile(); });
+            .md-and-up({ .title-over-bg3-desktop(); });
+            margin-top: 30vh;
+            padding: 1rem 0;
+            z-index: 2;
+        }
+        h2 {
+            .type-secondary();
+            .md-and-down({ .title-over-bg2-mobile(); });
+            .md-and-up({ .title-over-bg2-desktop(); });
+            font-style: italic;
+            margin: 0.3rem auto;
+            padding: 1rem 0;
+            z-index: 2;
+        }
+        .story-by {
+            .font-s3();
+            bottom: 3rem;
+            color: @color-empty;
+            height: 2.5rem;
+            position: absolute;
+            z-index: 2;
+            img {
+                .position(absolute; -0.5rem; 0; 0; -3rem; 2.5rem; 2.5rem);
+                border-radius: 100%;
+            }
+        }
+    }
+}
