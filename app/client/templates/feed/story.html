@@ -1,7 +1,6 @@
 <template name="story">
 	<div class="page-view-story {{activeTabClass}}">
 
-
 		<div class="story-brief layout vertical center-center">
 			<div class="hero-overlay-down-up"></div>
 				<h1>THE SHOP KEEPER</h1>
@@ -12,8 +11,8 @@
 				</div>
 		</div>
 
-		<div class="story-tab-container layout vertical" >
-		  	<div class="btns-group story-tabs">
+		<div class="story-tab-container" >
+		  	<div class="btns-group-flexless story-tabs layout horizontal center-center">
 		    	<a data-tab-template="storyStory" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'storyStory'}}active{{else}}no-state{{/if}}">Story</a>
 		    	<a data-tab-template="storyItinerary" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'storyItinerary'}}active{{else}}no-state{{/if}}">Itinerary</a>
 			</div>
