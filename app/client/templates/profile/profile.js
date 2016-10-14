@@ -1,5 +1,3 @@
-import storyLike from '../../modules/story-like';
-
 let templateTabGroupName = 'profileTabs';
 
 Template.profile.onCreated(function() {
@@ -49,10 +47,6 @@ Template.profile.events({
     e.preventDefault();
     let name = template.$(event.target).closest('.js-tab-trigger').data('tab-template');
     Session.set(templateTabGroupName, name);
-  },
-    'click .st-count': function(e){
-        storyLike(e);
-    }
-
+  }
 });
 

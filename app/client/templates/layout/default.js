@@ -1,4 +1,5 @@
 import openSidePanel from '../../modules/open-side-panel';
+import storyLike from '../../modules/story-like';
 
 let dataReadyHold = null;
 const NOTIFICATION_TIMEOUT = 3000;
@@ -93,5 +94,9 @@ Template.default.helpers({
 Template.default.events({
   'click .side-panel-trigger': function(e, template){
     openSidePanel(e, template);
+  },
+  'click .st-count': function(e){
+      e.preventDefault();
+      storyLike(e);
   }
 });
