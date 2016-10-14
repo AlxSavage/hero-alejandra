@@ -8,14 +8,19 @@
 
     // Story main brief
     .story-brief {
-        .md-and-down ({ .position(absolute; 0; 0; 0; 0; auto; 120vh); });
+        .md-and-down ({ .position(absolute; 0; 0; 0; 0; auto; 80vh); });
         .md-and-up ({ .position(absolute; 0; 0; 0; 0; auto; 120vh); });
         .hero-cover(white; "https://instagram.fmex1-1.fna.fbcdn.net/t51.2885-15/e35/14533713_1678899692437238_7881188898519384064_n.jpg?ig_cache_key=MTM1MDkxNjEyMTAwNzUyMjM1NQ%3D%3D.2"; 0px; -600px;);
         h1 {
             .type-bold();
-            .md-and-down({ .title-over-bg3-mobile(); });
-            .md-and-up({ .title-over-bg3-desktop(); });
-            margin-top: 30vh;
+            .md-and-down({ 
+                margin-top: 0;
+                .title-over-bg3-mobile(); 
+            });
+            .md-and-up({ 
+                margin-top: 30vh;
+                .title-over-bg3-desktop(); 
+            });
             padding: 1rem 0;
             z-index: 2;
         }
