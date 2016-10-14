@@ -2,7 +2,7 @@ let templateTabGroupName = 'storyTabs';
 
 Template.story.onCreated(function() {
   	this.storyId = this.data;
-    Session.setDefault(templateTabGroupName, 'storyStories');
+    Session.setDefault(templateTabGroupName, 'storyStory');
 });
 
 // Comments helpers, we get the {{storyId}} var from the router
