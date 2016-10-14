@@ -5,7 +5,6 @@ Template.header.events({
 	// Opens side menu for followers/following
 	'click header .side-panel-trigger': function(e, template){
 		Session.set('activeMessagesTab', template.$(e.target).closest('.side-panel-trigger').data('panel-tab'));
-		openSidePanel(e, template);
 	},
 	// Search box velocity.js effects
 	'click .header-search': function(e){
