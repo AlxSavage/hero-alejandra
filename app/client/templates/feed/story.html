@@ -1,5 +1,7 @@
 <template name="story">
-	<div class="page-view-story">
+	<div class="page-view-story {{activeTabClass}}">
+
+
 		<div class="story-brief layout vertical center-center">
 			<div class="hero-overlay-down-up"></div>
 				<h1>THE SHOP KEEPER</h1>
@@ -9,6 +11,29 @@
 					<img src="https://s-media-cache-ak0.pinimg.com/236x/81/63/e4/8163e4d1615e6bd3a130cd50a786f14e.jpg" title="Author"> By Jack Kerouac | Oct 17th 2016
 				</div>
 		</div>
+
+		<div class="story-tab-container layout vertical" >
+		  	<div class="btns-group story-tabs">
+		    	<a data-tab-template="storyStory" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'storyStory'}}active{{else}}no-state{{/if}}">Story</a>
+		    	<a data-tab-template="storyItinerary" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'storyItinerary'}}active{{else}}no-state{{/if}}">Itinerary</a>
+			</div>
+			<div class="flex">
+				{{>activeTab tabKey=tabKey}}
+			</div>
+		</div>
+
 	</div>
 
+	{{>navTabs}}
+
+</template>
+
+
+<template name="storyStory">
+	Story story here
+</template>
+
+
+<template name="storyItinerary">
+	Story itinerary here
 </template>
