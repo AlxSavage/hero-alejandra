@@ -34,6 +34,13 @@ Router.route('/messages/:channel', {
   name: 'channel'
 });
 
+Router.route('/feed/:_story', {
+  name: 'story',
+  data: function(){
+    return this.params._story;
+  }
+});
+
 Router.route('/feed/:_story/comments', {
   name: 'comments',
   data: function(){
