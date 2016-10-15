@@ -34,6 +34,10 @@ Router.route('/profile', {
   name: 'profile'
 });
 
+Router.route('/editProfile', {
+  name: 'editProfile'
+});
+
 Router.route('/messages/:channel', {
   name: 'channel'
 });
