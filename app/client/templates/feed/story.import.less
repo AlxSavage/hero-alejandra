@@ -57,5 +57,57 @@
     hr {
       width: 65px;
     }
+}
 
+// Styling for story content
+.story-container {
+    padding: 1rem 0;
+    .lg-and-down ({ .position(relative; 0; 0; 0; 0; 100%; auto); });
+    .lg ({ .position(relative; 0; 0; 0; 0; 900px; auto); });
+    .xs-and-down ({ padding: 0 0 3.3rem; });
+    margin: 5rem auto 0;
+
+    h1 {
+        .type-bold();
+        .font-headline();
+        color: @color-well;
+        text-transform: uppercase;
+        margin: 1rem 0;
+    }
+
+    h2 {
+        .font-semiheadline();
+        .type-semiregular();
+        color: @color-well;
+    }
+
+    p {
+        .font-s3();
+        .type-regular();
+        color: @color-medium-well;
+    }
+
+    figure {
+        margin: 4rem 0;
+        figcaption {
+            .font-s3();
+            .type-regular();
+            color: @color-medium-well;
+            font-style: italic;;
+            margin: 1rem 0;
+            text-align: center;
+        }
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: @color-line;
+      width: 100%;
+      margin: 2rem 0;
+    }
+
+    img {
+        width: 100%;
+    }
 }
