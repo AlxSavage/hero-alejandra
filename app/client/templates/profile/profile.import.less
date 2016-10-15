@@ -20,7 +20,7 @@
         .md-and-up ({ .position(absolute; 0; 0; 0; 0; auto; 70vh); });
         .md-and-down ({ .position(absolute; 0; 0; 0; 0; auto; 62vh); });
         .md-and-up ({ .position(absolute; 0; 0; 0; 0; auto; 70vh); });
-        .hero-cover(white; "https://instagram.fmex1-1.fna.fbcdn.net/t51.2885-15/e35/14718026_323701217996928_670964300696780800_n.jpg?ig_cache_key=MTM2MDUxNDE0NDYyMDczNjQzMQ%3D%3D.2"; 0px; -200px;);
+        .hero-cover(@color-primary; "https://instagram.fmex1-1.fna.fbcdn.net/t51.2885-15/e35/14718026_323701217996928_670964300696780800_n.jpg?ig_cache_key=MTM2MDUxNDE0NDYyMDczNjQzMQ%3D%3D.2"; 0px; -200px;);
         .profile-img {
             .md-and-down({ 
                 height: 5.7rem;
@@ -29,22 +29,22 @@
                 margin: 0.7rem auto 0;
             });
             .md-and-up({ 
-                height: 6rem;
+                height: 7rem;
                 border-radius: 100%;
-                width: 6rem;
+                width: 7rem;
                 margin: 1.7rem auto 0.7rem;
             });
           z-index: 2;
         }
     }
 
-    h1 {
+    .hero-title {
         .type-bold();
         .md-and-down({ .title-over-bg1-mobile(); });
         .md-and-up({ .title-over-bg1-desktop(); });
         z-index: 2;
     }
-    h2 {
+    .hero-subtitle {
         .type-secondary();
         .md-and-down({ .title-over-bg2-mobile(); });
         .md-and-up({ .title-over-bg2-desktop(); });
@@ -76,7 +76,10 @@
                 color: @color-empty;
                 display: block;
                 .md-and-down({ .font-s3(); });
-                .md-and-up({ .font-m1(); });
+                .md-and-up({ 
+                    font-size: 23px;
+                    letter-spacing: 1.5px;
+                });
                 border-bottom: 2px solid transparent;
             }
             &:hover {
@@ -95,7 +98,7 @@
 
     a.edit-profile {
         .md-and-down({ display: none; });
-        .uiButton(rgba(0, 0, 0, 0.2); @color-empty; @color-empty; @color-full; @color-empty; 10rem; 2.2rem; 1.4rem); 
+        .uiButton(rgba(26,28,33,0.3); @color-border; @color-empty; rgba(26,28,33,0.4); @color-empty; 10rem; 2.2rem; 1.4rem);
         line-height: 2.2rem;
         font-size: 0.9rem;
         margin-top: 1.7rem;
@@ -176,5 +179,8 @@
           .type-regular;
           .font-s3;
         }
+    }
+    hr {
+      width: 72px;
     }
 }
