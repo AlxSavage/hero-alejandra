@@ -18,6 +18,10 @@ Router.route('/explore', {
   name: 'explore'
 });
 
+Router.route('/categoryView', {
+  name: 'categoryView'
+});
+
 Router.route('/postFormPlaceholder', {
   name: 'postFormPlaceholder'
 });

@@ -1,10 +1,68 @@
 .page-explore {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: @color-full;
-  
+  .position(absolute, 0,0,auto,0,auto,auto);
+  min-height: 200vh;
+  padding-top: 4.5rem;
+  .md-and-down ({ padding-top: 0; });
+
+  .search-container {
+    position: relative;
+    display: block;
+    margin: 0 1rem;
+    width: 70%;
+
+    .search-input{
+    background: #1a1c21;
+    color: white;
+    text-align: center;
+    margin: 2rem 1rem;
+    }
+  }
+
+  .category-container {
+    .category-group {
+      display: block;
+      margin: 1rem 1rem;
+
+      .group-description {
+        .title {
+            .type-bold();
+            color: white;
+            margin: 1rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+      }
+
+      .group-images {
+        .image-container {
+          min-height: 130px;
+          margin: 0px 5px;
+
+          .image {  
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position-x: center;
+
+          }
+
+          .title {
+            .type-bold();
+            color: white;
+            font-size: 16px;
+            color: white;
+            margin-top: -4.5rem;
+            max-height: 4rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+
   .search-inactive {
     background-color: #424242;
     opacity: 0.6;
@@ -27,10 +85,8 @@
       margin-right: 5px;
   }
 
-  .content-scrollable {
-    top: 100%;
-    margin-top: -1px;
-  }
+
+
 
   .btns-group [class*="btn-"] {
       -webkit-box-flex: 1;
@@ -44,62 +100,6 @@
     margin-left: -90px;
   }
 }
-
-// Collapse end-state
-.page-explore.tab-1,
-.page-explore.tab-2,
-.page-explore.tab-3,
-.page-explore.tab-4,
-.page-explore.tab-5 {
-  .content-scrollable {
-    top: 126px;
-  }
-}
-
-// Collapse animation-specific styles
-@transition-time: 700ms;
-@easing: cubic-bezier(0.175, 0.885, 0.335, 1.05);
-.page-explore {
-  
-
-  .content-scrollable {
-    .transform(translate3d(0,0,0));
-    .transition( all @transition-time @easing );
-    .backface-visibility(hidden);
-
-
-    &.instant { .transition( transform 0, top @transition-time @easing ); }
-    &.delayed { .transition( transform 0 linear @transition-time, top @transition-time @easing); }
-  }
-}
-
-//USE SESSION VALUE TO SET VISIBILITY AND TRANSFORMATION OF SCROLLABLE AREAS
-// Value is set from session var and template helper isActiveClass
-.page-explore.tab-1 {
-  .tab-1-scrollable { .transform(translate3d(0,0,0)); }
-  .tab-2-scrollable { .transform(translate3d(-100%,0,0)); }
-  .tab-3-scrollable { .transform(translate3d(-100%,0,0)); }
-  .tab-4-scrollable { .transform(translate3d(-100%,0,0)); }
-}
-.page-explore.tab-2 {
-  .tab-1-scrollable { .transform(translate3d(-100%,0,0)); }
-  .tab-2-scrollable { .transform(translate3d(0,0,0)); }
-  .tab-3-scrollable { .transform(translate3d(-100%,0,0)); }
-  .tab-4-scrollable { .transform(translate3d(-100%,0,0)); }
-}
-.page-explore.tab-3 {
-  .tab-1-scrollable { .transform(translate3d(-100%,0,0)); }
-  .tab-2-scrollable { .transform(translate3d(-100%,0,0)); }
-  .tab-3-scrollable { .transform(translate3d(0,0,0)); }
-  .tab-4-scrollable { .transform(translate3d(-100%,0,0)); }
-}
-.page-explore.tab-4 {
-  .tab-1-scrollable { .transform(translate3d(-100%,0,0)); }
-  .tab-2-scrollable { .transform(translate3d(-100%,0,0)); }
-  .tab-3-scrollable { .transform(translate3d(-100%,0,0)); }
-  .tab-4-scrollable { .transform(translate3d(0,0,0)); }
-}
-
 
 .explore-nav .nav-tabs{
     display: none;

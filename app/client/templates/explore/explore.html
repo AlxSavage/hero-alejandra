@@ -1,8 +1,53 @@
 <template name="explore">
-	{{>nav title='Explore' black=true}}
-	<div class="page-explore {{activeTabClass}} bg-dark">
-		{{>categories}}
+	<div class="page-explore bg-dark">
+	  {{#if showMobileNav}}
+			<div class="search-container layout horizontal" style="z-index: 1;     min-height: 77px;padding: 1.5rem;">
+				<input type="search" id="mobile-search" class="mobile-search" name="mobilesearch" placeholder="Search...">
+				{{#if activeGlobalSearch}}
+					<a class="js-destroy-search">Cancel</a>
+				{{/if}}
+			</div>
+	  {{/if}}
+		
+		<div class="category-container layout vertical">
+
+			{{#each categories}}
+				{{>categoryGroup this}}
+			{{/each}}
+	
+		</div>
+
 	</div>
 
 	{{>navTabs}}
+</template>
+
+
+<template name="categoryGroup">
+	<div class="category-group layout vertical">
+
+		<div class="group-description layout horizontal">
+			<h4 class="flex-8 title">{{name}}</h4>
+			<a href="{{pathFor 'categoryView'}}" title="See all">See all</a>						
+		</div>
+
+		<div class="group-images layout horizontal">
+				<div class="image-container flex layout vertical">
+					<img src="" style="background-image: url('/img/test3.png')" class="image">
+					<p class="title">{{truncateThirty "THis is an example of a really long title that we need to truncate"}}</p>
+				</div>
+				<div class="image-container flex layout vertical">
+					<img src="" style="background-image: url('/img/test3.png')" class="image">
+					<p class="title">{{truncateThirty "THis is an example of a really long title that we need to truncate"}}</p>
+				</div>
+				<div class="image-container flex layout vertical">
+					<img src="" style="background-image: url('/img/test3.png')" class="image">
+					<p class="title">{{truncateThirty "THis is an example of a really long title that we need to truncate"}}</p>
+				</div>
+				<div class="image-container flex layout vertical">
+					<img src="" style="background-image: url('/img/test3.png')" class="image">
+					<p class="title">{{truncateThirty "THis is an example of a really long title that we need to truncate"}}</p>
+				</div>
+		</div>
+	</div>
 </template>

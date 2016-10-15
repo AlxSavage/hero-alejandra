@@ -1,6 +1,6 @@
 <template name="profile">
 
-		<div class="page-view-profile {{activeTabClass}}">
+		<div class="page-view-profile">
 		  {{#if showMobileNav}}
 				<nav class="transparent-nav">
 				  <div class="nav-group right">
@@ -38,7 +38,7 @@
 					</li>
 				</ul>
 
-			  	<a href="#" data-panel-template="profileEdit" class="side-panel-trigger edit-profile">
+			  	<a href="{{pathFor 'editProfile'}}" data-panel-template="profileEdit" class="edit-profile">
 			  		Edit Profile
 			  	</a>
 

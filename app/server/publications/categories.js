@@ -1,3 +1,10 @@
+Meteor.publish('categoryReactiveQuery', function (query, limit) {
+  Meteor._sleepForMs(1000);
+    console.log(query)
+    return Categories.find({$or: [ {defaultCategory: 1}, {name: query} ]}, {limit: limit});
+
+});
+
 Meteor.publish("search", function(searchValue) {
 	console.log(searchValue);
   if (!searchValue) {
@@ -20,4 +27,12 @@ Meteor.publish("search", function(searchValue) {
       }
     }
   );
+});
+
+Meteor.publish('categories', function(opts){
+  if (opts.limit) {
+    return Categories.find({}, {limit: opts.limit});
+  } else {
+    return [];
+  }
 });

@@ -1,0 +1,31 @@
+<template name="categoryView">
+	<div class="page-categoryview">
+	  {{#if showMobileNav}}
+			{{>nav backAction="js-fakeroute-explore"}}
+		{{else}}
+		<div class="categoryview-brief layout vertical center-center">
+			
+			<div class="categoryview-brief-overlay"></div>
+			
+			<h1>CategoryName</h1>
+		</div>
+		{{/if}}
+		<div class="categoryview-tab-container layout vertical" >
+	  	<div class="btns-group categoryview-tabs">
+	    	<a data-tab-template="categoryTab1" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'categoryTab1'}}active{{else}}no-state{{/if}}">All</a>
+	    	<a data-tab-template="categoryTab2" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'categoryTab2'}}active{{else}}no-state{{/if}}">Do</a>
+	    	<a data-tab-template="categoryTab3" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'categoryTab3'}}active{{else}}no-state{{/if}}">Eat</a>
+	    	<a data-tab-template="categoryTab4" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'categoryTab4'}}active{{else}}no-state{{/if}}">Stay</a>
+			</div>
+			<div class="flex">
+				{{>activeTab tabKey=tabKey}}
+			</div>
+		</div>
+	</div>
+	
+</template>
+
+<template name="categoryTab1"><div style="height: 2000px; width:100%;"><h1>categoryview 1</h1></div></template>
+<template name="categoryTab2"><div style="height: 2000px; width:100%;"><h1>categoryview 2</h1></div></template>
+<template name="categoryTab3"><div style="height: 2000px; width:100%;"><h1>categoryview 3</h1></div></template>
+<template name="categoryTab4"><div style="height: 2000px; width:100%;"><h1>categoryview 4</h1></div></template>
