@@ -10,6 +10,7 @@ let notifications = new Mongo.Collection(null);
 Session.setDefault(IGNORE_CONNECTION_ISSUE_KEY, true);
 Session.setDefault('showMobileNav', false);
 Session.setDefault('showStickyHeader', false);
+Session.setDefault('showUserNav', false);
 
 Meteor.startup(function () {
 	if (Meteor.isClient) {

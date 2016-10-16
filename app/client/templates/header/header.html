@@ -27,9 +27,23 @@
 					<i class="fa fa-bell-o" aria-hidden="true"></i>
 				</div>
 				<div class="header-user">
-					<a href="{{pathFor 'profile' _id=currentUserId}}" class="{{#if currentRoute 'profile'}}active{{else}}inactive{{/if}}">
-						<img src="https://s-media-cache-ak0.pinimg.com/236x/81/63/e4/8163e4d1615e6bd3a130cd50a786f14e.jpg">
-					</a>
+					<img src="https://s-media-cache-ak0.pinimg.com/236x/81/63/e4/8163e4d1615e6bd3a130cd50a786f14e.jpg">
+					<div class="user-menu">
+						<ul>
+							<li>
+								<a href="{{pathFor 'profile' _id=currentUserId}}" class="{{#if currentRoute 'profile'}}active{{else}}inactive{{/if}}">My Profile</a>
+							</li>
+							<li>
+								<a href="#">Settings</a>
+							</li>
+							<li>
+								<a href="#">FAQ</a>
+							</li>
+							<li>
+								<a href="#">Log Out</a>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 

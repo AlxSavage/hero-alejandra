@@ -1,6 +1,4 @@
-import openSidePanel from '../../modules/open-side-panel';
-
-// Header helpers
+// Header events
 Template.header.events({
 	// Opens side menu for followers/following
 	'click header .side-panel-trigger': function(e, template){
@@ -20,6 +18,33 @@ Template.header.events({
 	},
 	'click .js-fakeroute-to-post-form': function (e){
 		Router.go('postFormPlaceholder')
-	}
-});
+	},
+	'click .header-user img': function(e){ // User menu
+		e.preventDefault();
+		Session.set('showUserNav', true);
+		toggleUserMenu($(e.target).next(".user-menu"), "192px");
+	},
+	'blur .user-menu': function(e){
+		if ( Session.get('showUserNav') ) { 
+			Session.set('showUserNav', false);
+			toggleUserMenu($(".user-menu"), "192px"); 
+		}
+	},
+})
 
+// Helper functions 
+
+toggleUserMenu = function($container, newHeight) {
+	var opened = Session.get('showUserNav');
+	$container.velocity({
+	 height: opened ? newHeight : "0",
+	 opacity: opened ? 1 : 0,
+	}, {
+	 duration: 1000,
+	 easing: "easeOutCirc",
+	 complete: function() {
+	 	$container.find("ul").velocity({ opacity: opened ? 1 : 0 });
+	 }
+	});
+	$container.find("a:first").focus();
+};

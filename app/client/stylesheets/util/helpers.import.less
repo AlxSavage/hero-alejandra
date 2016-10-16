@@ -30,3 +30,10 @@
     background-image: -ms-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
     background-image: linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
 }
+
+/* Cross-browser shadow mixin */
+.shadow (@settings) {
+    -webkit-box-shadow: @settings;
+    -moz-box-shadow:    @settings;
+    box-shadow:         @settings;
+}

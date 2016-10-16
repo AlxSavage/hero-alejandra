@@ -18,6 +18,8 @@ Template.stickyHeader.onRendered(function() {
 	    .velocity("transition.slideUpOut", {
 	      duration: 300,
 	      complete: function() {
+	      	$(".user-menu").css({ top: '-15rem', opacity: 0 });
+	      	Session.set('showUserNav', false);
 	        $node.remove();
 	      }
 	    });
