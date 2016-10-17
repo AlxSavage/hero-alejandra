@@ -1,0 +1,29 @@
+<template name="inbox">
+	<h3><i class="fa fa-times js-close-sidepanel" aria-hidden="true"></i>Inbox</h3>
+	<ul class="notifications-listing">
+	    {{#each message in recentMessages}}
+	        <li>
+	            <!--<a href="/messages/@{{fromUsername message.owner}}">-->
+	            <a href="#" class="inboxMessage side-panel-trigger" data-panel-owner="@{{fromUsername message.owner}}" data-panel-template="channel">
+	                <div class="nt-user">
+	                    <img src="http://cdn0.peopleimages.com/picture/1324707-theres-just-so-many-wonderful-things-to-see-fit_400_400.jpg">
+	                </div>
+	                <div class="nt-info">
+	                    <div class="nt-inbox strong">
+	                        {{#with sendersName message.owner}}
+	                            {{this}}
+	                        {{/with}}
+	                    </div>
+	                    <span class="nt-inbox">
+	                        {{message.message}}
+	                    </span>
+	                    
+	                </div>
+	                <div class="nt-right">
+	                    <span class="nt-date">{{messageTimestamp message.timestamp}}</span>
+	                </div>
+	            </a>
+	        </li>
+	    {{/each}}
+	</ul>
+</template>

@@ -16,14 +16,14 @@
 				<div class="header-search-box">
 					<div class="header-search">
 						<i class="fa fa-search" aria-hidden="true"></i>
-						<input type="search" name="desktop-search" id="desktop-search">
+						
 					</div>
 				</div>
 				<button class="header-create js-fakeroute-to-post-form">Create</button>
-				<div class="header-inbox side-panel-trigger" data-panel-template="userNotifications" data-panel-tab="tab-2">
+				<div class="header-inbox side-panel-trigger" data-panel-template="inbox">
 					<i class="fa fa-envelope-o" aria-hidden="true"></i>
 				</div>
-				<div class="header-notifications side-panel-trigger" data-panel-template="userNotifications" data-panel-tab="tab-1">
+				<div class="header-notifications side-panel-trigger" data-panel-template="activity">
 					<i class="fa fa-bell-o" aria-hidden="true"></i>
 				</div>
 				<div class="header-user">
@@ -49,4 +49,10 @@
 
 		</div>
 	</header>
+	{{#if activeGlobalSearch}}
+		<div class="search-container layout horizontal" style="padding: 1rem 5rem;">
+				<input type="search" name="desktop-search" id="desktop-search" placeholder="Search...">
+				<a class="js-destroy-search">Cancel</a>
+		</div>	
+	{{/if}}
 </template>

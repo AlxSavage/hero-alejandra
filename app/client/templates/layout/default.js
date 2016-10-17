@@ -13,9 +13,9 @@ Session.setDefault('showStickyHeader', false);
 Session.setDefault('showUserNav', false);
 
 Meteor.startup(function () {
-	if (Meteor.isClient) {
-	  dataReadyHold = LaunchScreen.hold();
-	}
+  if (Meteor.isClient) {
+    dataReadyHold = LaunchScreen.hold();
+  }
   // Only show the connection error box if it has been 3 seconds since
   // the app started
   setTimeout(function () {
@@ -25,13 +25,13 @@ Meteor.startup(function () {
 });
 
 Template.default.onCreated(function() {
-	this.addNotification = function(notification) {
-		let id = notifications.insert(notification);
+  this.addNotification = function(notification) {
+    let id = notifications.insert(notification);
 
-		Meteor.setTimeout(function() {
-		  notifications.remove(id);
-		}, NOTIFICATION_TIMEOUT);
-	};
+    Meteor.setTimeout(function() {
+      notifications.remove(id);
+    }, NOTIFICATION_TIMEOUT);
+  };
   
 
   this.scrollPosition = new ReactiveVar(0);

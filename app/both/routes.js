@@ -18,6 +18,10 @@ Router.route('/explore', {
   name: 'explore'
 });
 
+Router.route('/categoryView', {
+  name: 'categoryView'
+});
+
 Router.route('/postFormPlaceholder', {
   name: 'postFormPlaceholder'
 });
@@ -28,6 +32,10 @@ Router.route('/user-notifications', {
 
 Router.route('/profile', {
   name: 'profile'
+});
+
+Router.route('/editProfile', {
+  name: 'editProfile'
 });
 
 Router.route('/messages/:channel', {

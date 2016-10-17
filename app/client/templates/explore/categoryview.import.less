@@ -1,5 +1,4 @@
-// Profile content
-.page-view-profile {
+.page-categoryview {
     position: absolute;
     top: 0;
     left: 0;
@@ -15,13 +14,32 @@
         //-webkit-text-stroke: 1px #fff;
     }
     // Profile main brief
-    .profile-brief {
-        .md-and-down ({ .position(absolute; 0; 0; 0; 0; auto; 62vh); });
+    .categoryview-brief {
+        .md-and-down ({ .position(absolute; 0; 0; 0; 0; auto; 50vh); });
         .md-and-up ({ .position(absolute; 0; 0; 0; 0; auto; 70vh); });
-        .md-and-down ({ .position(absolute; 0; 0; 0; 0; auto; 62vh); });
-        .md-and-up ({ .position(absolute; 0; 0; 0; 0; auto; 70vh); });
-        .hero-cover(@color-primary; "https://instagram.fmex1-1.fna.fbcdn.net/t51.2885-15/e35/14718026_323701217996928_670964300696780800_n.jpg?ig_cache_key=MTM2MDUxNDE0NDYyMDczNjQzMQ%3D%3D.2"; 0px; -200px;);
-        .profile-img {
+        background: white;
+        background-image: url("https://instagram.fmex1-1.fna.fbcdn.net/t51.2885-15/e35/14280355_978687815589972_1061713616_n.jpg?ig_cache_key=MTMzMzYyODczMTUwMzMyMTAwMw%3D%3D.2");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;  
+        color: @color-empty;
+        text-align: center;
+        overflow: hidden;
+        .md-and-down({ background-position: top center; });
+        .md-and-up({ background-position: 0px -200px; });
+        // Profile gradient background
+        .categoryview-brief-overlay {
+          .md-and-down ({
+            .position(absolute; 0; 0; 0; 0; 100%; 100%);
+            .overlay-gradient(bottom, 0.5);
+          });
+          .md-and-up ({
+            .position(absolute; 0; 0; 0; 0; 100%; 50%);
+            .overlay-gradient(bottom, 0.75);
+          });
+          z-index: 1;
+        }
+        .categoryview-img {
             .md-and-down({ 
                 height: 5.7rem;
                 border-radius: 100%;
@@ -29,22 +47,28 @@
                 margin: 0.7rem auto 0;
             });
             .md-and-up({ 
-                height: 7rem;
+                height: 6rem;
                 border-radius: 100%;
-                width: 7rem;
+                width: 6rem;
                 margin: 1.7rem auto 0.7rem;
             });
           z-index: 2;
         }
+        hr{
+          width: 3.2rem;
+          border: 0;
+          height: 1px;
+          background: @color-empty;
+        }
     }
 
-    .hero-title {
+    h1 {
         .type-bold();
         .md-and-down({ .title-over-bg1-mobile(); });
         .md-and-up({ .title-over-bg1-desktop(); });
         z-index: 2;
     }
-    .hero-subtitle {
+    h2 {
         .type-secondary();
         .md-and-down({ .title-over-bg2-mobile(); });
         .md-and-up({ .title-over-bg2-desktop(); });
@@ -76,10 +100,7 @@
                 color: @color-empty;
                 display: block;
                 .md-and-down({ .font-s3(); });
-                .md-and-up({ 
-                    font-size: 23px;
-                    letter-spacing: 1.5px;
-                });
+                .md-and-up({ .font-m1(); });
                 border-bottom: 2px solid transparent;
             }
             &:hover {
@@ -96,9 +117,9 @@
         }
     }
 
-    a.edit-profile {
+    a.edit-categoryview {
         .md-and-down({ display: none; });
-        .uiButton(rgba(26,28,33,0.3); @color-border; @color-empty; rgba(26,28,33,0.4); @color-empty; 10rem; 2.2rem; 1.4rem);
+        .uiButton(rgba(0, 0, 0, 0.2); @color-empty; @color-empty; @color-full; @color-empty; 10rem; 2.2rem; 1.4rem); 
         line-height: 2.2rem;
         font-size: 0.9rem;
         margin-top: 1.7rem;
@@ -145,16 +166,12 @@
             width: 1.2rem;
         }
     }
-    .profile-tab-container {
+    .categoryview-tab-container {
         .md-and-down ({ margin-top: 50vh; });
         .md-and-up ({ margin-top: 70vh; });
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;        
         overflow-y: scroll;
     }
-    .profile-tabs [class*="btn-"] {
+    .categoryview-tabs [class*="btn-"] {
         display: inline-block;
         float: left;
         -webkit-box-flex: 0.25;
@@ -170,7 +187,7 @@
         text-transform: uppercase;
     }
 
-    .profile-list-item {
+    .categoryview-list-item {
         display: block; 
         min-height: 180px;
         .title {
@@ -183,8 +200,5 @@
           .type-regular;
           .font-s3;
         }
-    }
-    hr {
-      width: 72px;
     }
 }

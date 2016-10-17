@@ -1,5 +1,5 @@
-Template.navTabs.setTab = function(tab) {
-};
+
+// Todo, move to session var, configure routing if session var set
 Template.navTabs.onCreated(function() {
   this.navTabSelection = new ReactiveVar(null);
 })

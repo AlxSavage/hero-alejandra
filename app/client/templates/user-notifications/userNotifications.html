@@ -1,137 +1,17 @@
 <template name="userNotifications">
     {{>nav title='Notifications' black=true}}
-    <div class="page-user-notifications {{activeTab}}">
+    <div class="page-user-notifications">
 
-        <div class="btns-group messages-tabs layout horizontal scroll">
-            <a class="btn-tertiary {{#if isActiveTab 'tab-1'}}active{{else}}no-state{{/if}} js-show-tab-1">Activity</a>
-            <a class="btn-tertiary {{#if isActiveTab 'tab-2'}}active{{else}}no-state{{/if}} js-show-tab-2">Inbox</a>
-        </div>
-
-        <!-- Activity (Temporary templating placeholder info) -->
-        <div class="content-scrollable static-nav tab-1-scrollable">
-            <h3><i class="fa fa-times js-close-sidepanel" aria-hidden="true"></i>Notifications</h3>
-            <ul class="notifications-listing">
-                <li>
-                    <a href="#">
-                        <div class="nt-user">
-                            <img src="http://cdn0.peopleimages.com/picture/1324707-theres-just-so-many-wonderful-things-to-see-fit_400_400.jpg">
-                        </div>
-                        <div class="nt-info">
-                            <div class="nt-about"><span class="strong">K Jones</span> commented on your trip to india</div>
-                            <span class="nt-message">That trip looks amazing!!! I want to go!!!</span>
-                            <span class="nt-date">1 day ago</span>
-                        </div>
-                        <div class="nt-right">
-                            <img src="https://instagram.fmex1-1.fna.fbcdn.net/t51.2885-15/e35/14099495_280352162347971_1030285355_n.jpg?ig_cache_key=MTMyMTczOTA4ODgyMzE5Nzg0NA%3D%3D.2">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="nt-user">
-                            <img src="http://cdn0.peopleimages.com/picture/1324707-theres-just-so-many-wonderful-things-to-see-fit_400_400.jpg">
-                        </div>
-                        <div class="nt-info">
-                            <div class="nt-about"><span class="strong">K Jones</span> is now following you.</div>
-                            <span class="nt-date">1 day ago</span>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="nt-user">
-                            <img src="http://cdn2.peopleimages.com/picture/374705-exploring-an-aquatic-paradise-together-fit_400_400.jpg">
-                        </div>
-                        <div class="nt-info">
-                            <div class="nt-about"><span class="strong">B Smith</span> likes your trip</div>
-                            <span class="nt-date">Mar 31</span>
-                        </div>
-                        <div class="nt-right">
-                            <img src="http://cdn1.peopleimages.com/picture/1231404-vacation-memories-that-will-last-a-lifetime-fit_400_400.jpg">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="nt-user">
-                            <img src="http://cdn0.peopleimages.com/picture/1256331-leave-nothing-but-footprints-take-nothing-but-pictures-fit_400_400.jpg">
-                        </div>
-                        <div class="nt-info">
-                            <div class="nt-about"><span class="strong">You</span> earned <span class="strong">1000 points</span> for creating a trip. Keep up the good work!!</div>
-                            <span class="nt-date">Feb 2</span>
-                        </div>
-                        <div class="nt-right">
-                            <img src="https://instagram.fmex1-1.fna.fbcdn.net/t51.2885-15/e35/14099495_280352162347971_1030285355_n.jpg?ig_cache_key=MTMyMTczOTA4ODgyMzE5Nzg0NA%3D%3D.2">
-                        </div>
-                    </a>
-                </li>
-            </ul>
-
-        </div>
- 
-
-        <!-- Inbox -->
-        <div class="content-scrollable static-nav tab-2-scrollable">
-            <h3><i class="fa fa-times js-close-sidepanel" aria-hidden="true"></i>Inbox</h3>
-            <!--        
-            # TODO/REMOVE: Are channels gonna be included?
-            <h5>Channels</h5>
-            <ul>
-            {{#each channel in channels}}
-                <li class="{{currentChannel channel.name}}">
-                    <a href="/messages/{{channel.name}}">
-                        #{{channel.name}}
-                    </a>
-                </li>
-            {{/each}} 
-            </ul>
-            -->
-
-            <!--
-            # TODO/REMOVE: Should we show all users available for direct messaging?
-            # or add a new message that calls possible users?
-            <h5>Direct Messages</h5>
-            <ul>
-                {{#each user in users}}
-                    <li class="">
-                        <a href="/messages/@{{user.username}}">
-                            {{user.username}}
-                        </a>
-                    </li>
-                {{/each}}
-            </ul>
-            -->
-
-            <ul class="notifications-listing">
-                {{#each message in recentMessages}}
-                    <li>
-                        <!--<a href="/messages/@{{fromUsername message.owner}}">-->
-                        <a href="#" class="inboxMessage side-panel-trigger" data-panel-owner="@{{fromUsername message.owner}}" data-panel-template="channel">
-                            <div class="nt-user">
-                                <img src="http://cdn0.peopleimages.com/picture/1324707-theres-just-so-many-wonderful-things-to-see-fit_400_400.jpg">
-                            </div>
-                            <div class="nt-info">
-                                <div class="nt-inbox strong">
-                                    {{#with sendersName message.owner}}
-                                        {{this}}
-                                    {{/with}}
-                                </div>
-                                <span class="nt-inbox">
-                                    {{message.message}}
-                                </span>
-                                
-                            </div>
-                            <div class="nt-right">
-                                <span class="nt-date">{{messageTimestamp message.timestamp}}</span>
-                            </div>
-                        </a>
-                    </li>
-                {{/each}}
-            </ul>
+        <div class="notifications-tab-container layout vertical" >
+            <div class="btns-group notifications-tabs">
+                <a data-tab-template="activity" class="btn-tertiary js-tab-trigger flex {{#if isActiveTab 'activity'}}active{{else}}no-state{{/if}}">Activity</a>
+                <a data-tab-template="inbox" class="btn-tertiary js-tab-trigger flex {{#if isActiveTab 'inbox'}}active{{else}}no-state{{/if}}">Inbox</a>
+            </div>
+            <div class="flex">
+                {{>activeTab tabKey=tabKey}}
+            </div>            
         </div>
     </div>
 
-    <div class="mobile-nav"> 
-        {{>navTabs}}
-    </div>
+    {{>navTabs}}
 </template>

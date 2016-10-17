@@ -1,72 +1,72 @@
 import openSidePanel from '../../modules/open-side-panel';
 
-Session.set('activeMessagesTab', 'tab-1');
+let templateTabGroupName = 'userNotificationsTabs';
+
 
 Template.userNotifications.onCreated(function() {
-    Meteor.subscribe( 'userMessageChannels');
-    Meteor.subscribe( 'recentMessages');
+    Session.setDefault(templateTabGroupName, 'activity');
 });
 
 Template.userNotifications.helpers({
-    activeTab() {
-        let bool = Session.get('activeMessagesTab');
-        return bool;
+    isActiveTab: function(name) {
+        return Session.equals(templateTabGroupName, name);
     },
-    isActiveTab(name) {
-        let equals = Session.equals('activeMessagesTab', name);
-        return equals;
+    activeTabName: function() {
+        return Session.get(templateTabGroupName);
     },
-    currentChannel( name ) {
-        let current = Router.current().params.channel;
-        if ( current ) {
-            return current === name || current === `@${ name }` ? 'active' : false;
-        }
+    tabKey: function() {
+        return templateTabGroupName;
     },
-    channels() {
-        let channels = Channels.find();
-        if ( channels ) {
-            return channels;
-        }
-    },
-    users() {
-        let users = Meteor.users.find( { _id: { $ne: Meteor.userId() } } );
-        if ( users ) {
-            return users;
-        }
-    },
-    fullName( name ) {
-        if ( name ) {
-            return `${ name.first } ${ name.last }`;
-        }
-    },
-    recentMessages() {
-        let messages = Messages.find({},{sort: {timestamp: -1}});
 
-        if (messages) {
-            return _.uniq(messages.fetch(),'owner');
-        }
-    },
-    fromUsername( userId ) {
-        if ( userId ) {
-            let user = Meteor.users.findOne( userId, { fields: { 'username': 1 } } );
-            return user && user.username ? user.username : null;
-        }
-    },
-    sendersName( userId ) {
-        if ( userId ) {
-            let user = Meteor.users.findOne( userId, { fields: { 'profile.name': 1 } } );
-            return user && user.profile.name.first ? `${ user.profile.name.first } ${ user.profile.name.last }` : `${ user.profile.name}`;
-        }
-    }
+
+
+    // currentChannel( name ) {
+    //     let current = Router.current().params.channel;
+    //     if ( current ) {
+    //         return current === name || current === `@${ name }` ? 'active' : false;
+    //     }
+    // },
+    // channels() {
+    //     let channels = Channels.find();
+    //     if ( channels ) {
+    //         return channels;
+    //     }
+    // },
+    // users() {
+    //     let users = Meteor.users.find( { _id: { $ne: Meteor.userId() } } );
+    //     if ( users ) {
+    //         return users;
+    //     }
+    // },
+    // fullName( name ) {
+    //     if ( name ) {
+    //         return `${ name.first } ${ name.last }`;
+    //     }
+    // },
+    // recentMessages() {
+    //     let messages = Messages.find({},{sort: {timestamp: -1}});
+
+    //     if (messages) {
+    //         return _.uniq(messages.fetch(),'owner');
+    //     }
+    // },
+    // fromUsername( userId ) {
+    //     if ( userId ) {
+    //         let user = Meteor.users.findOne( userId, { fields: { 'username': 1 } } );
+    //         return user && user.username ? user.username : null;
+    //     }
+    // },
+    // sendersName( userId ) {
+    //     if ( userId ) {
+    //         let user = Meteor.users.findOne( userId, { fields: { 'profile.name': 1 } } );
+    //         return user && user.profile.name.first ? `${ user.profile.name.first } ${ user.profile.name.last }` : `${ user.profile.name}`;
+    //     }
+    // }
 });
 
+// we attach the event trigger here instead of the layout so that we can maintain separate session keys
+// for different tabs throughout the application.
 Template.userNotifications.events({
-    'click .js-show-tab-1': function(event, template) {
-        Session.set('activeMessagesTab', 'tab-1');
-    },
-    'click .js-show-tab-2': function(event, template) {
-        Session.set('activeMessagesTab', 'tab-2');
-    },
     'click .inboxMessage': function(event, template) {
         let messageOwner = template.$(event.target).closest('.inboxMessage').data('panel-owner');
         Session.set('chatWith', messageOwner);
@@ -75,6 +75,21 @@ Template.userNotifications.events({
         } else {
             Session.set('activeSidePanel', 'channel');
         }
-    }
-
+    },
+    'click .js-tab-trigger': function(e, template){
+        e.preventDefault();
+        let name = template.$(event.target).closest('.js-tab-trigger').data('tab-template');
+        Session.set(templateTabGroupName, name);
+    },
+  //     'click .inboxMessage': function(event, template) {
+  //         let messageOwner = template.$(event.target).closest('.inboxMessage').data('panel-owner');
+  //         Session.set('chatWith', messageOwner);
+  //         if (Session.get('showMobileNav')) {
+  //             openSidePanel(event, template);
+  //             console.log("mobile version");
+  //         } else {
+  //             Session.set('activeSidePanel', 'channel');
+  //             console.log("show desktop");
+  //         }
+  //     }  
 });
