@@ -46,7 +46,6 @@ Template.profile.events({
   'click .js-tab-trigger': function(e, template){
     e.preventDefault();
     let name = template.$(event.target).closest('.js-tab-trigger').data('tab-template');
-
     Session.set(templateTabGroupName, name);
   }
 });

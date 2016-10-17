@@ -12,11 +12,11 @@
 			{{/if}}
 			<div class="profile-brief layout vertical center-center">
 				
-				<div class="profile-brief-overlay"></div>
+				<div class="hero-overlay-up-down"></div>
 				
-				<h1>MADONE_57</h1>
+				<div class="hero-title">MADONE_57</div>
 				<hr>
-				<h2>On the road</h2>
+				<div class="hero-subtitle">On the road</div>
 
 				<img src="https://s-media-cache-ak0.pinimg.com/236x/81/63/e4/8163e4d1615e6bd3a130cd50a786f14e.jpg" class="profile-img" alt="User">
 				<h2>Jack Kerouac</h2>
@@ -45,7 +45,7 @@
 			  	<div class="user-cont">CONTRIBUTOR</div>
 			</div>
 			<div class="profile-tab-container layout vertical" >
-		  	<div class="btns-group profile-tabs">
+		  	<div class="btns-group-flexless layout horizontal center-center">
 		    	<a data-tab-template="profileStories" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'profileStories'}}active{{else}}no-state{{/if}}">Stories</a>
 		    	<a data-tab-template="profileDrafts" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'profileDrafts'}}active{{else}}no-state{{/if}}">Drafts</a>
 		    	<a data-tab-template="profileItineraries" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'profileItineraries'}}active{{else}}no-state{{/if}}">Itineraries</a>
@@ -58,27 +58,168 @@
 		</div>
 
 	{{>navTabs}}
+
+	
+
 </template>
 
-<template name="profileStories"><div style="height: 2000px; width:100%;">
-	<h1>profile stories</h1>
-</div></template>
+<template name="profileStories">
+
+	<main class="container profile-stories layout horizontal wrap flex justified">
+
+		<div class="story-item">
+			<div class="st-edition layout horizontal wrap flex justified">
+				<div class="st-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+				<div class="st-delete"><i class="fa fa-trash" aria-hidden="true"></i></div>
+			</div>
+			<a class="profile-list-item" href="{{pathFor 'story' _story=123}}"> <!-- temp hard coded story ID for templating-->
+				<div class="st-title">NEW DELHI BELLY</div>
+				<div class="st-desc">behind the veil</div>
+				<div class="st-count" data-liked-viewer="false">
+					<span class="count">22</span>
+					<i class="fa fa-heart" aria-hidden="true"></i>
+					<i class="fa fa-heart shadow" aria-hidden="true"></i>
+				</div>
+				<div class="story-cover"></div>
+			</a>
+		</div>
+
+		<div class="story-item">
+			<div class="st-edition layout horizontal wrap flex justified">
+				<div class="st-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+				<div class="st-delete"><i class="fa fa-trash" aria-hidden="true"></i></div>
+			</div>
+			<a class="profile-list-item" href="{{pathFor 'story' _story=123}}"> <!-- temp hard coded story ID for templating-->
+				<div class="st-title">ROADTRIPPIN THE USA</div>
+				<div class="st-desc">Get hit in the face with color.</div>
+				<div class="st-count" data-liked-viewer="false">
+					<span class="count">22</span>
+					<i class="fa fa-heart" aria-hidden="true"></i>
+					<i class="fa fa-heart shadow" aria-hidden="true"></i>
+				</div>
+				<div class="story-cover"></div>
+			</a>
+		</div>
+
+		<div class="story-item">
+			<div class="st-edition layout horizontal wrap flex justified">
+				<div class="st-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+				<div class="st-delete"><i class="fa fa-trash" aria-hidden="true"></i></div>
+			</div>
+			<a class="profile-list-item" href="{{pathFor 'story' _story=123}}"> <!-- temp hard coded story ID for templating-->
+				<div class="st-title">ROADTRIPPIN THE USA</div>
+				<div class="st-desc">Get hit in the face with color.</div>
+				<div class="st-count" data-liked-viewer="false">
+					<span class="count">22</span>
+					<i class="fa fa-heart" aria-hidden="true"></i>
+					<i class="fa fa-heart shadow" aria-hidden="true"></i>
+				</div>
+				<div class="story-cover"></div>
+			</a>
+		</div>
+
+		<div class="story-item">
+			<div class="st-edition layout horizontal wrap flex justified">
+				<div class="st-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+				<div class="st-delete"><i class="fa fa-trash" aria-hidden="true"></i></div>
+			</div>
+			<a class="profile-list-item" href="{{pathFor 'story' _story=123}}"> <!-- temp hard coded story ID for templating-->
+				<div class="st-title">ROADTRIPPIN THE USA</div>
+				<div class="st-desc">Get hit in the face with color.</div>
+				<div class="st-count" data-liked-viewer="false">
+					<span class="count">22</span>
+					<i class="fa fa-heart" aria-hidden="true"></i>
+					<i class="fa fa-heart shadow" aria-hidden="true"></i>
+				</div>
+				<div class="story-cover"></div>
+			</a>
+		</div>
+
+		<div class="story-item">
+			<div class="st-edition layout horizontal wrap flex justified">
+				<div class="st-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+				<div class="st-delete"><i class="fa fa-trash" aria-hidden="true"></i></div>
+			</div>
+			<a class="profile-list-item" href="{{pathFor 'story' _story=123}}"> <!-- temp hard coded story ID for templating-->
+				<div class="st-title">ROADTRIPPIN THE USA</div>
+				<div class="st-desc">Get hit in the face with color.</div>
+				<div class="st-count" data-liked-viewer="false">
+					<span class="count">22</span>
+					<i class="fa fa-heart" aria-hidden="true"></i>
+					<i class="fa fa-heart shadow" aria-hidden="true"></i>
+				</div>
+				<div class="story-cover"></div>
+			</a>
+		</div>
+
+		<div class="story-item">
+			<div class="st-edition layout horizontal wrap flex justified">
+				<div class="st-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+				<div class="st-delete"><i class="fa fa-trash" aria-hidden="true"></i></div>
+			</div>
+			<a class="profile-list-item" href="{{pathFor 'story' _story=123}}"> <!-- temp hard coded story ID for templating-->
+				<div class="st-title">ROADTRIPPIN THE USA</div>
+				<div class="st-desc">Get hit in the face with color.</div>
+				<div class="st-count" data-liked-viewer="false">
+					<span class="count">22</span>
+					<i class="fa fa-heart" aria-hidden="true"></i>
+					<i class="fa fa-heart shadow" aria-hidden="true"></i>
+				</div>
+				<div class="story-cover"></div>
+			</a>
+		</div>
+
+		<div class="story-item">
+			<div class="st-edition layout horizontal wrap flex justified">
+				<div class="st-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+				<div class="st-delete"><i class="fa fa-trash" aria-hidden="true"></i></div>
+			</div>
+			<a class="profile-list-item" href="{{pathFor 'story' _story=123}}"> <!-- temp hard coded story ID for templating-->
+				<div class="st-title">ROADTRIPPIN THE USA</div>
+				<div class="st-desc">Get hit in the face with color.</div>
+				<div class="st-count" data-liked-viewer="false">
+					<span class="count">22</span>
+					<i class="fa fa-heart" aria-hidden="true"></i>
+					<i class="fa fa-heart shadow" aria-hidden="true"></i>
+				</div>
+				<div class="story-cover"></div>
+			</a>
+		</div>
+
+		<div class="story-item">
+			<div class="st-edition layout horizontal wrap flex justified">
+				<div class="st-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+				<div class="st-delete"><i class="fa fa-trash" aria-hidden="true"></i></div>
+			</div>
+			<a class="profile-list-item" href="{{pathFor 'story' _story=123}}"> <!-- temp hard coded story ID for templating-->
+				<div class="st-title">ROADTRIPPIN THE USA</div>
+				<div class="st-desc">Get hit in the face with color.</div>
+				<div class="st-count" data-liked-viewer="false">
+					<span class="count">22</span>
+					<i class="fa fa-heart" aria-hidden="true"></i>
+					<i class="fa fa-heart shadow" aria-hidden="true"></i>
+				</div>
+				<div class="story-cover"></div>
+			</a>
+		</div>
+
+<!-- 		<a class="profile-list-item" href="#">
+			{{#with post}}
+			<span class="">
+				<span class="title">{{title}}</span>
+				<span class="desc">{{description}}</span>
+			</span>
+			{{> coverImage id=coverImage}}
+			{{/with}}
+		</a>
+ -->	
+	</main>
+</template>
+
 <template name="profileDrafts"><h1>profileDrafts</h1></template>
 <template name="profileItineraries"><h1>profileItineraries</h1></template>
 <template name="profileBoards"><h1>profileBoards</h1></template>
 
-
-<template name="postItem">
-  <a class="profile-list-item" href="">
-    {{#with post}}
-      <span class="">
-        <span class="title">{{title}}</span>
-        <span class="desc">{{description}}</span>
-      </span>
-      {{> coverImage id=coverImage}}
-    {{/with}}
-  </a>
-</template>
 
 <template name="coverImage">
 	<!-- {{#with imageFile.with}} -->

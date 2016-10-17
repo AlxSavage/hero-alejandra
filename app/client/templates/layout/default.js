@@ -1,4 +1,5 @@
 import openSidePanel from '../../modules/open-side-panel';
+import storyLike from '../../modules/story-like';
 
 let dataReadyHold = null;
 const NOTIFICATION_TIMEOUT = 3000;
@@ -9,6 +10,7 @@ let notifications = new Mongo.Collection(null);
 Session.setDefault(IGNORE_CONNECTION_ISSUE_KEY, true);
 Session.setDefault('showMobileNav', false);
 Session.setDefault('showStickyHeader', false);
+Session.setDefault('showUserNav', false);
 
 Meteor.startup(function () {
   if (Meteor.isClient) {
@@ -93,5 +95,9 @@ Template.default.helpers({
 Template.default.events({
   'click .side-panel-trigger': function(e, template){
     openSidePanel(e, template);
+  },
+  'click .st-count': function(e){
+      e.preventDefault();
+      storyLike(e);
   }
 });

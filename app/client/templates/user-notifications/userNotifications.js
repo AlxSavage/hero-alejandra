@@ -67,12 +67,20 @@ Template.userNotifications.helpers({
 // we attach the event trigger here instead of the layout so that we can maintain separate session keys
 // for different tabs throughout the application.
 Template.userNotifications.events({
-  'click .js-tab-trigger': function(e, template){
-    e.preventDefault();
-    let name = template.$(event.target).closest('.js-tab-trigger').data('tab-template');
-
-    Session.set(templateTabGroupName, name);
-  },
+    'click .inboxMessage': function(event, template) {
+        let messageOwner = template.$(event.target).closest('.inboxMessage').data('panel-owner');
+        Session.set('chatWith', messageOwner);
+        if (Session.get('showMobileNav')) {
+            openSidePanel(event, template);
+        } else {
+            Session.set('activeSidePanel', 'channel');
+        }
+    },
+    'click .js-tab-trigger': function(e, template){
+        e.preventDefault();
+        let name = template.$(event.target).closest('.js-tab-trigger').data('tab-template');
+        Session.set(templateTabGroupName, name);
+    },
   //     'click .inboxMessage': function(event, template) {
   //         let messageOwner = template.$(event.target).closest('.inboxMessage').data('panel-owner');
   //         Session.set('chatWith', messageOwner);
