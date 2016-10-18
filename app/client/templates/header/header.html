@@ -34,13 +34,13 @@
 								<a href="{{pathFor 'profile' _id=currentUserId}}" class="{{#if currentRoute 'profile'}}active{{else}}inactive{{/if}}">My Profile</a>
 							</li>
 							<li>
-								<a href="#">Settings</a>
+								<a href="#" class="side-panel-trigger" data-panel-template="profileSettings">Settings</a>
 							</li>
 							<li>
-								<a href="#">FAQ</a>
+								<a href="{{pathFor 'faq'}}">FAQ</a>
 							</li>
 							<li>
-								<a href="#">Log Out</a>
+								<a href="#" class="js-force-logout"> Log Out</a>
 							</li>
 						</ul>
 					</div>

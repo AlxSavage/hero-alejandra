@@ -31,11 +31,14 @@ Template.header.events({
 		Session.set('showUserNav', true);
 		toggleUserMenu($(e.target).next(".user-menu"), "192px");
 	},
-	'blur .user-menu': function(e){
+	'click .user-menu': function(e){
 		if ( Session.get('showUserNav') ) { 
 			Session.set('showUserNav', false);
-			toggleUserMenu($(".user-menu"), "192px"); 
+			toggleUserMenu($(".user-menu"), "0px"); 
 		}
+	},
+	'click .js-force-logout': function (e,template) {
+		AccountsTemplates.logout();
 	}
 })
 
@@ -43,14 +46,14 @@ Template.header.events({
 toggleUserMenu = function($container, newHeight) {
 	var opened = Session.get('showUserNav');
 	$container.velocity({
-		height: opened ? newHeight : "0",
-		opacity: opened ? 1 : 0,
-	}, {
-		duration: 1000,
-		easing: "easeOutCirc",
-		complete: function() {
-			$container.find("ul").velocity({ opacity: opened ? 1 : 0 });
-		}
-	});
-	$container.find("a:first").focus();
+			height: opened ? newHeight : "0",
+			opacity: opened ? 1 : 0,
+		}, {
+			duration: 200,
+			easing: "easeOutCirc",
+			complete: function() {
+				$container.find("ul").velocity({ opacity: opened ? 1 : 0 });
+			}
+		});
+	// $container.find("a:first").focus();
 };
