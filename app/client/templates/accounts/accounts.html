@@ -23,7 +23,7 @@
 </template>
 
 <template name="override-atTitle">
-  <h1 class="title-auth">{{title}}</h1>
+  <div class="at-title">{{title}}</div>
 </template>
 
 <template name="override-atSigninLink">
@@ -72,6 +72,7 @@
 
 <template name="override-atForm">
   <div class="page-accounts layout vertical center-center">
+    {{>atTitle}}        
     {{#if showMessage}}
       {{> atMessage}}
     {{/if}}
