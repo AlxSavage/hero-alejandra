@@ -70,9 +70,11 @@ Router.route('/privacy', {
 Router.route('/terms-of-use', {
   name: 'terms',
 });
+Router.route('/frequently-asked-questions', {
+  name: 'faq'
+});
 
 AccountsTemplates.configure({
-  defaultLayout: 'default',
   showForgotPasswordLink: true,
   sendVerificationEmail: false,
   enablePasswordChange: true,    
@@ -155,6 +157,8 @@ AccountsTemplates.addFields([
 AccountsTemplates.configureRoute('signIn', {
   name: 'login',
   path: '/login',
+  layoutTemplate: 'accountsLayout',
+  redirect: 'feed'
 });
 AccountsTemplates.configureRoute('signUp', {
   name: 'register',
@@ -174,5 +178,5 @@ var makeSureLoggedIn = function() {
 }
 
 Router.onBeforeAction(makeSureLoggedIn, {
-  except: ['explore', 'login', 'register']
+  except: ['explore', 'login', 'register', 'privacy', 'terms', 'faq']
 });
