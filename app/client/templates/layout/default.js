@@ -1,3 +1,6 @@
+import openSidePanel from '../../modules/open-side-panel';
+import storyLike from '../../modules/story-like';
+
 let dataReadyHold = null;
 const NOTIFICATION_TIMEOUT = 3000;
 const IGNORE_CONNECTION_ISSUE_KEY = 'ignoreConnectionIssue';
@@ -7,11 +10,12 @@ let notifications = new Mongo.Collection(null);
 Session.setDefault(IGNORE_CONNECTION_ISSUE_KEY, true);
 Session.setDefault('showMobileNav', false);
 Session.setDefault('showStickyHeader', false);
+Session.setDefault('showUserNav', false);
 
 Meteor.startup(function () {
-	if (Meteor.isClient) {
-	  dataReadyHold = LaunchScreen.hold();
-	}
+  if (Meteor.isClient) {
+    dataReadyHold = LaunchScreen.hold();
+  }
   // Only show the connection error box if it has been 3 seconds since
   // the app started
   setTimeout(function () {
@@ -21,13 +25,13 @@ Meteor.startup(function () {
 });
 
 Template.default.onCreated(function() {
-	this.addNotification = function(notification) {
-		let id = notifications.insert(notification);
+  this.addNotification = function(notification) {
+    let id = notifications.insert(notification);
 
-		Meteor.setTimeout(function() {
-		  notifications.remove(id);
-		}, NOTIFICATION_TIMEOUT);
-	};
+    Meteor.setTimeout(function() {
+      notifications.remove(id);
+    }, NOTIFICATION_TIMEOUT);
+  };
   
 
   this.scrollPosition = new ReactiveVar(0);
@@ -85,5 +89,15 @@ Template.default.helpers({
   },  
   notifications: function() {
     return notifications.find();
+  }
+});
+
+Template.default.events({
+  'click .side-panel-trigger': function(e, template){
+    openSidePanel(e, template);
+  },
+  'click .st-count': function(e){
+      e.preventDefault();
+      storyLike(e);
   }
 });

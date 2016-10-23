@@ -18,6 +18,10 @@ Router.route('/explore', {
   name: 'explore'
 });
 
+Router.route('/categoryView', {
+  name: 'categoryView'
+});
+
 Router.route('/postFormPlaceholder', {
   name: 'postFormPlaceholder'
 });
@@ -30,8 +34,19 @@ Router.route('/profile', {
   name: 'profile'
 });
 
+Router.route('/editProfile', {
+  name: 'editProfile'
+});
+
 Router.route('/messages/:channel', {
   name: 'channel'
+});
+
+Router.route('/feed/:_story', {
+  name: 'story',
+  data: function(){
+    return this.params._story;
+  }
 });
 
 Router.route('/feed/:_story/comments', {
@@ -55,9 +70,11 @@ Router.route('/privacy', {
 Router.route('/terms-of-use', {
   name: 'terms',
 });
+Router.route('/frequently-asked-questions', {
+  name: 'faq'
+});
 
 AccountsTemplates.configure({
-  defaultLayout: 'default',
   showForgotPasswordLink: true,
   sendVerificationEmail: false,
   enablePasswordChange: true,    
@@ -140,6 +157,8 @@ AccountsTemplates.addFields([
 AccountsTemplates.configureRoute('signIn', {
   name: 'login',
   path: '/login',
+  layoutTemplate: 'accountsLayout',
+  redirect: 'feed'
 });
 AccountsTemplates.configureRoute('signUp', {
   name: 'register',
@@ -159,5 +178,5 @@ var makeSureLoggedIn = function() {
 }
 
 Router.onBeforeAction(makeSureLoggedIn, {
-  except: ['explore', 'login', 'register']
+  except: ['explore', 'login', 'register', 'privacy', 'terms', 'faq']
 });

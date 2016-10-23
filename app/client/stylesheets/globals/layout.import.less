@@ -1,48 +1,125 @@
 #outer-body-wrapper {
-  .position(absolute, 0, 0, 0, 0);
-  .transition(all 200ms ease-out);
-  .transform(translate3d(0, 0, 0));
+    .position(absolute, 0, 0, 0, 0);
+    .transition(all 200ms ease-out);
+    .transform(translate3d(0, 0, 0));
 }
 
 .content-scrollable {
-  .position(absolute, 0, 0, 0, 0);
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: none;
+    .position(absolute, 0, 0, 0, 0);
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: none;
 }
 
 // Transparent screen to prevent interactions on content when menu is open
 .content-overlay {
-  .position(absolute, 0, 0, 0, 0);
-  cursor: pointer;
+    .position(absolute, 0, 0, 0, 0);
+    cursor: pointer;
 }
 .overlay {
-  .position(absolute, 0, 0, 0, 0);  
+    .position(absolute, 0, 0, 0, 0);  
+}
+
+// Side panel style
+.side-panel {
+    .position(fixed, 0, 0, auto, auto, 36rem, 100%);
+    .md-and-down ({ width: 100%; });
+    display: block;
+    z-index: 99999;
+    padding: 0;
+    overflow: auto;
+    transform: translateX(100%);
+    background: @color-empty;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+h3 {
+    display: block;
+    .md-and-down ({ display: none; });
+    background: @color-full;
+    width: 100%;
+    height: 4rem;
+    color: @color-empty;
+    .type-black();
+    .font-nav-title();
+    line-height: 4rem;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    .fa{
+       .position(absolute, 1.5rem, 0, 0, 1.5rem, auto, auto); 
+       cursor: pointer;
+       text-align: left;
+    }
+}
+
+/* Hero cover image */
+.hero-cover(@background-color; @background-image; @position-x; @position-y) {
+    background: @background-color;
+    background-image: url(@background-image);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    color: @color-empty;
+    text-align: center;
+    overflow: hidden;
+    .md-and-down({ background-position: top center; });
+    .md-and-up({ background-position: @position-x @position-y });
+    // Hero cover gradient background
+    .hero-overlay-up-down {
+        .md-and-down ({
+            .position(absolute; 0; 0; 0; 0; 100%; 100%);
+            .overlay-gradient(bottom, 0.5);
+        });
+        .md-and-up ({
+            .position(absolute; 0; 0; 0; 0; 100%; 50%);
+            .overlay-gradient(bottom, 0.75);
+        });
+        z-index: 1;
+    }
+    .hero-overlay-down-up {
+        .md-and-down ({
+            .position(absolute; auto; 0; 0; 0; 100%; 66%);
+            .overlay-gradient(bottom, 0.6);
+        });
+        .md-and-up ({
+            .position(absolute; auto; 0; 0; 0; 100%; 66%);
+            .overlay-gradient(top, 0.6);
+        });
+        z-index: 1;
+    }
+    hr {
+      border: 0;
+      height: 1px;
+      background: @color-empty;
+    }
 }
 
 //USE SESSION VALUE TO SET VISIBILITY AND TRANSFORMATION OF SCROLLABLE AREAS
 // Value is set from session var and template helper isActiveClass
 .tab-1 {
-  .tab-1-scrollable { .transform(translate3d(0,0,0)); }
-  .tab-2-scrollable { .transform(translate3d(-100%,0,0)); }
-  .tab-3-scrollable { .transform(translate3d(-100%,0,0)); }
-  .tab-4-scrollable { .transform(translate3d(-100%,0,0)); }
+    .tab-1-scrollable { .transform(translate3d(0,0,0)); }
+    .tab-2-scrollable { .transform(translate3d(-100%,0,0)); }
+    .tab-3-scrollable { .transform(translate3d(-100%,0,0)); }
+    .tab-4-scrollable { .transform(translate3d(-100%,0,0)); }
 }
 .tab-2 {
-  .tab-1-scrollable { .transform(translate3d(-100%,0,0)); }
-  .tab-2-scrollable { .transform(translate3d(0,0,0)); }
-  .tab-3-scrollable { .transform(translate3d(-100%,0,0)); }
-  .tab-4-scrollable { .transform(translate3d(-100%,0,0)); }
+    .tab-1-scrollable { .transform(translate3d(-100%,0,0)); }
+    .tab-2-scrollable { .transform(translate3d(0,0,0)); }
+    .tab-3-scrollable { .transform(translate3d(-100%,0,0)); }
+    .tab-4-scrollable { .transform(translate3d(-100%,0,0)); }
 }
 .tab-3 {
-  .tab-1-scrollable { .transform(translate3d(-100%,0,0)); }
-  .tab-2-scrollable { .transform(translate3d(-100%,0,0)); }
-  .tab-3-scrollable { .transform(translate3d(0,0,0)); }
-  .tab-4-scrollable { .transform(translate3d(-100%,0,0)); }
+    .tab-1-scrollable { .transform(translate3d(-100%,0,0)); }
+    .tab-2-scrollable { .transform(translate3d(-100%,0,0)); }
+    .tab-3-scrollable { .transform(translate3d(0,0,0)); }
+    .tab-4-scrollable { .transform(translate3d(-100%,0,0)); }
 }
 .tab-4 {
-  .tab-1-scrollable { .transform(translate3d(-100%,0,0)); }
-  .tab-2-scrollable { .transform(translate3d(-100%,0,0)); }
-  .tab-3-scrollable { .transform(translate3d(-100%,0,0)); }
-  .tab-4-scrollable { .transform(translate3d(0,0,0)); }
+    .tab-1-scrollable { .transform(translate3d(-100%,0,0)); }
+    .tab-2-scrollable { .transform(translate3d(-100%,0,0)); }
+    .tab-3-scrollable { .transform(translate3d(-100%,0,0)); }
+    .tab-4-scrollable { .transform(translate3d(0,0,0)); }
 }

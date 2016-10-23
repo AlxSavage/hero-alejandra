@@ -96,6 +96,12 @@ UI.registerHelper( 'messageTimestamp', ( timestamp ) => {
   }
 });
 
+UI.registerHelper('truncateThirty', function(string) {
+  if(string)
+    return string.substr(0,30)+ (string.length > 30 ? "..." : "");
+});
+
+
 UI.registerHelper( 'capitalize', ( string ) => {
   if ( string ) {
     return string.charAt( 0 ).toUpperCase() + string.slice( 1 );
@@ -116,4 +122,8 @@ UI.registerHelper( 'parseMarkdown', ( string ) => {
 
 UI.registerHelper( 'currentUserId', () => {
   return Meteor.userId();
+});
+
+UI.registerHelper( 'activeGlobalSearch', () => {
+  return Session.get('activeGlobalSearch');
 });

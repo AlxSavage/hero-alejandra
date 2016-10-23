@@ -1,12 +1,12 @@
 [class^="btn-"],
 [class*=" btn-"] {
   // Sizing
-  .font-s2;
+  .font-btn();
   line-height: 22px !important; //override line-height always so we can use em's to size.
   padding: 1em 1.25em 1em; // 48px tall
 
   // Style
-  .type-black;
+  .type-bold();
   .title-caps;
   .transition( all 100ms ease-in );
   color: @color-empty;
@@ -50,16 +50,17 @@
   &[class*="tertiary"] {
     background-color: @color-raw;
     color: @color-rare;
+    border-bottom: 5px solid transparent;
     &.active {
-      color: @color-medium-rare;
-      border-bottom: 3px solid @color-primary;
+      color: @color-well;
+      border-bottom: 5px solid @color-primary;
     }
   }
   &[class*="darktab"] {
     color:@color-medium;
     &.active {
       color:  @color-rare;
-      border-bottom: 3px solid @color-primary;
+      border-bottom: 5px solid @color-primary;
     }
   }
 
@@ -96,6 +97,15 @@
     .flex(1);
   }
 }
+
+.btns-group-flexless {
+  background: @color-raw;
+  width: 100%;
+  a {
+    margin: 0 0.5rem;
+  }
+}
+
 .explore-tabs {
   background-color: @darktab;
   margin-top: -1px;

@@ -1,7 +1,9 @@
 <template name="default">
-	<div class="header-wrapper">
-		{{> header}}
-	</div>
+	{{#unless showMobileNav}}
+		<div class="header-wrapper">
+			{{> header}}
+		</div>
+	{{/unless}}
 
 
 	{{> stickyHeader}}
@@ -23,5 +25,6 @@
 	  {{/each}}
 	</div>
 	{{> sidePanel}}
+	{{> globalSearch}}
 	{{> overlay}}
 </template>

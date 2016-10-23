@@ -23,24 +23,20 @@
 </template>
 
 <template name="override-atTitle">
-  <h1 class="title-auth">{{title}}</h1>
+  <div class="at-title">{{title}}</div>
 </template>
 
 <template name="override-atSigninLink">
   <div class="at-signin-link">
-    <p>
       Already have an account?
       <a href="{{pathFor 'login'}}" id="at-signIn" class="at-link at-signin">Sign In</a>
-    </p>
   </div>
 </template>
 
 <template name="override-atSignupLink">
   <div class="at-signup-link">
-    <p>
       Don't have an account?
       <a href="{{pathFor 'register'}}" id="at-signUp" class="at-link at-signup">Sign Up</a>
-    </p>
   </div>
 </template>
 
@@ -53,11 +49,10 @@
 </template>
 
 <template name="override-atPwdLink">
-
 </template>
 
 <template name="override-atPwdForm">
-  <div class="at-pwd-form">
+  <div class="at-pwd-form layout horizontal center-center">
     <form role="form" id="at-pwd-form" class="{{disabled}}" novalidate action="#" method="POST">
       {{#each fields}}
         {{> atInput}}
@@ -76,35 +71,31 @@
 
 
 <template name="override-atForm">
-  <div class="page-auth fit">
-    <div class="title">
-      {{>atTitle}}        
-    </div>
-    <div class="subtitle"></div>
+  <div class="page-accounts layout vertical center-center">
+    {{>atTitle}}        
+    {{#if showMessage}}
+      {{> atMessage}}
+    {{/if}}
+    {{#if showError}}
+      {{> atError}}
+    {{/if}}
+    {{#if showPwdForm}}
+      {{> atPwdForm}}
+    {{/if}}
 
-    <div class="layout vertical center flex">
-      {{#if showMessage}}
-        {{> atMessage}}
-      {{/if}}
-      {{#if showError}}
-        {{> atError}}
-      {{/if}}
-      {{#if showPwdForm}}
-        {{> atPwdForm}}
-      {{/if}}
-      {{#if showResult}}
-        {{> atResult}}
-      {{/if}}
-      {{#if showSignInLink}}
-        {{> atSigninLink}}
-      {{/if}}
-      {{#if showForgotPasswordLink}}
-        {{> atPwdLink}}
-      {{/if}}
-      {{#if showSignUpLink}}
-        {{> atSignupLink}}
-      {{/if}}
-      {{> atTermsLink}}
-    </div>
+    {{#if showResult}}
+      {{> atResult}}
+    {{/if}}
+
+    {{#if showSignInLink}}
+      {{> atSigninLink}}
+    {{/if}}
+    {{#if showForgotPasswordLink}}
+      {{> atPwdLink}}
+    {{/if}}
+    {{#if showSignUpLink}}
+      {{> atSignupLink}}
+    {{/if}}
+    {{> atTermsLink}}
   </div>
 </template>

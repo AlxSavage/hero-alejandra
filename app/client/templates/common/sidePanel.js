@@ -13,5 +13,8 @@ Template.sidePanel.events({
 		$(".side-panel").velocity({ translateX: ["100%", 0] }, 300);
 		delete Session.keys['activeSidePanel'];
 		return false;  	
+	},
+	'click .cover, click .js-replace-sidepanel': function(e, template){
+    Session.set('activeMessagesTab', template.$(e.target).data('panel-tab'));
 	}
 });

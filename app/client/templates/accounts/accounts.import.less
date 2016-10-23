@@ -1,22 +1,50 @@
-.page-auth {
+.page-accounts {
   .background-image(
     url('/img/bg/login_blur_800x800.jpg')
   );
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: @color-empty;
   background-position: center;
   background-size: cover;
   color: white;
+  z-index: 99;
 
-  input {
-    color: white!important;
-  }
-
-  .title {
+  .at-title {
+    position: fixed;
+    top: 3em;
     text-align: center;
     .type-bold();
     .font-m1();
-    margin: 3em auto 2em auto;
+    color: white;
+    background: transparent;
+  }
+  .at-pwd-form {
+    display: block;
+    width: 380px;
+    color: white;
   }
 
+  .at-error {
+  }
+
+  .at-signup-link {
+  margin-top: 1rem;
+  }
+
+  .at-signin-link, .at-signup-link, .at-link.at-pwd {
+    margin-top: 1rem;
+  }
+
+  .at-terms-link {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
   .at-field-fulltName {
   display: inline-block;
   width:100%;
@@ -33,25 +61,30 @@
   display: block;
   width:100%;
   }
-  //input:-webkit-autofill {
-  //  -webkit-box-shadow: 0 0 0px 1000px @color-well inset;
-  //}
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px @color-well inset;
+  }
 
-  .at-error {
-  text-transform: none;
-  color: @warning;
-  }
-  .at-signin-link{
-    text-align: center;
-    padding: 20px 20px 10px;
-  }
+
   form {
     text-align: center;
-    min-width: 300px;
     input {
       display: block;
       margin-bottom: 10px;
       width: 100%;
+      color: white;
+    }
+    input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: white;
+    }
+    input::-moz-placeholder { /* Firefox 19+ */
+      color: white;
+    }
+    input:-ms-input-placeholder { /* IE 10+ */
+      color: white;
+    }
+    input:-moz-placeholder { /* Firefox 18- */
+      color: white;
     }
     .has-error {
       span {
@@ -62,38 +95,6 @@
     margin-top: 1rem;
     }
   }
-
-
-
-
-  nav {
-    height: 60px;
-    position: relative;
-    .nav-item {
-        font-size: 12px;
-        .icon {
-        font-size: 18px;
-        }
-    }
-  }  
-
-
-
-  .at-signup-link, .at-signin-link {
-    .font-s2;
-    color: @medium-grey-text-alt;
-
-    @media screen and (min-width: 40em) {
-      bottom: 0;
-      margin-top: 1rem;
-      position: relative;
-    }
-  }  
-  .at-pwd {
-    .font-s2;
-    color: @color-empty;
-    margin-top: 0.5rem;
-  }  
 
   .at-terms-link{
     text-align: center;
@@ -108,10 +109,5 @@
 
       .font-s2;
     }
-  }
-  .at-input {
-    display: inline-block;
-    float: left;
-    width: 50%;
   }
 }

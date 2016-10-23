@@ -132,7 +132,7 @@
 }
 
 .xs-and-down(@rules) {
-  @media @screen and @xxs-high {
+  @media @screen and @xs-high {
     @rules();
   }
 }
@@ -156,6 +156,12 @@
     @rules();
   }
 }
+.lg-and-down(@rules) {
+  @media @screen and @md-high {
+    @rules();
+  }
+}
+
 
 .wider-than(@width, @rules) {
   @media @screen and (min-width: @width) {

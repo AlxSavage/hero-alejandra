@@ -16,22 +16,43 @@
 				<div class="header-search-box">
 					<div class="header-search">
 						<i class="fa fa-search" aria-hidden="true"></i>
-						<input type="search" name="desktop-search" id="desktop-search">
+						
 					</div>
 				</div>
 				<button class="header-create js-fakeroute-to-post-form">Create</button>
-				<div class="header-notifications">
-					<a href="{{pathFor 'userNotifications'}}" class="{{#if currentRoute 'userNotifications'}}active{{else}}inactive{{/if}}">
-						<i class="fa fa-bell-o" aria-hidden="true"></i>
-					</a>
+				<div class="header-inbox side-panel-trigger" data-panel-template="inbox">
+					<i class="fa fa-envelope-o" aria-hidden="true"></i>
+				</div>
+				<div class="header-notifications side-panel-trigger" data-panel-template="activity">
+					<i class="fa fa-bell-o" aria-hidden="true"></i>
 				</div>
 				<div class="header-user">
-					<a href="{{pathFor 'profile' _id=currentUserId}}" class="{{#if currentRoute 'profile'}}active{{else}}inactive{{/if}}">
-						<img src="http://cdn0.peopleimages.com/picture/1324707-theres-just-so-many-wonderful-things-to-see-fit_400_400.jpg">
-					</a>
+					<img src="https://s-media-cache-ak0.pinimg.com/236x/81/63/e4/8163e4d1615e6bd3a130cd50a786f14e.jpg">
+					<div class="user-menu">
+						<ul>
+							<li>
+								<a href="{{pathFor 'profile' _id=currentUserId}}" class="{{#if currentRoute 'profile'}}active{{else}}inactive{{/if}}">My Profile</a>
+							</li>
+							<li>
+								<a href="#" class="side-panel-trigger" data-panel-template="profileSettings">Settings</a>
+							</li>
+							<li>
+								<a href="{{pathFor 'faq'}}">FAQ</a>
+							</li>
+							<li>
+								<a href="#" class="js-force-logout"> Log Out</a>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 
 		</div>
 	</header>
+	{{#if activeGlobalSearch}}
+		<div class="search-container layout horizontal" style="padding: 1rem 5rem;">
+				<input type="search" name="desktop-search" id="desktop-search" placeholder="Search...">
+				<a class="js-destroy-search">Cancel</a>
+		</div>	
+	{{/if}}
 </template>

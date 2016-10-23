@@ -1,5 +1,6 @@
 Template.share.onCreated(function() {
    this.storyId = this.data;
+    Session.setDefault(templateTabGroupName, 'storyStories');
 });
 
 // Share helpers, we get the {{storyId}} var from the router
