@@ -16,10 +16,12 @@
     }
     // Profile main brief
     .profile-brief {
-        .md-and-down ({ .position(absolute; 0; 0; 0; 0; auto; 62vh); });
-        .md-and-up ({ .position(absolute; 0; 0; 0; 0; auto; 70vh); });
-        .md-and-down ({ .position(absolute; 0; 0; 0; 0; auto; 62vh); });
-        .md-and-up ({ .position(absolute; 0; 0; 0; 0; auto; 70vh); });
+        .md-and-down ({ 
+            .position(absolute; 0; 0; 0; 0; auto; 62vh); 
+        });
+        .md-and-up ({ 
+            .position(absolute; 0; 0; 0; 0; auto; 70vh); 
+        });
         .hero-cover(@color-primary; "https://instagram.fmex1-1.fna.fbcdn.net/t51.2885-15/e35/14718026_323701217996928_670964300696780800_n.jpg?ig_cache_key=MTM2MDUxNDE0NDYyMDczNjQzMQ%3D%3D.2"; 0px; -200px;);
         .profile-img {
             .md-and-down({ 
@@ -40,14 +42,22 @@
 
     .hero-title {
         .type-bold();
-        .md-and-down({ .title-over-bg1-mobile(); });
-        .md-and-up({ .title-over-bg1-desktop(); });
+        .md-and-down({ 
+            .title-over-bg1-mobile(); 
+        });
+        .md-and-up({ 
+            .title-over-bg1-desktop(); 
+        });
         z-index: 2;
     }
     .hero-subtitle {
         .type-secondary();
-        .md-and-down({ .title-over-bg2-mobile(); });
-        .md-and-up({ .title-over-bg2-desktop(); });
+        .md-and-down({ 
+            .title-over-bg2-mobile(); 
+        });
+        .md-and-up({ 
+            .title-over-bg2-desktop(); 
+        });
         margin: 0.3rem auto;
         font-style: italic;
         z-index: 2;
@@ -69,13 +79,19 @@
             color: @color-raw;
             vertical-align: middle;
             letter-spacing: 0.08rem;
-            .md-and-down({ .font-s1(); });
-            .md-and-up({ .font-s2(); });
+            .md-and-down({ 
+                .font-s1(); 
+            });
+            .md-and-up({ 
+                .font-s2(); 
+            });
             .type-bold();
             .number {
                 color: @color-empty;
                 display: block;
-                .md-and-down({ .font-s3(); });
+                .md-and-down({ 
+                    .font-s3(); 
+                });
                 .md-and-up({ 
                     font-size: 23px;
                     letter-spacing: 1.5px;
@@ -97,7 +113,9 @@
     }
 
     a.edit-profile {
-        .md-and-down({ display: none; });
+        .md-and-down({ 
+            display: none; 
+        });
         .uiButton(rgba(26,28,33,0.3); @color-border; @color-empty; rgba(26,28,33,0.4); @color-empty; 10rem; 2.2rem; 1.4rem);
         line-height: 2.2rem;
         font-size: 0.9rem;
@@ -146,8 +164,12 @@
         }
     }
     .profile-tab-container {
-        .md-and-down ({ margin-top: 50vh; });
-        .md-and-up ({ margin-top: 70vh; });
+        .md-and-down ({ 
+            margin-top: 50vh; 
+        });
+        .md-and-up ({ 
+            margin-top: 70vh; 
+        });
         position: absolute;
         top: 0;
         right: 0;

@@ -17,7 +17,9 @@
 
 // Header styles
 .header-container{
-	.md-and-down({ display:none; });
+	.md-and-down({ 
+		display:none; 
+	});
 	.header-container{
 		z-index: 1;
 	}
@@ -28,7 +30,9 @@
 	}
 
 	ul.header-nav {
-		.xs({ display:none; });
+		.xs({ 
+			display:none; 
+		});
 	    margin: @header-padding 0;
 	    padding: 0 0 0 2%;
 	    li {
@@ -44,10 +48,10 @@
 	    		font-size: 15px;
 	    		letter-spacing: 1.2px;
 	    		.type-bold();
-					&:hover {
-				    border-bottom: 4px solid @color-empty;
-					}
-					&.active{
+				&:hover {
+			    	border-bottom: 4px solid @color-empty;
+				}
+				&.active{
 				    border-bottom: 4px solid @color-primary;
 				    padding-bottom: 5px;
 	  			}
@@ -97,7 +101,7 @@
 		border-radius: 50%;
 		cursor: pointer;
 		display: block;
-		line-height: @header-element;
+		line-height: 1.9rem;
 		min-width: @header-element;
 		vertical-align: middle;
 		i {
@@ -150,6 +154,6 @@
 		}
 	}
 	.fa {
-		font-size: 1.2rem;
+		font-size: 1.1rem;
 	}
 }
