@@ -59,20 +59,20 @@
         });
         overflow-y: scroll;
     }
-    .categoryview-tabs [class*="btn-"] {
-        display: inline-block;
-        float: left;
-        -webkit-box-flex: 0.25;
-        -moz-box-flex: 0.25;
-        -webkit-flex: 0.25;
-        flex: 0.25;
-        padding: 13px 5px;
-        font-size: 12px;
-        line-height: 12px;
-        font-weight: 400;
-        letter-spacing: 1px;
-        text-indent: 0;
-        text-transform: uppercase;
+
+    // Containers for each category group
+    .container.categoryview-stories {
+        padding: 1rem 0;
+        .lg-and-down ({ 
+            .position(relative; 0; 0; 0; 0; 100%; auto); 
+        });
+        .lg ({ 
+            .position(relative; 0; 0; 0; 0; 85.83%; auto); 
+            padding: 3rem 0 0;
+        });
+        .xs-and-down ({ 
+            padding: 0 0 3.3rem; 
+        });
     }
 
     .categoryview-list-item {

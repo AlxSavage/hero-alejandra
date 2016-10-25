@@ -11,11 +11,11 @@
 		</div>
 		{{/if}}
 		<div class="categoryview-tab-container layout vertical" >
-	  	<div class="btns-group categoryview-tabs">
-	    	<a data-tab-template="categoryTab1" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'categoryTab1'}}active{{else}}no-state{{/if}}">All</a>
-	    	<a data-tab-template="categoryTab2" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'categoryTab2'}}active{{else}}no-state{{/if}}">Do</a>
-	    	<a data-tab-template="categoryTab3" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'categoryTab3'}}active{{else}}no-state{{/if}}">Eat</a>
-	    	<a data-tab-template="categoryTab4" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'categoryTab4'}}active{{else}}no-state{{/if}}">Stay</a>
+		  	<div class="btns-group-flexless layout horizontal center-center">
+		    	<a data-tab-template="categoryTab1" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'categoryTab1'}}active{{else}}no-state{{/if}}">All</a>
+		    	<a data-tab-template="categoryTab2" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'categoryTab2'}}active{{else}}no-state{{/if}}">Do</a>
+		    	<a data-tab-template="categoryTab3" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'categoryTab3'}}active{{else}}no-state{{/if}}">Eat</a>
+		    	<a data-tab-template="categoryTab4" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'categoryTab4'}}active{{else}}no-state{{/if}}">Stay</a>
 			</div>
 			<div class="flex">
 				{{>activeTab tabKey=tabKey}}
@@ -27,7 +27,7 @@
 
 <template name="categoryTab1">
 
-	<div class="container explore-stories layout horizontal wrap justified">
+	<div class="container categoryview-stories layout horizontal wrap justified">
 
 		<!-- temp hard coded story ID for templating-->
 		<div class="story-item" style="background-image: url('https://scontent-dft4-1.cdninstagram.com/t51.2885-15/e35/14676523_1771758936412519_5065848990021451776_n.jpg?ig_cache_key=MTM1NzY5MzQ2ODUyODQ3ODM5NQ%3D%3D.2')">
