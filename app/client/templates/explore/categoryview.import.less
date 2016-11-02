@@ -5,8 +5,19 @@
     right: 0;
     background-color: @color-empty;
 
-    nav.transparent-nav .nav-item {
-        color:@color-well;
+    .transparent-nav {
+        background: @color-well;
+        color: @color-empty;
+        height: 47px;
+        line-height: 47px;
+        position: fixed;
+        vertical-align: middle;
+        .nav-group {
+            left: 10px;
+            .nav-item {
+                line-height: 47px;
+            }
+        }
     }
     .icon {
         opacity: 0.7;
@@ -52,7 +63,17 @@
 
     .categoryview-tab-container {
         .md-and-down ({ 
-            margin-top: 50vh; 
+            background: @color-well;
+            margin-top: 0; 
+            .btns-group-flexless {
+                background: @color-well;
+                position: fixed;
+                top: 47px;
+                z-index: 9;
+            }
+            .categoryview-stories {
+                padding-top: 100px !important;
+            }
         });
         .md-and-up ({ 
             margin-top: 70vh; 
@@ -89,4 +110,5 @@
           .font-s3;
         }
     }
+
 }
