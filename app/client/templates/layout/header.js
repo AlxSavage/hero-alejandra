@@ -37,6 +37,12 @@ Template.header.events({
 			toggleUserMenu($(".user-menu"), "0px"); 
 		}
 	},
+	'blur .user-menu': function(e){
+		if ( Session.get('showUserNav') ) { 
+			Session.set('showUserNav', false);
+			toggleUserMenu($(".user-menu"), "192px"); 
+		}
+	},
 	'click .js-force-logout': function (e,template) {
 		AccountsTemplates.logout();
 	}
@@ -45,6 +51,7 @@ Template.header.events({
 // Helper functions 
 toggleUserMenu = function($container, newHeight) {
 	var opened = Session.get('showUserNav');
+	console.log("toggleUserMenu: ",opened);
 	$container.velocity({
 			height: opened ? newHeight : "0",
 			opacity: opened ? 1 : 0,
@@ -55,5 +62,5 @@ toggleUserMenu = function($container, newHeight) {
 				$container.find("ul").velocity({ opacity: opened ? 1 : 0 });
 			}
 		});
-	// $container.find("a:first").focus();
+	$container.find("a:first").focus();
 };
