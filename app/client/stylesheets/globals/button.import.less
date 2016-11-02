@@ -117,3 +117,33 @@
 .action-nav-container {
   //.position(absolute, auto, 0, 0, 0, auto, auto);
 }
+
+// Styles for mobile category
+// TODO: Are all tertiary buttons like this?
+
+.categoryview-tab-container {
+  .md-and-down ({ 
+    [class^="btn-"],
+    [class*=" btn-"] {
+      &[class*="tertiary"] {
+        .font-btn-mobile();
+        .type-bold();
+        background-color: @color-well;
+        color: @color-rare;
+        border-bottom: 5px solid transparent;
+        &.active {
+          border-bottom: 5px solid @color-primary;
+        }
+      }
+    }
+  });
+}
+
+.page-view-story {
+  .md-and-down ({ 
+    [class^="btn-"] {
+      .type-bold();
+      .font-btn-mobile();
+    }
+  });
+}

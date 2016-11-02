@@ -1,53 +1,102 @@
 <template name="explore">
-	<div class="page-explore bg-dark">
-	  {{#if showMobileNav}}
-			<div class="search-container layout horizontal" style="z-index: 1;     min-height: 77px;padding: 1.5rem;">
-				<input type="search" id="mobile-search" class="mobile-search" name="mobilesearch" placeholder="Search...">
-				{{#if activeGlobalSearch}}
-					<a class="js-destroy-search">Cancel</a>
-				{{/if}}
+
+	<div class="page-explore">
+		{{#if showMobileNav}}
+		<div class="search-container">
+			<input type="search" id="mobile-search" class="mobile-search" name="mobilesearch" placeholder="&#xF002; Search">
+			{{#if activeGlobalSearch}}
+			<a class="js-destroy-search">Cancel</a>
+			{{/if}}
+		</div>
+		{{/if}}
+
+		<div class="explore-brief layout vertical center-center">
+
+				<div class="hero-overlay-up-down"></div>
+
+				<div class="hero-title">For Travelers, by Travelers</div>
+
+				<div class="hero-subtitle">Available on</div>
+
+				<div class="app-buttons layout horizontal flex justified">
+				
+					<div class="app-google-play">
+						<a href="#">
+							<img src="/img/web-assets/google-play.png" alt="Download Android App">
+						</a>
+					</div>
+				
+					<div class="app-store">
+						<a href="#">
+							<img src="/img/web-assets/app-store.png" alt="Download iOS App">
+						</a>
+					</div>
+
+				</div>
+
 			</div>
-	  {{/if}}
-		
-		<div class="category-container layout vertical">
+
+
+		<main class="container explore-stories category-container layout vertical">
 
 			{{#each categories}}
-				{{>categoryGroup this}}
+			{{>categoryGroup this}}
 			{{/each}}
-	
-		</div>
+
+			<div class="show-more">
+				SHOW MORE
+			</div>
+
+		</main>
 
 	</div>
 
 	{{>navTabs}}
+
+
 </template>
 
 
 <template name="categoryGroup">
 	<div class="category-group layout vertical">
-
 		<div class="group-description layout horizontal">
 			<h4 class="flex-8 title">{{name}}</h4>
 			<a href="{{pathFor 'categoryView'}}" title="See all">See all</a>						
 		</div>
-
-		<div class="group-images layout horizontal">
-				<div class="image-container flex layout vertical">
-					<img src="" style="background-image: url('/img/test3.png')" class="image">
-					<p class="title">{{truncateThirty "THis is an example of a really long title that we need to truncate"}}</p>
+		<div class="group-images layout horizontal wrap justified">
+			<!-- temp hard coded story ID for templating-->
+			<div class="story-item" style="background-image: url('https://scontent-dft4-1.cdninstagram.com/t51.2885-15/e35/14676523_1771758936412519_5065848990021451776_n.jpg?ig_cache_key=MTM1NzY5MzQ2ODUyODQ3ODM5NQ%3D%3D.2')">
+				<div class="st-edition layout horizontal wrap flex justified">
+					<div class="st-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+					<div class="st-delete"><i class="fa fa-trash" aria-hidden="true"></i></div>
 				</div>
-				<div class="image-container flex layout vertical">
-					<img src="" style="background-image: url('/img/test3.png')" class="image">
-					<p class="title">{{truncateThirty "THis is an example of a really long title that we need to truncate"}}</p>
-				</div>
-				<div class="image-container flex layout vertical">
-					<img src="" style="background-image: url('/img/test3.png')" class="image">
-					<p class="title">{{truncateThirty "THis is an example of a really long title that we need to truncate"}}</p>
-				</div>
-				<div class="image-container flex layout vertical">
-					<img src="" style="background-image: url('/img/test3.png')" class="image">
-					<p class="title">{{truncateThirty "THis is an example of a really long title that we need to truncate"}}</p>
-				</div>
+				<a class="profile-list-item" href="{{pathFor 'story' _story=123}}"> 
+					<div class="st-title st-explore">
+						{{truncateThirty "This is an example of a really long title that we need to truncate"}}
+					</div>
+					<div class="st-desc st-explore">
+						{{truncateThirty "Really long description has also been added here but we are going to tuncrate it."}}
+					</div>
+					<hr>
+					<div class="st-author layout horizontal">
+						<div class="story-img flex-1">
+							<img src="https://s-media-cache-ak0.pinimg.com/236x/81/63/e4/8163e4d1615e6bd3a130cd50a786f14e.jpg" class="profile-img" alt="User">
+						</div>
+						<div class="author-name flex-2">
+							J. Smith
+						</div>
+						<div class="st-date flex-2">
+							2 days ago
+						</div>
+					</div>
+					<div class="st-count" data-liked-viewer="false">
+						<span class="count">22</span>
+						<i class="fa fa-heart" aria-hidden="true"></i>
+						<i class="fa fa-heart shadow" aria-hidden="true"></i>
+					</div>
+					<div class="story-cover"></div>
+				</a>
+			</div>
 		</div>
 	</div>
 </template>

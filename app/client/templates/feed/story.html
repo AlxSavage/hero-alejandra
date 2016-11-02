@@ -4,7 +4,7 @@
 		<div class="story-brief layout vertical center-center">
 			<div class="hero-overlay-down-up"></div>
 				<div class="hero-title">THE SHOP KEEPER</div>
-				<hr>
+				<hr class="hero-hr">
 				<div class="hero-subtitle">Trip to Zimbabwe</div>
 				<div class="story-by">
 					<img src="https://s-media-cache-ak0.pinimg.com/236x/81/63/e4/8163e4d1615e6bd3a130cd50a786f14e.jpg" title="Author"> By Jack Kerouac | Oct 17th 2016
@@ -20,10 +20,19 @@
 				{{>activeTab tabKey=tabKey}}
 			</div>
 		</div>
-
+		{{>suggestedStories}}
 	</div>
 
-	{{>navTabs}}
+	<div class="action-bar-mobile">
+		<div class="layout horizontal wrap justified">
+			<div class="action-like flex">7</div>
+			<div class="action-comment flex">2</div>
+			<div class="action-bookmark flex">14</div>
+			<div class="action-next flex"></div>
+			<div class="action-share flex"></div>
+		</div>
+	</div>
+
 
 </template>
 
@@ -77,11 +86,12 @@
 			</figcaption>
 		</figure>
 
-		<hr>
 
-<!-- 		<h2>Details</h2>
-
-		<ul>
+		<ul class="details">
+			<li class="details-title">
+ 				<h2 class="details">Details</h2>
+ 			</li>
+		
 			<li class="detail-location">
 				<div class="detail-title">Location:</div>
 				<div class="detail-desc">Zimbabwe</div>
@@ -97,18 +107,58 @@
 			<li class="detail-hashtag">
 				<div class="detail-desc"><a href="#">#TheLionKing</a></div>
 			</li>
-			<li class="detail-tops">
+			<li class="detail-tips">
 				<div class="detail-title">Travel Tips:</div>
 				<div class="detail-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at tempus nisl. Nulla vitae sapien egestas, commodo urna a, dictum odio. Donec tincidunt ut elit et placerat. Quisque pellentesque imperdiet felis eu sodales. Donec sagittis sapien in aliquet fringilla. Donec malesuada odio non mauris hendrerit, eget tempor ex elementum. Integer feugiat diam quis lectus vestibulum accumsan. Curabitur molestie ex tellus, sit amet tempor tortor facilisis sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a risus sit amet magna luctus feugiat a id tellus.</div>
 			</li>
 		</ul>
 
-		<hr> -->
+		<div class="mobile-hashtags">
+			<a href="#">#Shinjuku</a> <a href="#">#Cosplay</a> <a href="#">#ShabuShabu</a>
+		</div>
 
+		<div class="action-bar-desktop layout horizontal wrap justified">
+			<div class="layout horizontal wrap justified action-icons">
+				<div class="action-like action-icon flex">7</div>
+				<div class="action-comment action-icon flex">2</div>
+				<div class="action-bookmark action-icon flex">14</div>
+				<div class="action-next action-icon flex"></div>
+			</div>
+			<div class="layout horizontal wrap justified layout-end share-icons">
+				<div class="share-fb share-icon flex"></div>
+				<div class="share-twitter share-icon flex"></div>
+				<div class="share-more share-icon flex layout-end"></div>
+			</div>
+		</div>
 	</div>
 </template>
 
 
 <template name="storyItinerary">
 	Story itinerary here
+</template>
+
+<template name="suggestedStories">
+	<div class="suggested-stories">
+		<div class="container categoryview-stories">
+		<h4>STORIES YOU MIGHT LIKE</h4>
+		<!-- temp hard coded story ID for templating-->
+		<div class="story-item layout-first" style="background-image: url('https://scontent-dft4-1.cdninstagram.com/t51.2885-15/e35/14676523_1771758936412519_5065848990021451776_n.jpg?ig_cache_key=MTM1NzY5MzQ2ODUyODQ3ODM5NQ%3D%3D.2')">
+			<div class="st-edition layout horizontal wrap flex justified">
+				<div class="st-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+				<div class="st-delete"><i class="fa fa-trash" aria-hidden="true"></i></div>
+			</div>
+			<a class="profile-list-item" href="{{pathFor 'story' _story=123}}"> 
+				<div class="st-title st-suggested">
+					{{truncateThirty "This is an example of a really long title that we need to truncate"}}
+				</div>
+				<div class="st-desc st-suggested">
+					{{truncateThirty "Really long description has also been added here but we are going to tuncrate it."}}
+				</div>
+				<div class="story-cover"></div>
+			</a>
+		</div>
+	</div>
+
+	</div>
 </template>
