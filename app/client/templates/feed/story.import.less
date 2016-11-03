@@ -456,9 +456,8 @@ ul.details {
 }
 
 // Story Itinerary
-
 .st-itinerary {
-     // Story main brief
+     // Itinerary map
     .st-itinerary-map {
         z-index: 2;
         .md-and-down ({ 
@@ -468,5 +467,34 @@ ul.details {
             .position(absolute; 0; 0; 0; 0; auto; 120vh);
         });
         .hero-cover(transparent; "none"; 0px; -600px;);
+    }
+    // Itinerary daes container
+    .itinerary {
+        margin: @mobile-padding;
+        .itinerary-story {
+            border-left: 1px solid @light-border;
+            padding: 1rem auto;
+            width: 100%;
+            img {
+                height: 170px;
+                width: 127;
+            }
+        }
+        .itinerary-title {
+            background: @light-border;
+            margin-left: 20px;
+            &:before {
+                .type-awesome();
+                color: @light-border;
+                content: "\f08a";
+                cursor: pointer;
+                left: -10px;
+            }
+            .fa {
+                color: @light-border;
+                left: 30px;
+                position: absolute;
+            }
+        }
     }
 }
