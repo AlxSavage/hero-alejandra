@@ -19,6 +19,9 @@ UI.registerHelper("showMobileNav", function(path) {
 UI.registerHelper("showStickyHeader", function(path) {
   return Session.get('showStickyHeader');
 });
+UI.registerHelper("showStickyStoryBar", function(path) {
+  return Session.get('showStickyStoryBar');
+});
 
 /*
 * Environment: native and web userAgent identification

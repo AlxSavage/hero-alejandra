@@ -10,6 +10,7 @@ let notifications = new Mongo.Collection(null);
 Session.setDefault(IGNORE_CONNECTION_ISSUE_KEY, true);
 Session.setDefault('showMobileNav', false);
 Session.setDefault('showStickyHeader', false);
+Session.setDefault('showStickyStoryBar', false);
 Session.setDefault('showUserNav', false);
 
 Meteor.startup(function () {
@@ -39,11 +40,15 @@ Template.default.onCreated(function() {
 
   this.showMobileNav = Session.get('showMobileNav');
   this.stickyHeaderActive = Session.get('showStickyHeader');
+  this.stickyStoryBarActive = Session.get('showStickyStoryBar');
   this.setStickyHeader = function(val){
     Session.set('showStickyHeader',val);
   };
   this.setShowMobileNav = function(val){
     Session.set('showMobileNav',val);
+  };
+  this.setStickyStoryBar = function(val){
+    Session.set('showStickyStoryBar',val);
   };
 
   this.onResize = function(newValue,instance) {
@@ -59,6 +64,7 @@ Template.default.onCreated(function() {
   });
   this.autorun(() => {
     this.screenWidth.get() > 992 ? Session.set('showMobileNav', false) : Session.set('showMobileNav', true);    
+    this.scrollPosition.get() > 103 && this.screenWidth.get() < 992 ? Session.set('showStickyStoryBar', true) : Session.set('showStickyStoryBar', false);    
     console.log('screenWidth from autorun: ' + this.screenWidth.get());
   });
 });

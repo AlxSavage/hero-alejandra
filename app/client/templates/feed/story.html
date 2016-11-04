@@ -20,7 +20,7 @@
 		</div>
 		{{>suggestedStories}}
 	</div>
-	{{>mobileActionBar}}
+	{{>stickyStoryBar}}
 </template>
 
 
@@ -139,20 +139,24 @@
 			</div>
 			{{>desktopActionBar}}
 		</div>
-		{{>mobileActionBar}}
+		{{>stickyStoryBar}}
 	</div>
 </template>
 
-<template name="mobileActionBar">
-	<div class="action-bar-mobile">
-		<div class="layout horizontal wrap justified">
-			<div class="action-like flex">7</div>
-			<div class="action-comment flex">2</div>
-			<div class="action-bookmark flex">14</div>
-			<div class="action-next flex"></div>
-			<div class="action-share flex"></div>
-		</div>
-	</div>
+<template name="stickyStoryBar">
+	<div id="sticky-story-bar-hook">
+		{{# if showStickyStoryBar}}
+			<div class="action-bar-mobile">
+				<div class="layout horizontal wrap justified">
+					<div class="action-like flex">7</div>
+					<div class="action-comment flex">2</div>
+					<div class="action-bookmark flex">14</div>
+					<div class="action-next flex"></div>
+					<div class="action-share flex"></div>
+				</div>
+			</div>
+		{{/if}}
+	</div>	
 </template>
 
 <template name="desktopActionBar">
