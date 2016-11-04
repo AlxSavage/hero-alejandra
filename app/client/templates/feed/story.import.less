@@ -153,7 +153,7 @@
         color: @color-medium-well;
         .md-and-down ({
             .font-s3();
-            padding: 0 @mobile-padding;
+            padding: 0 @small-story-padding;
         });
     }
 
@@ -366,7 +366,7 @@ ul.details {
         margin: 0 2rem;
     });
     .type-light();
-    .font-s3-mobile-details();
+    .font-details();
     border-bottom: 1px solid @color-border;
     border-top: 1px solid @color-border;
     color: @color-medium-well;
@@ -472,45 +472,83 @@ ul.details {
     }
     // Itinerary dates container
     .itinerary {
-        margin: @mobile-side-margin;
+        margin: @small-side-margin;
         &:first-of-type {
             margin-top: @bottom-story;
         }
         .itinerary-story {
             border-left: 1px solid @light-border;
-            padding: @mobile-small-padding 0 @mobile-small-padding @mobile-small-padding;
             width: 100%;
+            .md-and-down ({
+                padding: @small-padding 0 @small-padding @small-padding;
+            });
+            .md-and-up ({
+                padding: @medium-padding 0 @medium-padding @medium-padding;
+            });
             img {
-                height: 127px;
-                width: 170px;
+                .md-and-down ({
+                    height: 127px;
+                    width: 170px;
+                });
+                .md-and-up ({
+                    height: 206px;
+                    width: 276px;
+                });
             }
-            .timestamp, .timestamp-title {
-                padding-left: @mobile-small-padding;
+            .timestamp, .timestamp-title, .itinerary-info {
+                .md-and-down ({
+                    padding-left: @small-padding;
+                });
+                .md-and-up ({
+                    padding-left: @medium-padding;
+                });
             }
             .timestamp {
-                .font-s3-mobile-details();
-                .type-regular();
+                .font-details();
                 color: @medium-grey-text;
-                padding-top: @mobile-medium-padding;
+                padding-top: @medium-padding;
+                .md-and-down ({
+                    .type-regular();
+                });
+                .md-and-up ({
+                    .type-semiregular();
+                });
                 &:before {
                     .type-awesome();
                     color: @light-border;
                     content: "\f017";
-                    padding-right: @mobile-mini-padding;
+                    padding-right: @mini-padding;
                 }
             }
             .timestamp-title {
-                .font-s3-mobile-details();
-                .type-light();
+                .font-details-semi();
+                .md-and-down ({
+                    .type-light();
+                    color: @color-medium-well;
+                });
+                .md-and-up ({
+                    .type-semiregular();
+                    color: @color-well;
+                    margin: 10px 0;
+                });
+            }
+            .itinerary-info {
+                .font-s3();
+                .type-regular();
                 color: @color-medium-well;
+                line-height: 21px;
+                padding: 0 0 0 @medium-padding;
+                .md-and-down ({
+                    display: none;
+                });
             }
         }
         .itinerary-title {
-            .font-heading-mobile();
+            .font-details-title();
             .type-bold();
             background: @super-light-background;
             color: @medium-grey-text;
-            margin-left: @mobile-small-padding;
+            margin-left: @small-padding;
             padding: 5px @left-story;
             text-transform: uppercase;
             position: relative;

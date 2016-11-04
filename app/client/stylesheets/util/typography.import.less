@@ -107,12 +107,6 @@
   line-height: 21px;
   letter-spacing: 1.2px;
 }
-.font-s3-mobile-details() {
-  font-size: 14px;
-  line-height: 28px;
-  letter-spacing: 0.7px;
-}
-
 .font-s2() {
   font-size: 13px;
   line-height: 18px;
@@ -132,12 +126,6 @@
   font-size: 13px;
   letter-spacing: 1.2px;
 }
-
-.font-heading-mobile() {
-  font-size: 13px;
-  letter-spacing: 1.5px;
-}
-
 
 // ALT to be paired to type-secondary
 // Because the typeface LORA reads larger than LATO
@@ -199,6 +187,36 @@
 }
 
 // Story styles
+
+.font-details {
+  .md-and-down ({ 
+    font-size: 14px;
+  });
+  .md-and-up ({ 
+    font-size: 18px;
+  });
+  line-height: 28px;
+  letter-spacing: 0.7px;
+}
+.font-details-semi {
+  .md-and-down ({ 
+    font-size: 14px;
+  });
+  .md-and-up ({ 
+    font-size: 22px;
+  });
+  line-height: 28px;
+  letter-spacing: 0.7px;
+}
+.font-details-title() {
+  .md-and-down ({ 
+    font-size: 13px;
+  });
+  .md-and-up ({ 
+    font-size: 20px;
+  });
+  letter-spacing: 1.5px;
+}
 
 .font-headline {
   font-size: 30px;
