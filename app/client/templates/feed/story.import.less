@@ -468,31 +468,60 @@ ul.details {
         });
         .hero-cover(transparent; "none"; 0px; -600px;);
     }
-    // Itinerary daes container
+    // Itinerary dates container
     .itinerary {
-        margin: @mobile-padding;
+        margin: @mobile-side-margin;
+        &:first-of-type {
+            margin-top: @bottom-story;
+        }
         .itinerary-story {
             border-left: 1px solid @light-border;
-            padding: 1rem auto;
+            padding: @mobile-small-padding 0 @mobile-small-padding @mobile-small-padding;
             width: 100%;
             img {
-                height: 170px;
-                width: 127;
+                height: 127px;
+                width: 170px;
+            }
+            .timestamp, .timestamp-title {
+                padding-left: @mobile-small-padding;
+            }
+            .timestamp {
+                .font-s3-mobile-details();
+                .type-regular();
+                color: @medium-grey-text;
+                padding-top: 40px;
+                &:before {
+                    .type-awesome();
+                    color: @light-border;
+                    content: "\f017";
+                    padding-right: @mobile-mini-padding;
+                }
+            }
+            .timestamp-title {
+                .font-s3-mobile-details();
+                .type-light();
+                color: @color-medium-well;
             }
         }
         .itinerary-title {
-            background: @light-border;
-            margin-left: 20px;
+            .font-heading-mobile();
+            .type-bold();
+            background: @super-light-background;
+            color: @medium-grey-text;
+            margin-left: @mobile-small-padding;
+            padding: 5px @left-story;
+            text-transform: uppercase;
+            position: relative;
             &:before {
                 .type-awesome();
-                color: @light-border;
-                content: "\f08a";
-                cursor: pointer;
-                left: -10px;
+                .position(absolute; 2px; auto; auto; -6px; auto; auto);
+                color: @super-light-background;
+                content: "\f0d9";
+                font-size: 20px;
             }
             .fa {
                 color: @light-border;
-                left: 30px;
+                left: -24px;
                 position: absolute;
             }
         }
