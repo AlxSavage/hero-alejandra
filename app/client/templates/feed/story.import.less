@@ -246,13 +246,15 @@
 .action-bar-desktop {
     border-bottom: 1px solid @color-border;
     border-top: 1px solid @color-border;
-    display: block;
     height: 80px;
     margin: 10rem 0;
     padding: 1rem 0;
     z-index: 9;
     .md-and-down ({
-        display: none;
+        display: none !important;
+    });
+    .md-and-up ({
+        display: block;
     });
     .action-icons {
         width: 40%;
@@ -489,7 +491,7 @@ ul.details {
                 .font-s3-mobile-details();
                 .type-regular();
                 color: @medium-grey-text;
-                padding-top: 40px;
+                padding-top: @mobile-medium-padding;
                 &:before {
                     .type-awesome();
                     color: @light-border;
