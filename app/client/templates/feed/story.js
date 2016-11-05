@@ -31,7 +31,7 @@ Template.story.events({
     'click .action-share.fixed-icon': function(e){ // Share menu
         e.preventDefault();
         Session.set('showActionBarMenu', true);
-        togglePopUpMenu($(e.target).next(".action-bar-menu"), "192px", "showActionBarMenu");
+        togglePopUpMenu($(e.target).next(".action-bar-menu"), "256px", "showActionBarMenu");
     },
     'click .action-bar-menu': function(e){
         if ( Session.get('showActionBarMenu') ) { 
@@ -42,7 +42,7 @@ Template.story.events({
     'blur .action-bar-menu': function(e){
         if ( Session.get('showActionBarMenu') ) { 
             Session.set('showActionBarMenu', false);
-            togglePopUpMenu($(".action-bar-menu"), "192px", "showActionBarMenu"); 
+            togglePopUpMenu($(".action-bar-menu"), "256px", "showActionBarMenu"); 
         }
     },
 });
