@@ -143,21 +143,7 @@
 	</div>
 </template>
 
-<template name="stickyStoryBar">
-	<div id="sticky-story-bar-hook">
-		{{# if showStickyStoryBar}}
-			<div class="action-bar-mobile">
-				<div class="layout horizontal wrap justified">
-					<div class="action-like flex">7</div>
-					<div class="action-comment flex">2</div>
-					<div class="action-bookmark flex">14</div>
-					<div class="action-next flex"></div>
-					<div class="action-share flex"></div>
-				</div>
-			</div>
-		{{/if}}
-	</div>	
-</template>
+<!-- Desktop helper templates -->
 
 <template name="desktopActionBar">
 	<div class="action-bar-desktop layout horizontal wrap justified">
@@ -196,4 +182,22 @@
 			</div>
 		</div>
 	</div>
+</template>
+
+<!-- Mobile helper templates -->
+
+<template name="stickyStoryBar">
+	<div id="sticky-story-bar-hook">
+		{{# if showStickyStoryBar}}
+			<div class="action-bar-mobile">
+				<div class="layout horizontal wrap justified">
+					<div class="action-like flex">7</div>
+					<div class="action-comment flex">2</div>
+					<div class="action-bookmark flex">14</div>
+					<div class="action-next flex"></div>
+					<div class="action-share flex"></div>
+				</div>
+			</div>
+		{{/if}}
+	</div>	
 </template>
