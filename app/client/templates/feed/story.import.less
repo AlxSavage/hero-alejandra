@@ -625,7 +625,7 @@ ul.details {
 }
 
 // Desktop floating action bar
-.stickyActionsDesktop {
+.sticky-actions-desktop {
   .position(fixed; auto; auto; 0; auto; 100%; auto); 
   display: flex !important;
   padding: .75rem 1rem;
@@ -715,6 +715,7 @@ ul.details {
     width: 40%;
   }
   .action-icon {
+    cursor: pointer;
     display: flex;
     font-size: 16px;
     height: @desktop-icon;
@@ -784,6 +785,7 @@ ul.details {
   &:hover {
     &:before {
       background: @dark-eight-opacity;
+      cursor: pointer;
     }
   }
 }
@@ -793,7 +795,6 @@ ul.details {
     margin-right: 15px;
   }
 }
-
 .grouped.action-comment {
   &:before {
     border-top-left-radius: 50%;
@@ -809,58 +810,62 @@ ul.details {
     border-bottom-right-radius: 50%;
   }
 }
-.action-like{
-  &:before {
-    content: "\f08a";
-    pointer-events: none;
-  }
-}
-.action-like-fill {
-  &:before {
-    content: "\f004";
-    pointer-events: none;
-  }
-}
-.action-comment{
-  &:before {
-    content: "\f0e5";
-  }
-}
-.action-bookmark{
-  &:before {
-    content: "\f097";
-  }
-}
-.action-next{
-  &:before {
-    content: "\f064";
-  }
-}
-.action-share{
-  &:before {
-    content: "\f08e";
-  }
-}
-.share-icon {
-  display: flex;
-  font-size: 16px;
-  height: @desktop-icon-mini;
-  line-height: @desktop-icon-mini;
-  text-align: center;
-  width: auto;
-  vertical-align: middle;
-  &:before {
-    .type-awesome();
-    background: @color-empty;
-    border-radius: 50%;
-    cursor: pointer;
-    height: @desktop-icon-mini;
-    margin-left: 25px;
-    width: @desktop-icon-mini;
-  }
-  &:hover {
+
+// Action/share buttons for facebook
+.sticky-actions-desktop, .action-bar-desktop {
+  .action-like{
     &:before {
-      background: @light-background-color;
+      content: "\f08a";
+      pointer-events: none;
+    }
+  }
+  .action-like-fill {
+    &:before {
+      content: "\f004";
+      pointer-events: none;
+    }
+  }
+  .action-comment{
+    &:before {
+      content: "\f0e5";
+    }
+  }
+  .action-bookmark{
+    &:before {
+      content: "\f097";
+    }
+  }
+  .action-next{
+    &:before {
+      content: "\f064";
+    }
+  }
+  .action-share{
+    &:before {
+      content: "\f08e";
+    }
+  }
+  .share-icon {
+    display: flex;
+    font-size: 16px;
+    height: @desktop-icon-mini;
+    line-height: @desktop-icon-mini;
+    text-align: center;
+    width: auto;
+    vertical-align: middle;
+    &:before {
+      .type-awesome();
+      background: @color-empty;
+      border-radius: 50%;
+      cursor: pointer;
+      height: @desktop-icon-mini;
+      margin-left: 25px;
+      width: @desktop-icon-mini;
+    }
+    &:hover {
+      &:before {
+        background: @light-background-color;
+      }
     }
   }
 }
@@ -877,6 +882,7 @@ ul.details {
 .action-bar-menu {
   .position(absolute, auto, 0, 72px, auto, 186px, 0);
 }
+
 .fixed-action-bar-menu, .action-bar-menu {
   li a {
     .font-social();
