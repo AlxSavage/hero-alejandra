@@ -21,6 +21,7 @@
 		{{>suggestedStories}}
 	</div>
 	{{>stickyStoryBar}}
+	{{>desktopShare}}
 </template>
 
 
@@ -140,10 +141,20 @@
 			{{>desktopActionBar}}
 		</div>
 		{{>stickyStoryBar}}
+		{{>desktopShare}}
 	</div>
 </template>
 
 <!-- Desktop helper templates -->
+
+<template name="desktopShare">
+	<div class="stickyActionBar layout horizontal end-justified">
+		<div class="action-like-fill fixed-icon"></div>
+		<div class="action-comment fixed-icon grouped"></div>
+		<div class="action-bookmark fixed-icon grouped"></div>
+		<div class="action-share fixed-icon grouped"></div>
+	</div>
+</template>
 
 <template name="desktopActionBar">
 	<div class="action-bar-desktop layout horizontal wrap justified">

@@ -5,11 +5,9 @@
     left: 0;
     right: 0;
     background-color: @color-empty;
-
     .md-and-down ({
         padding-bottom: 60px;
     });
-
     // Story main brief
     .story-brief {
         .md-and-down ({ 
@@ -116,7 +114,6 @@
         padding: 0 0 3.3rem; 
     });
     margin: 5rem auto 0;
-
     h1 {
         .type-bold();
         .font-headline();
@@ -127,13 +124,11 @@
             padding: 0 2rem;
         });
     }
-
     h2 {
         .font-semiheadline();
         .type-semiregular();
         color: @color-well;
     }
-
     h2.details {
         .md-and-up ({
             .font-semiheadline();
@@ -146,7 +141,6 @@
             display: none;
         });
     }
-
     p {
         .font-s3();
         .type-regular();
@@ -156,7 +150,6 @@
             padding: 0 @small-story-padding;
         });
     }
-
     figure {
         margin: 4rem 0;
         figcaption {
@@ -168,7 +161,6 @@
             text-align: center;
         }
     }
-
     hr {
       border: 0;
       height: 1px;
@@ -176,185 +168,8 @@
       width: 100%;
       margin: 2rem 0;
     }
-
     img {
         width: 100%;
-    }
-}
-
-.action-bar-mobile {
-    .position(fixed; auto; 0; 0px; 0; 100%; 55px);
-    background: @color-empty;
-    z-index: 9;
-    .md-and-up ({
-        display: none;
-    });
-    .layout {
-        width: 100%;
-    }
-    div:not(.layout) {
-        color: @color-medium-well;
-        display: flex;
-        font-size: 16px;
-        height: 50px;
-        line-height: 50px;
-        text-align: center;
-        padding-left: 30px;
-        width: auto;
-        vertical-align: middle;
-        &:after {
-            .type-awesome();
-            color: @color-medium-well;
-            cursor: pointer;
-            margin-left: 8px;
-        }
-        &:hover {
-            &:after {
-                color: @color-full;
-            }
-        }
-    }
-    .action-like{
-        &:after {
-            content: "\f08a";
-        }
-    }
-    .action-comment{
-        &:after {
-            content: "\f0e5";
-        }
-    }
-    .action-bookmark{
-        &:after {
-            content: "\f097";
-        }
-    }
-    .action-next{
-        &:after {
-            content: "\f064";
-            margin-left: 30px;
-        }
-    }
-    .action-share{
-        &:after {
-            content: "\f08e";
-            margin-left: 30px;
-        }
-    }
-}
-
-.action-bar-desktop {
-    border-bottom: 1px solid @color-border;
-    border-top: 1px solid @color-border;
-    height: 80px;
-    margin: 10rem 0;
-    padding: 1rem 0;
-    z-index: 9;
-    .md-and-down ({
-        display: none !important;
-    });
-    .md-and-up ({
-        display: block;
-    });
-    .action-icons {
-        width: 40%;
-    }
-    .share-icons {
-        margin-top: 5px;
-        width: 20%;
-    }
-    .action-icon {
-        display: flex;
-        font-size: 16px;
-        height: @desktop-icon;
-        line-height: @desktop-icon;
-        text-align: center;
-        width: auto;
-        vertical-align: middle;
-        &:before {
-            .type-awesome();
-            background: rgba(26, 28, 33, 0.5);
-            border-radius: 50%;
-            color: @color-empty;
-            cursor: pointer;
-            height: @desktop-icon;
-            margin-right: 15px;
-            width: @desktop-icon;
-        }
-        &:hover {
-            &:before {
-                background: rgba(26, 28, 33, 0.8);
-            }
-        }
-    }
-    .action-like{
-        &:before {
-            content: "\f08a";
-        }
-    }
-    .action-comment{
-        &:before {
-            content: "\f0e5";
-        }
-    }
-    .action-bookmark{
-        &:before {
-            content: "\f097";
-        }
-    }
-    .action-next{
-        &:before {
-            content: "\f064";
-        }
-    }
-    .action-share{
-        &:before {
-            content: "\f08e";
-        }
-    }
-    .share-icon {
-        display: flex;
-        font-size: 16px;
-        height: @desktop-icon-mini;
-        line-height: @desktop-icon-mini;
-        text-align: center;
-        width: auto;
-        vertical-align: middle;
-        &:before {
-            .type-awesome();
-            background: @color-empty;
-            border-radius: 50%;
-            cursor: pointer;
-            height: @desktop-icon-mini;
-            margin-left: 25px;
-            width: @desktop-icon-mini;
-        }
-        &:hover {
-            &:before {
-                background: @light-background-color;
-            }
-        }
-    }
-    .share-fb{
-        &:before {
-            border: 1px solid @facebook;
-            color: @facebook;
-            content: "\f09a";
-        }
-    }
-    .share-more{
-        &:before {
-            border: 1px solid @color-medium-rare;
-            color: @color-medium-rare;
-            content: "\f141";
-        }
-    }
-    .share-twitter{
-        &:before {
-            border: 1px solid @twitter;
-            color: @twitter;
-            content: "\f099";
-        }
     }
 }
 
@@ -800,12 +615,247 @@ ul.details {
             .position(absolute; auto; 0; 4.8rem; 4%; 92%; 1px); 
         });
     }
-
 }
 
 // Story container in category view
 .page-categoryview {
     .story-item {
         height: calc(~"100vh - 100px");
+    }
+}
+
+// Desktop floating action bar
+.stickyActionBar {
+    .position(fixed; auto; auto; 0; auto; 100%; auto); 
+    padding: .75rem 1rem;
+    z-index: 9;
+    .md-and-down ({ 
+        display: none;
+    });
+}
+
+// Social/share/action styles
+.action-bar-mobile {
+    .position(fixed; auto; 0; 0px; 0; 100%; 55px);
+    background: @color-empty;
+    z-index: 9;
+    .md-and-up ({
+        display: none;
+    });
+    .layout {
+        width: 100%;
+    }
+    div:not(.layout) {
+        color: @color-medium-well;
+        display: flex;
+        font-size: 16px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        padding-left: 30px;
+        width: auto;
+        vertical-align: middle;
+        &:after {
+            .type-awesome();
+            color: @color-medium-well;
+            cursor: pointer;
+            margin-left: 8px;
+        }
+        &:hover {
+            &:after {
+                color: @color-full;
+            }
+        }
+    }
+    .action-like{
+        &:after {
+            content: "\f08a";
+        }
+    }
+    .action-comment{
+        &:after {
+            content: "\f0e5";
+        }
+    }
+    .action-bookmark{
+        &:after {
+            content: "\f097";
+        }
+    }
+    .action-next{
+        &:after {
+            content: "\f064";
+            margin-left: 30px;
+        }
+    }
+    .action-share{
+        &:after {
+            content: "\f08e";
+            margin-left: 30px;
+        }
+    }
+}
+
+.action-bar-desktop {
+    border-bottom: 1px solid @color-border;
+    border-top: 1px solid @color-border;
+    height: 80px;
+    margin: 10rem 0;
+    padding: 1rem 0;
+    z-index: 9;
+    .md-and-down ({
+        display: none !important;
+    });
+    .md-and-up ({
+        display: block;
+    });
+    .action-icons {
+        width: 40%;
+    }
+    .action-icon {
+        display: flex;
+        font-size: 16px;
+        height: @desktop-icon;
+        line-height: @desktop-icon;
+        text-align: center;
+        width: auto;
+        vertical-align: middle;
+        &:before {
+            .type-awesome();
+            background: @dark-half-opacity;
+            border-radius: 50%;
+            color: @color-empty;
+            cursor: pointer;
+            height: @desktop-icon;
+            margin-right: 15px;
+            width: @desktop-icon;
+        }
+        &:hover {
+            &:before {
+                background: @dark-eight-opacity;
+            }
+        }
+    }
+    .share-icons {
+        margin-top: 5px;
+        width: 20%;
+    }
+    .share-fb{
+        &:before {
+            border: 1px solid @facebook;
+            color: @facebook;
+            content: "\f09a";
+        }
+    }
+    .share-more{
+        &:before {
+            border: 1px solid @color-medium-rare;
+            color: @color-medium-rare;
+            content: "\f141";
+        }
+    }
+    .share-twitter{
+        &:before {
+            border: 1px solid @twitter;
+            color: @twitter;
+            content: "\f099";
+        }
+    }
+}
+.fixed-icon {
+    display: flex;
+    font-size: 20px;
+    height: @desktop-icon-big;
+    line-height: @desktop-icon-big;
+    text-align: center;
+    width: auto;
+    vertical-align: middle;
+    &:before {
+        .type-awesome();
+        background: @dark-half-opacity;
+        color: @color-empty;
+        cursor: pointer;
+        height: @desktop-icon-big;
+        width: @desktop-icon-big;
+    }
+    &:hover {
+        &:before {
+            background: @dark-eight-opacity;
+        }
+    }
+}
+.fixed-icon:not(.grouped) {
+    &:before {
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+}
+
+.grouped.action-comment {
+    &:before {
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+    }
+}
+.grouped {
+    box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+.grouped.action-share {
+    &:before {
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+    }
+}
+.action-like{
+    &:before {
+        content: "\f08a";
+    }
+}
+.action-like-fill {
+    &:before {
+        content: "\f004";
+    }
+}
+.action-comment{
+    &:before {
+        content: "\f0e5";
+    }
+}
+.action-bookmark{
+    &:before {
+        content: "\f097";
+    }
+}
+.action-next{
+    &:before {
+        content: "\f064";
+    }
+}
+.action-share{
+    &:before {
+        content: "\f08e";
+    }
+}
+.share-icon {
+    display: flex;
+    font-size: 16px;
+    height: @desktop-icon-mini;
+    line-height: @desktop-icon-mini;
+    text-align: center;
+    width: auto;
+    vertical-align: middle;
+    &:before {
+        .type-awesome();
+        background: @color-empty;
+        border-radius: 50%;
+        cursor: pointer;
+        height: @desktop-icon-mini;
+        margin-left: 25px;
+        width: @desktop-icon-mini;
+    }
+    &:hover {
+        &:before {
+            background: @light-background-color;
+        }
     }
 }
