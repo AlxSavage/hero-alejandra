@@ -669,6 +669,12 @@ ul.details {
     }
   }
   .action-like{
+    &.liked-viewer {
+      &:after {
+        color: @color-primary;
+        content: "\f004";
+      }
+    }
     &:after {
       content: "\f08a";
     }
@@ -868,11 +874,10 @@ ul.details {
       }
     }
   }
-}
-
-.action-like.liked-viewer, .action-like-fill.liked-viewer {
-  &:before, &:after {
-    background: @color-primary;
+  .action-like.liked-viewer, .action-like-fill.liked-viewer {
+    &:before, &:after {
+      background: @color-primary;
+    }
   }
 }
 

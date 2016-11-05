@@ -63,6 +63,14 @@ Template.story.events({
       togglePopUpMenu($(".action-bar-menu"), "192px", "showActionBarMenu"); 
     }
   },
+  'click .st-like': function(e){
+    $closestLike = $(event.target).closest('.st-like');
+    if ($closestLike.data('liked-viewer')){
+        $('.st-like').removeClass("liked-viewer").data('liked-viewer', false);
+      } else {
+        $('.st-like').addClass("liked-viewer").data('liked-viewer', true);
+      }
+    }
 });
 
 // Template for sticky share bar for mobile
