@@ -5,7 +5,6 @@ let templateTabGroupName = 'storyTabs';
 Template.story.onCreated(function() {
   this.storyId = this.data;
   Session.setDefault(templateTabGroupName, 'storyStory');
-  Session.set('showStickActionsDesktop', true);
 });
 
 // Comments helpers, we get the {{storyId}} var from the router
@@ -68,10 +67,10 @@ Template.story.events({
 
 // Template for sticky share bar for mobile
 Template.stickyActionsMobile.onRendered(function() {
-  velocitySlideHook("#sticky-actions-mobile-hook", "slideUpIn", "slideDownOut", "1200");
+  velocitySlideHook("#sticky-actions-mobile-hook", "slideUpIn", "slideDownOut", "1200", "300");
 });
 
 // Template for sticky action bar for desktop
 Template.stickyActionsDesktop.onRendered(function() {
-  velocitySlideHook("#sticky-actions-desktop-hook", "slideUpIn", "slideDownOut", "400");
+  velocitySlideHook("#sticky-actions-desktop-hook", "slideUpIn", "slideDownOut", "400", "300");
 });
