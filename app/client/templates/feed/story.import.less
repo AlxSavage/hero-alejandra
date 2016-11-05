@@ -484,7 +484,7 @@ ul.details {
             letter-spacing: 0.7px;
         });
     }
-    .st-count {
+    .st-like {
         .position(absolute; auto; 0; 1.4rem; 14.8rem; 3rem; 1rem);
         .md-and-down ({ 
             .position(absolute; auto; 1rem; 1.5rem; auto; 3rem; 1.5rem); 
@@ -763,13 +763,14 @@ ul.details {
     }
 }
 .fixed-icon {
+    cursor: pointer;
     display: flex;
     font-size: 20px;
     height: @desktop-icon-big;
     line-height: @desktop-icon-big;
     text-align: center;
-    width: auto;
     vertical-align: middle;
+    width: auto;
     &:before {
         .type-awesome();
         background: @dark-half-opacity;
@@ -809,11 +810,13 @@ ul.details {
 .action-like{
     &:before {
         content: "\f08a";
+        pointer-events: none;
     }
 }
 .action-like-fill {
     &:before {
         content: "\f004";
+        pointer-events: none;
     }
 }
 .action-comment{
@@ -859,3 +862,10 @@ ul.details {
         }
     }
 }
+
+.action-like.liked-viewer, .action-like-fill.liked-viewer {
+    &:before, &:after {
+        background: @color-primary;
+    }
+}
+

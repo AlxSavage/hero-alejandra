@@ -102,7 +102,7 @@ Template.default.events({
   'click .side-panel-trigger': function(e, template){
     openSidePanel(e, template);
   },
-  'click .st-count': function(e){
+  'click .st-like': function(e){
       e.preventDefault();
       storyLike(e);
   }
