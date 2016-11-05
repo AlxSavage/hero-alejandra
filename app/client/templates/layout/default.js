@@ -12,6 +12,7 @@ Session.setDefault('showMobileNav', false);
 Session.setDefault('showStickyHeader', false);
 Session.setDefault('showStickyStoryBar', false);
 Session.setDefault('showUserNav', false);
+Session.setDefault('showActionBarMenu', false);
 
 Meteor.startup(function () {
   if (Meteor.isClient) {
