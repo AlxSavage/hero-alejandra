@@ -1,3 +1,5 @@
+import togglePopUpMenu from '../../modules/toggle-popup-menu';
+
 // Header events
 Template.header.events({
 	// Opens side menu for followers/following
@@ -29,38 +31,21 @@ Template.header.events({
 	'click .header-user img': function(e){ // User menu
 		e.preventDefault();
 		Session.set('showUserNav', true);
-		toggleUserMenu($(e.target).next(".user-menu"), "192px");
+		togglePopUpMenu($(e.target).next(".user-menu"), "192px", "showUserNav");
 	},
 	'click .user-menu': function(e){
 		if ( Session.get('showUserNav') ) { 
 			Session.set('showUserNav', false);
-			toggleUserMenu($(".user-menu"), "0px"); 
+			togglePopUpMenu($(".user-menu"), "0px", "showUserNav"); 
 		}
 	},
 	'blur .user-menu': function(e){
 		if ( Session.get('showUserNav') ) { 
 			Session.set('showUserNav', false);
-			toggleUserMenu($(".user-menu"), "192px"); 
+			togglePopUpMenu($(".user-menu"), "192px", "showUserNav"); 
 		}
 	},
 	'click .js-force-logout': function (e,template) {
 		AccountsTemplates.logout();
 	}
 })
-
-// Helper functions 
-toggleUserMenu = function($container, newHeight) {
-	var opened = Session.get('showUserNav');
-	console.log("toggleUserMenu: ",opened);
-	$container.velocity({
-			height: opened ? newHeight : "0",
-			opacity: opened ? 1 : 0,
-		}, {
-			duration: 200,
-			easing: "easeOutCirc",
-			complete: function() {
-				$container.find("ul").velocity({ opacity: opened ? 1 : 0 });
-			}
-		});
-	$container.find("a:first").focus();
-};
