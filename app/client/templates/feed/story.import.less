@@ -625,8 +625,9 @@ ul.details {
 }
 
 // Desktop floating action bar
-.stickyActionBar {
+.stickyActionsDesktop {
     .position(fixed; auto; auto; 0; auto; 100%; auto); 
+    display: flex !important;
     padding: .75rem 1rem;
     z-index: 9;
     .md-and-down ({ 
@@ -702,6 +703,7 @@ ul.details {
     height: 80px;
     margin: 10rem 0;
     padding: 1rem 0;
+    position: relative;
     z-index: 9;
     .md-and-down ({
         display: none !important;
@@ -869,8 +871,13 @@ ul.details {
     }
 }
 
-.action-bar-menu {
+.fixed-action-bar-menu {
     .position(fixed, auto, 30px, 82px, auto, 186px, 0);
+}
+.action-bar-menu {
+    .position(absolute, auto, 0, 72px, auto, 186px, 0);
+}
+.fixed-action-bar-menu, .action-bar-menu {
     li a {
         .font-social();
         .type-regular();

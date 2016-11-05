@@ -20,8 +20,8 @@
 		</div>
 		{{>suggestedStories}}
 	</div>
-	{{>stickyStoryBar}}
-	{{>desktopStickyShare}}
+	{{>stickyActionsMobile}}
+	{{>stickyActionsDesktop}}
 </template>
 
 
@@ -140,41 +140,32 @@
 			</div>
 			{{>desktopActionBar}}
 		</div>
-		{{>stickyStoryBar}}
-		{{>desktopStickyShare}}
+		{{>stickyActionsMobile}}
+		{{>stickyActionsDesktop}}
 	</div>
 </template>
 
 <!-- Desktop helper templates -->
-
-<template name="desktopStickyShare">
-	<div class="stickyActionBar layout horizontal end-justified">
-		<div class="action-like-fill fixed-icon st-like"></div>
-		<div class="action-comment fixed-icon grouped"></div>
-		<div class="action-bookmark fixed-icon grouped"></div>
-		<div class="action-share fixed-icon grouped"></div>
-		<div class="popup-menu action-bar-menu">
-			<ul>
-				<li>
-					<a href="#" class="popup-fb">Facebook</a>
-				</li>
-				<li>
-					<a href="#" class="popup-twitter">Twitter</a>
-				</li>
-				<li>
-					<a href="#" class="popup-google">Google</a>
-				</li>
-				<li>
-					<a href="#" class="popup-tumblr">Tumblr</a>
-				</li>
-				<li>
-					<a href="#" class="popup-pinterest">Pinterest</a>
-				</li>
-				<li>
-					<a href="#" class="popup-email">Email</a>
-				</li>
-			</ul>			
-		</div>
+<template name="stickyActionsDesktop">
+	<div id="sticky-action-bar-hook">
+		{{# if showStickActionsDesktop}}
+			<div class="stickyActionsDesktop layout horizontal end-justified">
+				<div class="action-like-fill fixed-icon st-like"></div>
+				<div class="action-comment fixed-icon grouped"></div>
+				<div class="action-bookmark fixed-icon grouped"></div>
+				<div class="action-share fixed-icon grouped"></div>
+				<div class="popup-menu fixed-action-bar-menu">
+					<ul>
+						<li><a href="#" class="popup-fb">Facebook</a></li>
+						<li><a href="#" class="popup-twitter">Twitter</a></li>
+						<li><a href="#" class="popup-google">Google</a></li>
+						<li><a href="#" class="popup-tumblr">Tumblr</a></li>
+						<li><a href="#" class="popup-pinterest">Pinterest</a></li>
+						<li><a href="#" class="popup-email">Email</a></li>
+					</ul>			
+				</div>
+			</div>
+		{{/if}}
 	</div>
 </template>
 
@@ -190,6 +181,14 @@
 			<div class="share-fb share-icon flex"></div>
 			<div class="share-twitter share-icon flex"></div>
 			<div class="share-more share-icon flex layout-end"></div>
+			<div class="popup-menu action-bar-menu">
+				<ul>
+					<li><a href="#" class="popup-google">Google</a></li>
+					<li><a href="#" class="popup-tumblr">Tumblr</a></li>
+					<li><a href="#" class="popup-pinterest">Pinterest</a></li>
+					<li><a href="#" class="popup-email">Email</a></li>
+				</ul>			
+			</div>
 		</div>
 	</div>
 </template>
@@ -218,9 +217,9 @@
 </template>
 
 <!-- Mobile helper templates -->
-<template name="stickyStoryBar">
+<template name="stickyActionsMobile">
 	<div id="sticky-story-bar-hook">
-		{{# if showStickyStoryBar}}
+		{{# if showStickActionsMobile}}
 			<div class="action-bar-mobile">
 				<div class="layout horizontal wrap justified">
 					<div class="action-like flex">7</div>

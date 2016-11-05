@@ -19,8 +19,11 @@ UI.registerHelper("showMobileNav", function(path) {
 UI.registerHelper("showStickyHeader", function(path) {
   return Session.get('showStickyHeader');
 });
-UI.registerHelper("showStickyStoryBar", function(path) {
-  return Session.get('showStickyStoryBar');
+UI.registerHelper("showStickActionsMobile", function(path) {
+  return Session.get('showStickActionsMobile');
+});
+UI.registerHelper("showStickActionsDesktop", function(path) {
+  return Session.get('showStickActionsDesktop');
 });
 
 /*
