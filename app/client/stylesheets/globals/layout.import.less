@@ -115,6 +115,35 @@ h3 {
     }
 }
 
+// Popup menu
+.popup-menu {
+    .position(fixed, auto, 30px, 82px, auto, 186px, 0);
+    .shadow(0px 0px 7px 0px rgba(50, 50, 50, 0.6));
+    background: rgba(255, 255, 255, 0.8);
+    margin-left: 23.5rem;
+    opacity: 0;
+    overflow: hidden;
+    z-index: 0;
+    ul {
+        margin: 0;
+        padding: 2rem 1.5rem;
+        opacity: 0;
+        li {
+            line-height: 2rem;
+        }
+        a {
+            .font-s3-alt();
+            .type-regular();
+            color: @color-well;
+            text-decoration: none;
+            &:hover {
+                color: @color-full;
+                text-decoration: underline;;
+            }
+        }
+    }
+}
+
 //USE SESSION VALUE TO SET VISIBILITY AND TRANSFORMATION OF SCROLLABLE AREAS
 // Value is set from session var and template helper isActiveClass
 .tab-1 {
