@@ -193,29 +193,6 @@
 	</div>
 </template>
 
-<template name="suggestedStories">
-	<div class="suggested-stories">
-		<div class="container categoryview-stories">
-			<h4>STORIES YOU MIGHT LIKE</h4>
-			<div class="story-item layout-first" style="background-image: url('https://scontent-dft4-1.cdninstagram.com/t51.2885-15/e35/14676523_1771758936412519_5065848990021451776_n.jpg?ig_cache_key=MTM1NzY5MzQ2ODUyODQ3ODM5NQ%3D%3D.2')">
-				<div class="st-edition layout horizontal wrap flex justified">
-					<div class="st-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div>
-					<div class="st-delete"><i class="fa fa-trash" aria-hidden="true"></i></div>
-				</div>
-				<a class="profile-list-item" href="{{pathFor 'story' _story=123}}"> 
-					<div class="st-title st-suggested">
-						{{truncateThirty "This is an example of a really long title that we need to truncate"}}
-					</div>
-					<div class="st-desc st-suggested">
-						{{truncateThirty "Really long description has also been added here but we are going to tuncrate it."}}
-					</div>
-					<div class="story-cover"></div>
-				</a>
-			</div>
-		</div>
-	</div>
-</template>
-
 <!-- Mobile helper templates -->
 <template name="stickyActionsMobile">
 	<div id="sticky-actions-mobile-hook">
@@ -231,4 +208,38 @@
 			</div>
 		{{/if}}
 	</div>	
+</template>
+
+<!-- Suggested Stories Templates -->
+<template name="suggestedStories">
+  <div class="suggested-stories">
+    <div class="container categoryview-stories">
+      <h4>STORIES YOU MIGHT LIKE</h4>
+      <div class="suggested-carousel layout horizontal wrap justified">
+        {{>suggestedStory}}
+        {{>suggestedStory}}
+        {{>suggestedStory}}
+        {{>suggestedStory}}
+        {{>suggestedStory}}
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="suggestedStory">
+  <div class="story-item st-carousel" style="background-image: url('https://scontent-dft4-1.cdninstagram.com/t51.2885-15/e35/14676523_1771758936412519_5065848990021451776_n.jpg?ig_cache_key=MTM1NzY5MzQ2ODUyODQ3ODM5NQ%3D%3D.2')">
+    <div class="st-edition layout horizontal wrap flex justified">
+      <div class="st-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+      <div class="st-delete"><i class="fa fa-trash" aria-hidden="true"></i></div>
+    </div>
+    <a class="profile-list-item" href="{{pathFor 'story' _story=123}}"> 
+      <div class="st-title st-suggested">
+        {{truncateThirty "This is an example of a really long title that we need to truncate"}}
+      </div>
+      <div class="st-desc st-suggested">
+        {{truncateThirty "Really long description has also been added here but we are going to tuncrate it."}}
+      </div>
+      <div class="story-cover"></div>
+    </a>
+  </div>
 </template>

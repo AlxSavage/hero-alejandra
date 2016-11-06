@@ -7,6 +7,30 @@ Template.story.onCreated(function() {
   Session.setDefault(templateTabGroupName, 'storyStory');
 });
 
+Template.story.rendered = function() {
+  // Slick carousel for suggested stories on desktop
+  $('.suggested-carousel').slick({
+    arrows: true,
+    dots: false,
+    infinite: true,
+    speed: 500,
+    variableWidth: true,
+    responsive: [ 
+      {
+        breakpoint: 990,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          dots: true,
+          slidesToShow: 3,
+          swipe: true,
+          variableWidth: true,
+        }
+      }
+    ]
+  });
+}
+
 // Comments helpers, we get the {{storyId}} var from the router
 Template.story.helpers({
   storyId() {
