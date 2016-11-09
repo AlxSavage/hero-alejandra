@@ -1,7 +1,6 @@
 <template name="story">
 	<div class="page-view-story {{activeTabClass}}">
-
-		<div class="story-brief layout vertical center-center">
+		<div class="story-brief layout vertical center-center" style="background-image: url('https://instagram.fmex1-1.fna.fbcdn.net/t51.2885-15/e35/14533713_1678899692437238_7881188898519384064_n.jpg?ig_cache_key=MTM1MDkxNjEyMTAwNzUyMjM1NQ%3D%3D.2')">
 			<div class="hero-overlay-down-up"></div>
 				<div class="hero-title">THE SHOP KEEPER</div>
 				<hr class="hero-hr">
@@ -10,7 +9,6 @@
 					<img src="https://s-media-cache-ak0.pinimg.com/236x/81/63/e4/8163e4d1615e6bd3a130cd50a786f14e.jpg" title="Author"> By Jack Kerouac | Oct 17th 2016
 				</div>
 		</div>
-
 		<div class="story-tab-container" >
 		  	<div class="btns-group-flexless story-tabs layout horizontal center-center">
 		    	<a data-tab-template="storyStory" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'storyStory'}}active{{else}}no-state{{/if}}">Story</a>
@@ -22,28 +20,15 @@
 		</div>
 		{{>suggestedStories}}
 	</div>
-
-	<div class="action-bar-mobile">
-		<div class="layout horizontal wrap justified">
-			<div class="action-like flex">7</div>
-			<div class="action-comment flex">2</div>
-			<div class="action-bookmark flex">14</div>
-			<div class="action-next flex"></div>
-			<div class="action-share flex"></div>
-		</div>
-	</div>
-
-
+	{{>stickyActionsMobile}}
+	{{>stickyActionsDesktop}}
 </template>
 
 
 <template name="storyStory">
 	<div class="story-container">
-
 		<h1>It Always Rains on the Plains</h1>
-
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum. <strong>Some bold text formatting</strong>. condimentum turpis, eget accumsan velit lobortis eget. Aenean condimentum, magna consectetur ullamcorper iaculis, ex enim mattis orci, id venenatis massa eros vel lorem. Suspendisse acit. <a href="#">Link formatting</a>. Aliquam auctor non nulla et euismod. Cras at euismod purus, ac egestas tellus. Nulla facilisi. Nunc quis eros non neque efficitur hendrerit. Proin vitae ornare nisl. Pellentesque placerat ex urna, id eleifend mi pharetra non. Nam pharetra pulvinar sapien nec blandit. Aliquam luctus augue sed facilisis laoreet. Vestibulum hendrerit nunc mi, sed ultricies turpis vestibulum vel. Maecenas ante risus, condimentum imperdiet tortor a, porttitor volutpat tellus. Phasellus tristique placerat tellus, ullamcorper tristique tellus bibendum a. Integer ligula quam, consectetur ac turpis ac, rutrum posuere sapien.</p>
-
 		<figure>
 			<img src="/img/story-temp/video1.jpg" 
 			alt="Beatiful Sunset Video">
@@ -51,7 +36,6 @@
 				Beatiful Sunset Video
 			</figcaption>
 		</figure>
-
 		<figure>
 			<img src="/img/story-temp/video2.jpg" 
 			alt="Thirsty Kid">
@@ -59,7 +43,6 @@
 				Thirsty Kid
 			</figcaption>
 		</figure>
-
 		<figure>
 			<img src="/img/story-temp/story1.jpg" 
 			alt="Cute Kid Video">
@@ -67,7 +50,6 @@
 				Cute Kid Video
 			</figcaption>
 		</figure>
-
 		<figure>
 			<img src="/img/story-temp/story2.jpg" 
 			alt="The Plains">
@@ -75,9 +57,7 @@
 				The Plains
 			</figcaption>
 		</figure>
-
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum condimentum turpis, eget accumsan velit lobortis eget. Aenean condimentum, magna consectetur ullamcorper iaculis, ex enim mattis orci, id venenatis massa eros vel lorem. Suspendisse ac finibus quam, ut mattis velit. Aliquam auctor non nulla et euismod. Cras at euismod purus, ac egestas tellus. Nulla facilisi. Nunc quis eros non neque efficitur hendrerit. Proin vitae ornare nisl. Pellentesque placerat ex urna, id eleifend mi pharetra non. Nam pharetra pulvinar sapien nec blandit. Aliquam luctus augue sed facilisis laoreet. Vestibulum hendrerit nunc mi, sed ultricies turpis vestibulum vel. Maecenas ante risus, condimentum imperdiet tortor a, porttitor volutpat tellus. Phasellus tristique placerat tellus, ullamcorper tristique tellus bibendum a. Integer ligula quam, consectetur ac turpis ac, rutrum posuere sapien.</p>
-
 		<figure>
 			<img src="/img/story-temp/slideshow.jpg" 
 			alt="My Safari Slideshow">
@@ -85,8 +65,6 @@
 				My Safari Slideshow
 			</figcaption>
 		</figure>
-
-
 		<ul class="details">
 			<li class="details-title">
  				<h2 class="details">Details</h2>
@@ -112,53 +90,156 @@
 				<div class="detail-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at tempus nisl. Nulla vitae sapien egestas, commodo urna a, dictum odio. Donec tincidunt ut elit et placerat. Quisque pellentesque imperdiet felis eu sodales. Donec sagittis sapien in aliquet fringilla. Donec malesuada odio non mauris hendrerit, eget tempor ex elementum. Integer feugiat diam quis lectus vestibulum accumsan. Curabitur molestie ex tellus, sit amet tempor tortor facilisis sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a risus sit amet magna luctus feugiat a id tellus.</div>
 			</li>
 		</ul>
-
 		<div class="mobile-hashtags">
 			<a href="#">#Shinjuku</a> <a href="#">#Cosplay</a> <a href="#">#ShabuShabu</a>
 		</div>
-
-		<div class="action-bar-desktop layout horizontal wrap justified">
-			<div class="layout horizontal wrap justified action-icons">
-				<div class="action-like action-icon flex">7</div>
-				<div class="action-comment action-icon flex">2</div>
-				<div class="action-bookmark action-icon flex">14</div>
-				<div class="action-next action-icon flex"></div>
-			</div>
-			<div class="layout horizontal wrap justified layout-end share-icons">
-				<div class="share-fb share-icon flex"></div>
-				<div class="share-twitter share-icon flex"></div>
-				<div class="share-more share-icon flex layout-end"></div>
-			</div>
-		</div>
+		{{>desktopActionBar}}
 	</div>
 </template>
 
 
 <template name="storyItinerary">
-	Story itinerary here
+	<div class="st-itinerary">
+		<div class="st-itinerary-map">
+			<div class="semi-overlay-down-up"></div>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2435.2384537055277!2d4.9015450514377505!3d52.38422747968949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb322c46184413eb9!2sEYE+Film+Museum!5e0!3m2!1ses-419!2smx!4v1478137303136" 
+			width="100%" height="100%" 
+			frameborder="0" 
+			style="border:0; pointer-events: none;" 
+			allowfullscreen>
+			</iframe>
+		</div>
+		<div class="story-container">
+			<h1>TRIP TO ZIMBABWE</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum. <strong>Some bold text formatting</strong>. condimentum turpis, eget accumsan velit lobortis eget. Aenean condimentum, magna consectetur ullamcorper iaculis, ex enim mattis orci, id venenatis massa eros vel lorem. Suspendisse acit.</p>
+			<div class="itinerary">
+				<div class="itinerary-title">
+					<i class="fa fa-circle" aria-hidden="true"></i> MAR. 1 2016
+				</div>
+				<div class="itinerary-story layout horizontal wrap justified">
+					<img src="/img/assets/itinerary1.jpg">
+					<div class="itinerary-details flex">
+						<div class="timestamp">1:00pm</div>
+						<div class="timestamp-title">Exploring Shinjuku</div>
+						<p class="itinerary-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut varius ante vel nisi laoreet vehicula. Cras fermentum hendrerit neque. </p>
+					</div>
+				</div>
+			</div>
+			<div class="itinerary">
+				<div class="itinerary-title">
+					<i class="fa fa-circle" aria-hidden="true"></i> MAR. 2 2016
+				</div>
+				<div class="itinerary-story layout horizontal wrap justified">
+					<img src="/img/assets/itinerary2.jpg">
+					<div class="itinerary-details flex">
+						<div class="timestamp">1:00pm</div>
+						<div class="timestamp-title">Cherry Blossom</div>
+						<p class="itinerary-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut varius ante vel nisi laoreet vehicula. Cras fermentum hendrerit neque. </p>
+					</div>
+				</div>
+			</div>
+			{{>desktopActionBar}}
+		</div>
+		{{>stickyActionsMobile}}
+		{{>stickyActionsDesktop}}
+	</div>
 </template>
 
-<template name="suggestedStories">
-	<div class="suggested-stories">
-		<div class="container categoryview-stories">
-		<h4>STORIES YOU MIGHT LIKE</h4>
-		<!-- temp hard coded story ID for templating-->
-		<div class="story-item layout-first" style="background-image: url('https://scontent-dft4-1.cdninstagram.com/t51.2885-15/e35/14676523_1771758936412519_5065848990021451776_n.jpg?ig_cache_key=MTM1NzY5MzQ2ODUyODQ3ODM5NQ%3D%3D.2')">
-			<div class="st-edition layout horizontal wrap flex justified">
-				<div class="st-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div>
-				<div class="st-delete"><i class="fa fa-trash" aria-hidden="true"></i></div>
+<!-- Desktop helper templates -->
+<template name="stickyActionsDesktop">
+	<div id="sticky-actions-desktop-hook">
+		{{# if showStickActionsDesktop}}
+			<div class="sticky-actions-desktop layout horizontal end-justified">
+				<div class="action-like-fill fixed-icon st-like"></div>
+				<div class="action-comment fixed-icon grouped"></div>
+				<div class="action-bookmark fixed-icon grouped"></div>
+				<div class="action-share fixed-icon grouped"></div>
+				<div class="popup-menu fixed-action-bar-menu">
+					<ul>
+						<li><a href="#" class="popup-fb">Facebook</a></li>
+						<li><a href="#" class="popup-twitter">Twitter</a></li>
+						<li><a href="#" class="popup-google">Google</a></li>
+						<li><a href="#" class="popup-tumblr">Tumblr</a></li>
+						<li><a href="#" class="popup-pinterest">Pinterest</a></li>
+						<li><a href="#" class="popup-email">Email</a></li>
+					</ul>			
+				</div>
 			</div>
-			<a class="profile-list-item" href="{{pathFor 'story' _story=123}}"> 
-				<div class="st-title st-suggested">
-					{{truncateThirty "This is an example of a really long title that we need to truncate"}}
-				</div>
-				<div class="st-desc st-suggested">
-					{{truncateThirty "Really long description has also been added here but we are going to tuncrate it."}}
-				</div>
-				<div class="story-cover"></div>
-			</a>
+		{{/if}}
+	</div>
+</template>
+
+<template name="desktopActionBar">
+	<div class="action-bar-desktop layout horizontal wrap justified">
+		<div class="layout horizontal wrap justified action-icons">
+			<div class="action-like action-icon st-like flex"><span class="count">22</span></div>
+			<div class="action-comment action-icon flex">2</div>
+			<div class="action-bookmark action-icon flex">14</div>
+			<div class="action-next action-icon flex"></div>
+		</div>
+		<div class="layout horizontal wrap justified layout-end share-icons">
+			<div class="share-fb share-icon flex"></div>
+			<div class="share-twitter share-icon flex"></div>
+			<div class="share-more share-icon flex layout-end"></div>
+			<div class="popup-menu action-bar-menu">
+				<ul>
+					<li><a href="#" class="popup-google">Google</a></li>
+					<li><a href="#" class="popup-tumblr">Tumblr</a></li>
+					<li><a href="#" class="popup-pinterest">Pinterest</a></li>
+					<li><a href="#" class="popup-email">Email</a></li>
+				</ul>			
+			</div>
 		</div>
 	</div>
+</template>
 
-	</div>
+<!-- Mobile helper templates -->
+<template name="stickyActionsMobile">
+	<div id="sticky-actions-mobile-hook">
+		{{# if showStickActionsMobile}}
+			<div class="action-bar-mobile">
+				<div class="layout horizontal wrap justified">
+					<div class="action-like st-like flex"><span class="count">7</span></div>
+					<div class="action-comment flex">2</div>
+					<div class="action-bookmark flex">14</div>
+					<div class="action-next flex"></div>
+					<div class="action-share flex"></div>
+				</div>
+			</div>
+		{{/if}}
+	</div>	
+</template>
+
+<!-- Suggested Stories Templates -->
+<template name="suggestedStories">
+  <div class="suggested-stories">
+    <div class="container categoryview-stories">
+      <h4>STORIES YOU MIGHT LIKE</h4>
+      <div class="suggested-carousel layout horizontal wrap justified">
+        {{>suggestedStory}}
+        {{>suggestedStory}}
+        {{>suggestedStory}}
+        {{>suggestedStory}}
+        {{>suggestedStory}}
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="suggestedStory">
+  <div class="story-item st-carousel" style="background-image: url('https://scontent-dft4-1.cdninstagram.com/t51.2885-15/e35/14676523_1771758936412519_5065848990021451776_n.jpg?ig_cache_key=MTM1NzY5MzQ2ODUyODQ3ODM5NQ%3D%3D.2')">
+    <div class="st-edition layout horizontal wrap flex justified">
+      <div class="st-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+      <div class="st-delete"><i class="fa fa-trash" aria-hidden="true"></i></div>
+    </div>
+    <a class="profile-list-item" href="{{pathFor 'story' _story=123}}"> 
+      <div class="st-title st-suggested">
+        {{truncateThirty "This is an example of a really long title that we need to truncate"}}
+      </div>
+      <div class="st-desc st-suggested">
+        {{truncateThirty "Really long description has also been added here but we are going to tuncrate it."}}
+      </div>
+      <div class="story-cover"></div>
+    </a>
+  </div>
 </template>
