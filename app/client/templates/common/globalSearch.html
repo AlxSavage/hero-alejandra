@@ -1,18 +1,18 @@
 <template name="globalSearch">
-		{{#if activeGlobalSearch}}
-			<div class="page-global-search bg-dark">
+	{{#if activeGlobalSearch}}
+		<div class="page-global-search bg-dark">
 
-				<div class="tab-container layout vertical" >
-			  	<div class="btns-group tabs">
-			    	<a data-tab-template="searchStories" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'searchStories'}}active{{else}}no-state{{/if}}">Stories</a>
-			    	<a data-tab-template="searchPeople" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'searchPeople'}}active{{else}}no-state{{/if}}">People</a>
-					</div>
-					<div class="flex">
-						{{>activeTab tabKey=tabKey}}
-					</div>
+			<div class="tab-container layout vertical" >
+		  	<div class="btns-group btns-global-search tabs">
+		    	<a data-tab-template="searchStories" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'searchStories'}}active{{else}}no-state{{/if}}">Stories</a>
+		    	<a data-tab-template="searchPeople" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'searchPeople'}}active{{else}}no-state{{/if}}">People</a>
 				</div>
-			</div>			
-		{{/if}}
+				<div class="flex">
+					{{>activeTab tabKey=tabKey}}
+				</div>
+			</div>
+		</div>			
+	{{/if}}
 </template>
 
 <template name="searchStories"><div style="height: 2000px; width:100%;"><h1>searchstories</h1></div></template>

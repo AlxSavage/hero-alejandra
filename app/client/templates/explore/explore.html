@@ -2,13 +2,22 @@
 
 	<div class="page-explore">
 		{{#if showMobileNav}}
-		<div class="search-container">
-			<input type="search" id="mobile-search" class="mobile-search" name="mobilesearch" placeholder="&#xF002; Search">
-			{{#if activeGlobalSearch}}
-			<a class="js-destroy-search">Cancel</a>
-			{{/if}}
-		</div>
-		{{/if}}
+  		<div class="search-container">
+  			<input type="search" id="mobile-search" class="mobile-search {{#if activeGlobalSearch}}active{{/if}}" name="mobilesearch" placeholder="&#xF002; Search">
+  			{{#if activeGlobalSearch}}
+  			<a class="js-destroy-search">Cancel</a>
+        <main class="container explore-stories-search category-container layout vertical">
+          {{#each categories}}
+          {{>categoryGroup this}}
+          {{/each}}
+          <div class="show-more">
+            SHOW MORE
+          </div>
+        </main>
+    		{{/if}}
+  		</div>
+  	{{/if}}
+
 		<div class="explore-brief layout vertical center-center">
 			<div class="hero-overlay-up-down"></div>
 			<div class="hero-title">For Travelers, by Travelers</div>

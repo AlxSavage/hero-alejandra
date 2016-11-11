@@ -1,5 +1,5 @@
 .page-global-search {
-  .position(fixed, 0,0,auto,0,auto,auto);
+  .position(0, 0,0,auto,0,auto,auto);
   min-height: 100vh;
   background: black;
   .background-image(
@@ -8,19 +8,42 @@
   background-position: center;
   background-size: cover;
   padding-top: 8rem;
-  .md-and-down ({ padding-top: 77px; });
-
-
+  .md-and-down ({ padding-top: 60px; });
   .tabs {
   	background:transparent;
   }
-
-	.js-destroy-search {
-	  .md-and-down ({
-			  position: fixed;
-	      top: 33px;
-	      right: 1rem;
-	      color: white;
-	  });
+}
+.btns-global-search {
+  [class^="btn-"], [class*=" btn-"] {
+    .font-btn-mobile();
+    background: @color-empty-transparent;
+    padding: 0.8em 1.25em 0.8em;
   }
+  [class^="btn-"][class*="tertiary"].active, [class*=" btn-"][class*="tertiary"].active {
+    color: @color-empty;
+  }
+}
+.js-destroy-search {
+  .md-and-down ({
+      color: @color-rare;
+      float: left;
+      margin: 1.3rem 1.4rem 1.3rem;
+      &:hover {
+        color: @color-empty;
+      }
+  });
+}
+
+// Containers for each category group
+.container.explore-stories-search {
+  padding: 1rem 0;
+  .lg-and-down ({ 
+    .position(relative; 0; 0; 0; 0; 100%; auto); 
+  });
+  .lg ({ 
+    .position(relative; 62vh; 0; 0; 0; 85.83%; auto); 
+  });
+  .xs-and-down ({ 
+    padding: 3rem 0 3.3rem; 
+  });
 }
