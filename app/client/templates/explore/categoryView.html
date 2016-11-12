@@ -14,7 +14,7 @@
 		    	<a data-tab-template="categoryTab2" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'categoryTab2'}}active{{else}}no-state{{/if}}">Do</a>
 		    	<a data-tab-template="categoryTab3" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'categoryTab3'}}active{{else}}no-state{{/if}}">Eat</a>
 		    	<a data-tab-template="categoryTab4" class="btn-tertiary js-tab-trigger {{#if isActiveTab 'categoryTab4'}}active{{else}}no-state{{/if}}">Stay</a>
-			</div>
+			  </div>
 			<div class="flex">
 				{{>activeTab tabKey=tabKey}}
 			</div>
@@ -24,131 +24,63 @@
 
 <!-- Template for All -->
 <template name="categoryTab1">
-	<div class="show-more">
-		SHOW MORE
-	</div>
+  {{>singleCategoryView}}
 </template>
 
 <!-- Template for Do -->
 <template name="categoryTab2">
-	<div class="container categoryview-stories layout horizontal wrap justified">
-		<!-- temp hard coded story ID for templating-->
-		<div class="story-item" style="background-image: url('https://scontent-dft4-1.cdninstagram.com/t51.2885-15/e35/14591069_720272094792767_3812275884610551808_n.jpg?ig_cache_key=MTM1NTk5MTcyNjQwOTU2NjcwOQ%3D%3D.2')">
-			<div class="st-edition layout horizontal wrap flex justified">
-				<div class="st-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div>
-				<div class="st-delete"><i class="fa fa-trash" aria-hidden="true"></i></div>
-			</div>
-			<a class="profile-list-item" href="{{pathFor 'story' _story=123}}"> 
-				<div class="st-title st-category">
-					{{truncateThirty "This is an example of a really long title that we need to truncate"}}
-				</div>
-				<div class="st-desc st-category">
-					{{truncateThirty "Really long description has also been added here but we are going to tuncrate it."}}
-				</div>
-				<hr class="st-category">
-				<div class="st-author st-category layout horizontal">
-					<div class="story-img flex-1">
-						<img src="https://s-media-cache-ak0.pinimg.com/236x/81/63/e4/8163e4d1615e6bd3a130cd50a786f14e.jpg" class="profile-img" alt="User">
-					</div>
-					<div class="author-name flex-2">
-						J. Smith
-					</div>
-					<div class="st-date flex-2">
-						2 days ago
-					</div>
-				</div>
-				<div class="st-count" data-liked-viewer="false">
-					<span class="count">22</span>
-					<i class="fa fa-heart" aria-hidden="true"></i>
-					<i class="fa fa-heart shadow" aria-hidden="true"></i>
-				</div>
-				<div class="story-cover"></div>
-			</a>
-		</div>
-	</div>
-	<div class="show-more">
-		SHOW MORE
-	</div>
+  {{>singleCategoryView}}
 </template>
 
 <!-- Template for Eat -->
 <template name="categoryTab3">
-<div class="container categoryview-stories layout horizontal wrap justified">
-		<!-- temp hard coded story ID for templating-->
-		<div class="story-item" style="background-image: url('https://scontent-dft4-1.cdninstagram.com/t51.2885-15/e35/14473917_529449927249459_2172957507054469120_n.jpg?ig_cache_key=MTM1NTI5MzAxMjc1ODAzNTI2MQ%3D%3D.2')">
-			<div class="st-edition layout horizontal wrap flex justified">
-				<div class="st-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div>
-				<div class="st-delete"><i class="fa fa-trash" aria-hidden="true"></i></div>
-			</div>
-			<a class="profile-list-item" href="{{pathFor 'story' _story=123}}"> 
-				<div class="st-title st-category">
-					{{truncateThirty "This is an example of a really long title that we need to truncate"}}
-				</div>
-				<div class="st-desc st-category">
-					{{truncateThirty "Really long description has also been added here but we are going to tuncrate it."}}
-				</div>
-				<hr class="st-category">
-				<div class="st-author st-category layout horizontal">
-					<div class="story-img flex-1">
-						<img src="https://s-media-cache-ak0.pinimg.com/236x/81/63/e4/8163e4d1615e6bd3a130cd50a786f14e.jpg" class="profile-img" alt="User">
-					</div>
-					<div class="author-name flex-2">
-						J. Smith
-					</div>
-					<div class="st-date flex-2">
-						2 days ago
-					</div>
-				</div>
-				<div class="st-count" data-liked-viewer="false">
-					<span class="count">22</span>
-					<i class="fa fa-heart" aria-hidden="true"></i>
-					<i class="fa fa-heart shadow" aria-hidden="true"></i>
-				</div>
-				<div class="story-cover"></div>
-			</a>
-		</div>
-	</div>
+  {{>singleCategoryView}}
 </template>
 
 <!-- Template for Stay -->
 <template name="categoryTab4">
-	<div class="container categoryview-stories layout horizontal wrap justified">
-		<!-- temp hard coded story ID for templating-->
-		<div class="story-item" style="background-image: url('https://scontent-dft4-1.cdninstagram.com/t51.2885-15/e35/14719574_204400969971065_8809825892374151168_n.jpg?ig_cache_key=MTM2MDg4NTI0MjU0NTY3NDEzMQ%3D%3D.2')">
-			<div class="st-edition layout horizontal wrap flex justified">
-				<div class="st-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div>
-				<div class="st-delete"><i class="fa fa-trash" aria-hidden="true"></i></div>
-			</div>
-			<a class="profile-list-item" href="{{pathFor 'story' _story=123}}"> 
-				<div class="st-title st-category">
-					{{truncateThirty "This is an example of a really long title that we need to truncate"}}
-				</div>
-				<div class="st-desc st-category">
-					{{truncateThirty "Really long description has also been added here but we are going to tuncrate it."}}
-				</div>
-				<hr class="st-category">
-				<div class="st-author st-category layout horizontal">
-					<div class="story-img flex-1">
-						<img src="https://s-media-cache-ak0.pinimg.com/236x/81/63/e4/8163e4d1615e6bd3a130cd50a786f14e.jpg" class="profile-img" alt="User">
-					</div>
-					<div class="author-name flex-2">
-						J. Smith
-					</div>
-					<div class="st-date flex-2">
-						2 days ago
-					</div>
-				</div>
-				<div class="st-count" data-liked-viewer="false">
-					<span class="count">22</span>
-					<i class="fa fa-heart" aria-hidden="true"></i>
-					<i class="fa fa-heart shadow" aria-hidden="true"></i>
-				</div>
-				<div class="story-cover"></div>
-				<img src="" style="background-image: url('/img/test3.png')" class="image">
-			</a>
-		</div>
-	</div>
-	<div class="show-more">
-		SHOW MORE
-	</div>
+  {{>singleCategoryView}}
+</template>
+
+<template name="singleCategoryView">
+  <div class="container categoryview-stories layout horizontal wrap justified">
+    <!-- temp hard coded story ID for templating-->
+    <div class="story-item" style="background-image: url('https://scontent-dft4-1.cdninstagram.com/t51.2885-15/e35/14719574_204400969971065_8809825892374151168_n.jpg?ig_cache_key=MTM2MDg4NTI0MjU0NTY3NDEzMQ%3D%3D.2')">
+      <div class="st-edition layout horizontal wrap flex justified">
+        <div class="st-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+        <div class="st-delete"><i class="fa fa-trash" aria-hidden="true"></i></div>
+      </div>
+      <a class="profile-list-item" href="{{pathFor 'story' _story=123}}"> 
+        <div class="st-title st-category">
+          {{truncateThirty "This is an example of a really long title that we need to truncate"}}
+        </div>
+        <div class="st-desc st-category">
+          {{truncateThirty "Really long description has also been added here but we are going to tuncrate it."}}
+        </div>
+        <hr class="st-category">
+        <div class="st-author st-category layout horizontal">
+          <div class="story-img flex-1">
+            <img src="https://s-media-cache-ak0.pinimg.com/236x/81/63/e4/8163e4d1615e6bd3a130cd50a786f14e.jpg" class="profile-img" alt="User">
+          </div>
+          <div class="author-name flex-2">
+            J. Smith
+          </div>
+          <div class="st-date flex-2">
+            2 days ago
+          </div>
+        </div>
+        <div class="st-count" data-liked-viewer="false">
+          <span class="count">22</span>
+          <i class="fa fa-heart" aria-hidden="true"></i>
+          <i class="fa fa-heart shadow" aria-hidden="true"></i>
+        </div>
+        <div class="story-cover"></div>
+        <img src="" style="background-image: url('/img/test3.png')" class="image">
+      </a>
+    </div>
+  </div>
+  <div class="show-more">
+    SHOW MORE
+  </div>
+
 </template>
