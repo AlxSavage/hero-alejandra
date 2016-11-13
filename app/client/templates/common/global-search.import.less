@@ -1,27 +1,65 @@
 .page-global-search {
-  .position(0, 0,0,auto,0,auto,auto);
-  min-height: 100vh;
-  .background-image(
-    url('/img/bg/login_blur_800x800.jpg')
-  );
-  background-position: center;
-  background-size: cover;
   padding-top: 8rem;
-  .md-and-down ({ padding-top: 60px; });
+  .md-and-down ({ 
+    .position(auto, 0, 0, auto, 0, auto, auto);
+    .background-image(
+      url('/img/bg/login_blur_800x800.jpg')
+    );
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    padding-top: 60px; 
+  });
+  .md-and-up ({ 
+    .position(absolute; 170px; 0; 0; 0; 100%; auto);
+    background: @color-empty;
+    max-height: 190px;
+    padding-top: 0;
+    z-index: 99;
+  });
   .tabs {
   	background:transparent;
   }
 }
-.btns-global-search {
-  [class^="btn-"], [class*=" btn-"] {
-    .font-btn-mobile();
-    background: @color-empty-transparent;
-    padding: 0.8em 1.25em 0.8em;
-  }
-  [class^="btn-"][class*="tertiary"].active, [class*=" btn-"][class*="tertiary"].active {
-    color: @color-empty;
+.tab-global-search {
+  .md-and-up ({ 
+    height: 10rem;
+    margin: 0 auto;
+    padding: 2rem 0;
+    width: 270px;
+    .btns-group {
+      z-index: 10;
+    }
+  }); 
+  .md-and-down ({ 
+    .flex {
+      z-index: 10;
+    }
+  }); 
+  .btns-group {
+    [class^="btn-"], [class*=" btn-"] {
+      background: @color-empty-transparent;
+      .md-and-up ({ 
+        .font-s3();
+        padding: 0.8em 1rem;
+      }); 
+      .md-and-down ({ 
+        .font-btn-mobile();
+        padding: 0.8em 1.25em 0.8em;
+      }); 
+    }
+    [class^="btn-"][class*="tertiary"].active, [class*=" btn-"][class*="tertiary"].active {
+      .md-and-up ({ 
+        .font-s3();
+        color: @color-full;
+      }); 
+      .md-and-down ({ 
+        color: @color-empty;
+      }); 
+    }
   }
 }
+
 .js-destroy-search {
   .md-and-down ({
       color: @color-rare;
@@ -31,19 +69,19 @@
         color: @color-empty;
       }
   });
+  .md-and-up ({ 
+    display: none;
+  });
 }
 
 // Containers for each category group
 .container.explore-stories-search {
   padding: 1rem 0;
-  .lg-and-down ({ 
-    .position(relative; 0; 0; 0; 0; 100%; auto); 
-  });
-  .lg ({ 
+  // .lg-and-down ({ 
+  //   .position(relative; 0; 0; 0; 0; 100%; auto); 
+  // });
+  .md-and-up ({ 
     .position(relative; 62vh; 0; 0; 0; 85.83%; auto); 
-  });
-  .xs-and-down ({ 
-    padding: 7rem 0 3.3rem; 
   });
   // Story results
   .result {
@@ -88,11 +126,34 @@
 
 // Global search container
 .search-container {
-  background: @dark-eight-opacity;
+  .position(relative, 0, 0, auto, 0, 100%, auto);
   display: block;
   margin: 0 auto;
-  position: relative;
-  width: 100%;
+  .md-and-down ({ 
+    background-color: @dark-eight-opacity;
+    &.active {
+      .background-image(
+        url('/img/bg/login_blur_800x800.jpg')
+      );
+      background-position: center;
+      background-size: cover;
+    }
+  });
+  .md-and-up ({ 
+    .position(absolute, 70px, 0, auto, 0, auto, auto);
+    background-color: @color-raw-alt;
+    border-bottom: 1px solid @color-raw-semi;
+    height: 100px;
+    width: 100%;
+    z-index: 9;
+    input {
+      .font-m3();
+      .type-light();
+      border: none;
+      color: @color-medium-rare;
+      text-align: center;
+    }
+  });
   .mobile-search {
     background: rgba(66,66,66,0.6);
     border: 1px solid rgba(66,66,66,0.6);

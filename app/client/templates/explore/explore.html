@@ -2,10 +2,10 @@
 
 	<div class="page-explore">
 		{{#if showMobileNav}}
-  		<div class="search-container">
+  		<div class="search-container {{#if activeGlobalSearch}}active{{/if}}">
   			<input type="search" id="mobile-search" class="mobile-search {{#if activeGlobalSearch}}active{{/if}}" name="mobilesearch" placeholder="&#xF002; Search">
   			{{#if activeGlobalSearch}}
-          {{>mobileGlobalSearch}}
+          <a class="js-destroy-search">Cancel</a>
     		{{/if}}
   		</div>
   	{{/if}}
@@ -27,7 +27,7 @@
 				</div>
 			</div>
 		</div>
-		<main class="container explore-stories category-container layout vertical">
+		<main class="container explore-stories category-container layout vertical {{#if activeGlobalSearch}}active-search{{/if}}">
 			{{#each categories}}
 			{{>categoryGroup this}}
 			{{/each}}
@@ -85,26 +85,4 @@
       <div class="story-cover"></div>
     </a>
   </div>
-</template>
-
-<template name="mobileGlobalSearch">
-  <a class="js-destroy-search">Cancel</a>
-  <main class="container explore-stories-search">
-    {{>searchResult}}
-    {{>searchResult}}
-    {{>searchResult}}
-    {{>searchResult}}
-  </main>
-</template>
-
-<template name="searchResult">
-  <a href="{{pathFor 'searchResults'}}">
-    <div class="result layout horizontal wrap justified">
-      <div class="rs-thumbnail">
-        <img src="https://scontent-lga3-1.cdninstagram.com/t51.2885-15/sh0.08/e35/p750x750/14597381_205106936596986_6873403190771974144_n.jpg?ig_cache_key=MTM4MTU4MDI2NTAzNDY0MTI2Nw%3D%3D.2" alt="Story search">
-      </div>
-      <div class="rs-title">Japan</div>
-      <div class="rs-stories">3 stories</div>
-    </div>
-  </a>
 </template>
