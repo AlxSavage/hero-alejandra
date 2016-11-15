@@ -22,6 +22,10 @@ Router.route('/categoryView', {
   name: 'categoryView'
 });
 
+Router.route('/searchResults', {
+  name: 'searchResults'
+});
+
 Router.route('/postFormPlaceholder', {
   name: 'postFormPlaceholder'
 });
