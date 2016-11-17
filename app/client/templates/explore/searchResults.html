@@ -1,0 +1,12 @@
+<template name="searchResults">
+	<div class="page-categoryview">
+	  {{#if showMobileNav}}
+			{{>nav title="Search results"}}
+		{{/if}}
+    <div class="categoryview-tab-container search-results-tab layout vertical" >
+      <div class="flex">
+        {{>singleCategoryView}}
+      </div>
+    </div>
+	</div>
+</template>

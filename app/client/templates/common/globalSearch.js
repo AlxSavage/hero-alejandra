@@ -22,5 +22,9 @@ Template.globalSearch.events({
     let name = template.$(event.target).closest('.js-tab-trigger').data('tab-template');
 
     Session.set(templateTabGroupName, name);
+  },
+  'click .js-search-result': function(e, template){
+    Session.set('activeGlobalSearch', false);
   }
+
 });
